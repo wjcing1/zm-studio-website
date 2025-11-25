@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>服务卡片 · IKEA风格</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #f7f7f7;
+        --card: #ffffff;
+        --text: #111111;
+        --muted: #555555;
+        --border: #111111;
+        --radius: 14px;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", "Noto Sans SC", system-ui, -apple-system, Segoe UI, Roboto,
+          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      }
+      .wrap {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 24px;
+      }
+      .title {
+        font-size: 39px;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+        margin: 0 0 18px 0;
+      }
+      .sub {
+        margin: 0 0 28px 0;
+        color: #666;
+        font-size: 21px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+      .card {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 8px 0 4px 0;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .icon {
+        color: var(--text);
+        margin-bottom: 14px;
+      }
+      .icon svg {
+        width: 140px;
+        height: 140px;
+      }
+      .card h3 {
+        margin: 0 0 6px 0;
+        font-size: 22px;
+        line-height: 1.3;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      .note {
+        text-align: center;
+        margin-top: 16px;
+        color: #777;
+        font-size: 12px;
+      }
+      svg { stroke-width: 1.5; }
+      @media (max-width: 620px) {
+        .grid { grid-template-columns: 1fr; }
+        .wrap { margin: 24px auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <h1 class="title">Services</h1>
+      <p class="sub">zm studio</p>
+      <section class="grid" aria-label="3x3 services">
+        <article class="card">
+          <div class="icon"><i data-lucide="file-text" data-fallback="file-text"></i></div>
+          <h3>Exhibition Application & Registration</h3>
+          <p>Documents, registration and liaison with organizers.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon"><i data-lucide="hammer" data-fallback="hammer"></i></div>
+          <h3>Custom Booth Design & Construction</h3>
+          <p>3D concepts, construction, on-site management.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon"><i data-lucide="image" data-fallback="image"></i></div>
+          <h3>Graphic Design & Printing</h3>
+          <p>Brochures, posters, backdrops, business cards.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon"><i data-lucide="chair" data-fallback="package"></i></div>
+          <h3>Furniture & Equipment Rental</h3>
+          <p>Rental of chairs, lighting, audio and display stands.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon"><i data-lucide="truck" data-fallback="truck"></i></div>
+          <h3>Logistics & Shipping Coordination</h3>
+          <p>Transport, customs, storage and venue access.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon"><i data-lucide="shield-check" data-fallback="shield"></i></div>
+          <h3>On-site Supervision</h3>
+          <p>Full monitoring during setup and dismantling.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon"><i data-lucide="languages" data-fallback="message-square"></i></div>
+          <h3>Interpretation & Translation (CN/EN/IT)</h3>
+          <p>On-site interpretation and document translation.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon"><i data-lucide="plane" data-fallback="calendar"></i></div>
+          <h3>Hospitality & Travel Support</h3>
+          <p>Hotel booking, transport and business travel.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon"><i data-lucide="utensils" data-fallback="coffee"></i></div>
+          <h3>Catering & Event Management</h3>
+          <p>Catering, receptions and product launches.</p>
+        </article>
+      </section>
+      <p class="note">Icons by Lucide · Style inspired by IKEA signage</p>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.473.0/dist/umd/lucide.min.js"></script>
+    <script>
+      (function () {
+        const CDN_PRIMARY = "https://cdn.jsdelivr.net/npm/lucide@0.473.0/dist/umd/lucide.min.js";
+        const CDN_FALLBACK = "https://unpkg.com/lucide@0.473.0/dist/umd/lucide.min.js";
+        const ICON_SIZE = 140;
+        const STROKE = 1.5;
+
+        const fallbacks = {
+          languages: "message-square",
+          chair: "package",
+          hotel: "calendar",
+          "hard-hat": "shield",
+          megaphone: "volume-2",
+          cube: "box",
+          utensils: "coffee",
+        };
+
+        function renderWithLucide() {
+          document.querySelectorAll("[data-lucide]").forEach((el) => {
+            const requested = el.getAttribute("data-lucide");
+            const alt = el.getAttribute("data-fallback") || fallbacks[requested] || "square";
+            const name = (window.lucide && window.lucide.icons && window.lucide.icons[requested]) ? requested : alt;
+            el.setAttribute("data-lucide", name);
+          });
+          try {
+            window.lucide.createIcons({ attrs: { width: ICON_SIZE, height: ICON_SIZE, "stroke-width": STROKE } });
+          } catch (e) {
+            renderPlaceholders();
+          }
+        }
+
+        function renderPlaceholders() {
+          document.querySelectorAll("[data-lucide]").forEach((el) => {
+            el.innerHTML = '<svg width="' + ICON_SIZE + '" height="' + ICON_SIZE + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + STROKE + '" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/></svg>';
+          });
+        }
+
+        function loadScript(src, onload, onerror) {
+          const s = document.createElement("script");
+          s.src = src;
+          s.onload = onload;
+          s.onerror = onerror;
+          document.head.appendChild(s);
+        }
+
+        function ensureLucide() {
+          if (window.lucide && window.lucide.createIcons) {
+            renderWithLucide();
+            return;
+          }
+          loadScript(CDN_PRIMARY, () => {
+            if (window.lucide && window.lucide.createIcons) {
+              renderWithLucide();
+            } else {
+              loadScript(CDN_FALLBACK, () => {
+                if (window.lucide && window.lucide.createIcons) {
+                  renderWithLucide();
+                } else {
+                  renderPlaceholders();
+                }
+              }, renderPlaceholders);
+            }
+          }, () => {
+            loadScript(CDN_FALLBACK, () => {
+              if (window.lucide && window.lucide.createIcons) {
+                renderWithLucide();
+              } else {
+                renderPlaceholders();
+              }
+            }, renderPlaceholders);
+          });
+        }
+
+        ensureLucide();
+      })();
+    </script>
+  </body>
+  </html>
+
+

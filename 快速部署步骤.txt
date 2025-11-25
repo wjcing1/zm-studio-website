@@ -1,0 +1,57 @@
+🚀 最快部署到你的 Squarespace 域名
+=====================================
+
+假设你的域名是：zmstudio.com
+
+步骤 1：部署到 Vercel（2分钟）
+-----------------------------
+在终端运行：
+  vercel login
+  vercel
+
+记下给你的临时网址，先测试一下。
+
+
+步骤 2：在 Vercel 添加域名（1分钟）
+-----------------------------
+1. 访问 https://vercel.com/dashboard
+2. 点击你的项目
+3. Settings → Domains
+4. 输入你的域名：zmstudio.com
+5. 输入：www.zmstudio.com
+6. 记下 Vercel 提示的 DNS 记录
+
+
+步骤 3：在 Squarespace 设置 DNS（2分钟）
+-----------------------------
+1. 访问 https://account.squarespace.com/domains
+2. 点击你的域名
+3. DNS Settings → Add Record
+
+添加 A 记录：
+  Type: A
+  Host: @
+  Value: 76.76.21.21
+
+添加 CNAME 记录：
+  Type: CNAME
+  Host: www
+  Value: cname.vercel-dns.com
+
+保存！
+
+
+步骤 4：等待生效（15-60分钟）
+-----------------------------
+喝杯咖啡，等 15-60 分钟
+然后访问你的域名看看！
+
+
+完成！🎉
+--------
+以后更新网站只需要运行：
+  vercel --prod
+
+
+
+
