@@ -11,6 +11,7 @@ const ProjectDetailPage = lazy(() => import('@/features/projects/ProjectDetailPa
 const ServicesPage = lazy(() => import('@/features/services/ServicesPage'));
 const NewsPage = lazy(() => import('@/features/news/NewsPage'));
 const ContactPage = lazy(() => import('@/features/contact/ContactPage'));
+const NotFoundPage = lazy(() => import('@/features/not-found/NotFoundPage'));
 
 export const routes: RouteObject[] = [
   {
@@ -40,5 +41,9 @@ export const routes: RouteObject[] = [
   {
     path: '/contact',
     element: <ContactPage />
+  },
+  {
+    path: '*',
+    element: <NotFoundPage />
   }
 ];

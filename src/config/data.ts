@@ -25,10 +25,10 @@ export const PROJECTS: Project[] = [
     typology: "Research",
     status: "Concept",
     tags: ["Mobility", "Vertiport", "Y‑form"],
-    coverHue: 260,
+    coverImage: "/images/projects/p2-cover.jpg",
     summary: "Y‑shaped hub buffering parking & airside.",
     body: "Two infrastructural arms shape a civic plaza and mitigate noise.",
-    gallery: [260, 270, 280]
+    gallery: ["/images/projects/p2-1.jpg", "/images/projects/p2-2.jpg", "/images/projects/p2-3.jpg"]
   },
   {
     id: "p3",
@@ -38,10 +38,10 @@ export const PROJECTS: Project[] = [
     typology: "Interior",
     status: "Prototype",
     tags: ["Healing", "Color", "Elderly"],
-    coverHue: 20,
+    coverImage: "/images/projects/p3-cover.jpg",
     summary: "9m² color‑regulated space for seniors.",
     body: "Gradient color + tactile materials anchor daily rituals with circadian palette.",
-    gallery: [20, 30, 40]
+    gallery: ["/images/projects/p3-1.jpg", "/images/projects/p3-2.jpg", "/images/projects/p3-3.jpg"]
   },
   {
     id: "p4",
@@ -51,10 +51,23 @@ export const PROJECTS: Project[] = [
     typology: "Masterplan",
     status: "Concept",
     tags: ["Curve", "Runway", "Education"],
-    coverHue: 120,
+    coverImage: "/images/projects/p4-cover.jpg",
     summary: "1.1km runway reimagined with five curve rooms.",
     body: "Straight vs curve identity; five convex program peaks stitched by promenade.",
-    gallery: [120, 130, 140]
+    gallery: ["/images/projects/p4-1.jpg", "/images/projects/p4-2.jpg", "/images/projects/p4-3.jpg"]
+  },
+  {
+    id: "p5",
+    title: "Urban Textile Exhibition",
+    year: 2025,
+    location: "Shanghai, CN",
+    typology: "Installation",
+    status: "Built",
+    tags: ["Exhibition", "Textile", "Modular"],
+    coverImage: "/images/projects/p5-cover.jpg",
+    summary: "Modular exhibition system exploring fabric and light.",
+    body: "Lightweight textile modules create flexible exhibition spaces that adapt to various show formats and visitor flows.",
+    gallery: ["/images/projects/p5-1.jpg", "/images/projects/p5-2.jpg", "/images/projects/p5-3.jpg"]
   }
 ];
 

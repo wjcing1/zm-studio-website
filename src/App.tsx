@@ -5,6 +5,7 @@ import { Suspense } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import RootLayout from '@/components/layout/RootLayout';
 import { routes } from '@/config/routes';
+import PageLoader from '@/components/ui/PageLoader';
 
 const router = createBrowserRouter([
   {
@@ -16,16 +17,7 @@ const router = createBrowserRouter([
 
 export default function App() {
   return (
-    <Suspense
-      fallback={
-        <div className="min-h-screen grid place-items-center">
-          <div className="text-center">
-            <div className="w-16 h-16 border-4 border-neutral-300 border-t-neutral-600 rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-sm text-neutral-500 font-medium">Loading...</p>
-          </div>
-        </div>
-      }
-    >
+    <Suspense fallback={<PageLoader />}>
       <RouterProvider router={router} />
     </Suspense>
   );
