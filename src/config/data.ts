@@ -2,74 +2,129 @@
 
 import type { Project } from '@/types';
 
-// Projects data
-export const PROJECTS: Project[] = [
+// Projects data - Exhibition projects
+export const EXHIBITION_PROJECTS: Project[] = [
   {
-    id: "p1",
-    title: "River Loop Pavilion",
+    id: "e1",
+    title: "ZM Studio Exhibition Booth",
     year: 2025,
     location: "Milan, IT",
-    typology: "Installation",
-    status: "Competition",
-    tags: ["Landscape", "Pavilion", "Curve"],
-    coverImage: "/images/projects/p1-cover.jpg",
-    summary: "Curvilinear riverside pavilion framing seasonal change.",
-    body: "Soft infrastructure overlays linear embankment with bulging curves hosting micro‑programs.",
-    gallery: ["/images/projects/p1-1.jpg", "/images/projects/p1-2.jpg"]
+    typology: "Exhibition",
+    status: "Built",
+    tags: ["Exhibition", "Booth", "Modular"],
+    category: "exhibition",
+    coverImage: "/images/projects/e1-cover.jpg",
+    summary: "Modular exhibition booth with black frame structure.",
+    body: "A flexible exhibition system featuring a modern black steel frame, integrated lighting, and modular display panels.",
+    gallery: ["/images/projects/e1-1.jpg", "/images/projects/e1-2.jpg"]
   },
   {
-    id: "p2",
-    title: "Y‑Vertiport Research Center",
-    year: 2025,
-    location: "Bresso, IT",
-    typology: "Research",
-    status: "Concept",
-    tags: ["Mobility", "Vertiport", "Y‑form"],
-    coverImage: "/images/projects/p2-cover.jpg",
-    summary: "Y‑shaped hub buffering parking & airside.",
-    body: "Two infrastructural arms shape a civic plaza and mitigate noise.",
-    gallery: ["/images/projects/p2-1.jpg", "/images/projects/p2-2.jpg", "/images/projects/p2-3.jpg"]
-  },
-  {
-    id: "p3",
-    title: "Aging & Comfort Micro‑Room",
-    year: 2024,
-    location: "Bari, IT",
-    typology: "Interior",
-    status: "Prototype",
-    tags: ["Healing", "Color", "Elderly"],
-    coverImage: "/images/projects/p3-cover.jpg",
-    summary: "9m² color‑regulated space for seniors.",
-    body: "Gradient color + tactile materials anchor daily rituals with circadian palette.",
-    gallery: ["/images/projects/p3-1.jpg", "/images/projects/p3-2.jpg", "/images/projects/p3-3.jpg"]
-  },
-  {
-    id: "p4",
-    title: "Runway Curve Campus",
-    year: 2025,
-    location: "Iceland",
-    typology: "Masterplan",
-    status: "Concept",
-    tags: ["Curve", "Runway", "Education"],
-    coverImage: "/images/projects/p4-cover.jpg",
-    summary: "1.1km runway reimagined with five curve rooms.",
-    body: "Straight vs curve identity; five convex program peaks stitched by promenade.",
-    gallery: ["/images/projects/p4-1.jpg", "/images/projects/p4-2.jpg", "/images/projects/p4-3.jpg"]
-  },
-  {
-    id: "p5",
-    title: "Urban Textile Exhibition",
+    id: "e2",
+    title: "TOPBAND Energy Expo",
     year: 2025,
     location: "Shanghai, CN",
-    typology: "Installation",
+    typology: "Exhibition",
     status: "Built",
-    tags: ["Exhibition", "Textile", "Modular"],
-    coverImage: "/images/projects/p5-cover.jpg",
-    summary: "Modular exhibition system exploring fabric and light.",
-    body: "Lightweight textile modules create flexible exhibition spaces that adapt to various show formats and visitor flows.",
-    gallery: ["/images/projects/p5-1.jpg", "/images/projects/p5-2.jpg", "/images/projects/p5-3.jpg"]
+    tags: ["Exhibition", "Energy", "Technology"],
+    category: "exhibition",
+    coverImage: "/images/projects/e2-cover.jpg",
+    summary: "Green technology exhibition for TOPBAND energy solutions.",
+    body: "A vibrant green-themed exhibition space showcasing cutting-edge energy technology and sustainable solutions.",
+    gallery: ["/images/projects/e2-1.jpg", "/images/projects/e2-2.jpg"]
+  },
+  {
+    id: "e3",
+    title: "ZM Studio Food & Beverage Expo",
+    year: 2025,
+    location: "Milan, IT",
+    typology: "Exhibition",
+    status: "Built",
+    tags: ["Exhibition", "Food", "Hospitality"],
+    category: "exhibition",
+    coverImage: "/images/projects/e3-cover.jpg",
+    summary: "Restaurant and hospitality exhibition booth.",
+    body: "A sophisticated exhibition booth for the food and beverage industry, featuring integrated display areas and meeting spaces.",
+    gallery: ["/images/projects/e3-1.jpg", "/images/projects/e3-2.jpg"]
+  },
+  {
+    id: "e4",
+    title: "JETINNO Coffee Machine Expo",
+    year: 2025,
+    location: "Milan, IT",
+    typology: "Exhibition",
+    status: "Built",
+    tags: ["Exhibition", "Coffee", "Product"],
+    category: "exhibition",
+    coverImage: "/images/projects/e4-cover.jpg",
+    summary: "Premium coffee machine brand exhibition.",
+    body: "A warm, wood-accented exhibition space designed to showcase JETINNO's premium coffee machines and brand experience.",
+    gallery: ["/images/projects/e4-1.jpg", "/images/projects/e4-2.jpg"]
   }
 ];
+
+// Projects data - Interior projects
+export const INTERIOR_PROJECTS: Project[] = [
+  {
+    id: "i1",
+    title: "Minimal Kitchen Design",
+    year: 2025,
+    location: "Milan, IT",
+    typology: "Interior",
+    status: "Built",
+    tags: ["Interior", "Kitchen", "Minimal"],
+    category: "interior",
+    coverImage: "/images/projects/i1-cover.jpg",
+    summary: "Minimal kitchen with marble countertop and organic elements.",
+    body: "A serene kitchen space featuring a white marble island, neutral tones, and carefully curated natural elements.",
+    gallery: ["/images/projects/i1-1.jpg", "/images/projects/i1-2.jpg"]
+  },
+  {
+    id: "i2",
+    title: "Warm Living Space",
+    year: 2024,
+    location: "Milan, IT",
+    typology: "Interior",
+    status: "Built",
+    tags: ["Interior", "Living", "Natural Light"],
+    category: "interior",
+    coverImage: "/images/projects/i2-cover.jpg",
+    summary: "Sun-filled living room with natural materials.",
+    body: "A warm residential interior bathed in natural light, featuring sheer curtains and a harmonious blend of textures.",
+    gallery: ["/images/projects/i2-1.jpg", "/images/projects/i2-2.jpg"]
+  },
+  {
+    id: "i3",
+    title: "Contemporary Lounge",
+    year: 2024,
+    location: "Rome, IT",
+    typology: "Interior",
+    status: "Built",
+    tags: ["Interior", "Lounge", "Furniture"],
+    category: "interior",
+    coverImage: "/images/projects/i3-cover.jpg",
+    summary: "Modern lounge with curated furniture collection.",
+    body: "A sophisticated lounge space featuring warm brown tones, designer furniture, and thoughtful spatial composition.",
+    gallery: ["/images/projects/i3-1.jpg", "/images/projects/i3-2.jpg"]
+  },
+  {
+    id: "i4",
+    title: "Japanese-Inspired Residence",
+    year: 2024,
+    location: "Milan, IT",
+    typology: "Interior",
+    status: "Built",
+    tags: ["Interior", "Japanese", "Minimal"],
+    category: "interior",
+    coverImage: "/images/projects/i4-cover.jpg",
+    summary: "Serene Japanese-inspired residential interior.",
+    body: "A tranquil living space inspired by Japanese aesthetics, featuring clean lines, natural materials, and a sense of calm.",
+    gallery: ["/images/projects/i4-1.jpg", "/images/projects/i4-2.jpg"]
+  }
+];
+
+// Combined projects for backward compatibility
+export const PROJECTS: Project[] = [...EXHIBITION_PROJECTS, ...INTERIOR_PROJECTS];
+
 
 // Homepage sections data
 export interface HomeSection {

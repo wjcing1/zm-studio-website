@@ -6,7 +6,8 @@ import type { RouteObject } from 'react-router-dom';
 // Lazy load page components for code splitting
 const HomePage = lazy(() => import('@/features/home/HomePage'));
 const AboutPage = lazy(() => import('@/features/about/AboutPage'));
-const ProjectsPage = lazy(() => import('@/features/projects/ProjectsPage'));
+const ExhibitionPage = lazy(() => import('@/features/exhibition/ExhibitionPage'));
+const InteriorPage = lazy(() => import('@/features/interior/InteriorPage'));
 const ProjectDetailPage = lazy(() => import('@/features/projects/ProjectDetailPage'));
 const ServicesPage = lazy(() => import('@/features/services/ServicesPage'));
 const NewsPage = lazy(() => import('@/features/news/NewsPage'));
@@ -23,11 +24,19 @@ export const routes: RouteObject[] = [
     element: <AboutPage />
   },
   {
-    path: '/projects',
-    element: <ProjectsPage />
+    path: '/exhibition',
+    element: <ExhibitionPage />
   },
   {
-    path: '/projects/:projectId',
+    path: '/exhibition/:projectId',
+    element: <ProjectDetailPage />
+  },
+  {
+    path: '/interior',
+    element: <InteriorPage />
+  },
+  {
+    path: '/interior/:projectId',
     element: <ProjectDetailPage />
   },
   {
@@ -47,3 +56,4 @@ export const routes: RouteObject[] = [
     element: <NotFoundPage />
   }
 ];
+
