@@ -92,11 +92,11 @@ function GalleryCarousel({ images, title }: { images: (string | number)[]; title
   const visibleImages = getVisibleImages();
 
   return (
-    <section className="pb-16 md:pb-24">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-12">
+    <section className="pb-20 md:pb-32">
+      <div className="mx-auto max-w-[1200px] px-8 md:px-16 lg:px-20">
         <div className="relative">
           {/* Images Grid */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-6">
             {visibleImages.map((src, i) => (
               <motion.div
                 key={`${startIndex}-${i}`}
@@ -222,12 +222,12 @@ export default function ProjectDetailPage() {
       </section>
 
       {/* Content Section - Three column layout */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+      <section className="py-20 md:py-32">
+        <div className="mx-auto max-w-[1200px] px-8 md:px-16 lg:px-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             {/* Left Sidebar - Metadata (Fixed/Sticky) */}
-            <motion.aside {...fadeUp} className="lg:col-span-2">
-              <div className="lg:sticky lg:top-24 space-y-6">
+            <motion.aside {...fadeUp} className="lg:col-span-2 self-start">
+              <div className="lg:sticky lg:top-28 space-y-8">
                 <div>
                   <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1 font-medium">
                     Location
@@ -264,24 +264,26 @@ export default function ProjectDetailPage() {
             </motion.aside>
 
             {/* Middle - Description Text */}
-            <motion.div {...fadeUp} className="lg:col-span-5">
-              <div className="prose prose-neutral max-w-none">
-                <p className="text-base leading-relaxed text-neutral-600">
-                  {project.body}
-                </p>
+            <motion.div {...fadeUp} className="lg:col-span-6">
+              <div className="space-y-6">
+                {project.body.split('\n\n').map((paragraph, i) => (
+                  <p key={i} className="text-base leading-[1.8] text-neutral-600 tracking-wide">
+                    {paragraph}
+                  </p>
+                ))}
               </div>
             </motion.div>
 
-            {/* Right - Feature Image with Caption */}
+            {/* Right - Feature Image with Caption (Smaller) */}
             {typeof featureImage === 'string' && (
-              <motion.div {...fadeUp} className="lg:col-span-5">
-                <div className="space-y-3">
+              <motion.div {...fadeUp} className="lg:col-span-4">
+                <div className="space-y-3 max-w-[280px] ml-auto">
                   <img
                     src={featureImage}
                     alt={`${project.title} - Feature`}
-                    className="w-full aspect-[4/3] object-cover"
+                    className="w-full aspect-[3/4] object-cover"
                   />
-                  <p className="text-xs text-neutral-400 leading-relaxed">
+                  <p className="text-[11px] text-neutral-500 leading-relaxed">
                     {project.summary}
                   </p>
                 </div>

@@ -15,7 +15,7 @@ export const EXHIBITION_PROJECTS: Project[] = [
     category: "exhibition",
     coverImage: "/images/exhibition/p1-cover.jpg",
     summary: "Curvilinear riverside pavilion framing seasonal change.",
-    body: "Soft infrastructure overlays linear embankment with bulging curves hosting micro‑programs.",
+    body: "Soft infrastructure overlays the linear embankment with bulging curves hosting micro-programs. The pavilion responds to the river's seasonal rhythms, creating sheltered gathering spaces during winter and open-air platforms for summer events.\n\nThe design language draws from the organic forms found along the riverbank, translating natural erosion patterns into architectural gesture. Each curve frames a specific view of the water, guiding visitors through a choreographed sequence of experiences.\n\nMateriality emphasizes weathering steel and reclaimed timber, allowing the structure to age gracefully alongside its landscape context. The pavilion serves as both destination and waypoint, activating an underutilized stretch of urban waterfront.",
     gallery: ["/images/exhibition/p1-1.jpg", "/images/exhibition/p1-2.jpg", "/images/exhibition/p1-3.jpg"]
   },
   {
@@ -29,7 +29,7 @@ export const EXHIBITION_PROJECTS: Project[] = [
     category: "exhibition",
     coverImage: "/images/exhibition/p2-cover.jpg",
     summary: "Y‑shaped hub buffering parking & airside.",
-    body: "Two infrastructural arms shape a civic plaza and mitigate noise.",
+    body: "Two infrastructural arms shape a civic plaza and mitigate noise from aircraft operations. The Y-form creates a natural buffer zone while maximizing the efficiency of passenger flow between ground transport and aerial vehicles.\n\nThe research center component houses simulation facilities, maintenance workshops, and a public observation deck. Visitors can witness the future of urban air mobility while researchers develop next-generation vertiport standards.\n\nSustainability is embedded in every system: solar canopies power the facility, rainwater collection supports landscape irrigation, and modular construction allows for future expansion as the industry evolves.",
     gallery: ["/images/exhibition/p2-1.jpg", "/images/exhibition/p2-2.jpg", "/images/exhibition/p2-3.jpg"]
   },
   {
@@ -43,7 +43,7 @@ export const EXHIBITION_PROJECTS: Project[] = [
     category: "exhibition",
     coverImage: "/images/exhibition/p3-cover.jpg",
     summary: "9m² color‑regulated space for seniors.",
-    body: "Gradient color + tactile materials anchor daily rituals with circadian palette.",
+    body: "Gradient color and tactile materials anchor daily rituals within a circadian palette that shifts throughout the day. The 9m² prototype demonstrates how thoughtful design can enhance quality of life for elderly residents.\n\nEvery surface has been considered for both safety and sensory pleasure: soft-edge furniture, non-slip flooring with subtle texture variation, and lighting that mimics natural daylight patterns. The color scheme transitions from energizing warm tones in the morning to calming cool hues in the evening.\n\nThe project emerged from extensive research with care facilities and gerontologists, translating clinical findings into spatial poetry that respects dignity and promotes independence.",
     gallery: ["/images/exhibition/p3-1.jpg", "/images/exhibition/p3-2.jpg", "/images/exhibition/p3-3.jpg"]
   },
   {
@@ -57,7 +57,7 @@ export const EXHIBITION_PROJECTS: Project[] = [
     category: "exhibition",
     coverImage: "/images/exhibition/p4-cover.jpg",
     summary: "1.1km runway reimagined with five curve rooms.",
-    body: "Straight vs curve identity; five convex program peaks stitched by promenade.",
+    body: "Straight versus curve defines the identity of this 1.1km educational campus that reimagines a decommissioned runway. Five convex program peaks are stitched together by a continuous promenade, each housing distinct academic functions.\n\nThe linear datum of the original runway is counterpointed by organic classroom pods that swell outward to capture northern light. Between these volumes, sheltered courtyards create microclimates that extend Iceland's short outdoor season.\n\nGeothermal systems heat the entire complex, while the building's orientation and form maximize passive solar gain. The campus becomes a living laboratory for sustainable design in extreme climates.",
     gallery: ["/images/exhibition/p4-1.jpg", "/images/exhibition/p4-2.jpg", "/images/exhibition/p4-3.jpg"]
   },
   {
@@ -71,7 +71,7 @@ export const EXHIBITION_PROJECTS: Project[] = [
     category: "exhibition",
     coverImage: "/images/exhibition/p5-cover.jpg",
     summary: "Modular exhibition system exploring fabric and light.",
-    body: "Lightweight textile modules create flexible exhibition spaces that adapt to various show formats and visitor flows.",
+    body: "Lightweight textile modules create flexible exhibition spaces that adapt to various show formats and visitor flows. The system combines precision-engineered aluminum frames with custom-woven fabric panels that can be reconfigured within hours.\n\nLight becomes the primary medium: translucent textiles diffuse daylight by day and become luminous surfaces at night. The interplay of shadow and glow creates constantly shifting atmospheres that keep returning visitors engaged.\n\nDeveloped in partnership with local textile manufacturers, the project showcases Shanghai's heritage in fabric production while pushing material innovation forward. Every component is designed for disassembly and reuse.",
     gallery: ["/images/exhibition/p5-1.jpg", "/images/exhibition/p5-2.jpg", "/images/exhibition/p5-3.jpg"]
   }
 ];
@@ -89,7 +89,7 @@ export const INTERIOR_PROJECTS: Project[] = [
     category: "interior",
     coverImage: "/images/projects/i1-cover.jpg",
     summary: "Elegant private residence on historic Xingguo Road.",
-    body: "A refined residential interior featuring warm neutral tones, marble surfaces, and carefully curated natural elements. The design balances modern minimalism with timeless elegance.",
+    body: "A refined residential interior featuring warm neutral tones, marble surfaces, and carefully curated natural elements. The design balances modern minimalism with timeless elegance, creating spaces that feel both sophisticated and genuinely livable.\n\nThe material palette centers on natural stone, warm-toned oak, and soft textiles that age beautifully. Each room flows seamlessly into the next, with consistent sightlines that emphasize the generous proportions of the historic building.\n\nCustom millwork integrates storage and display functions, keeping surfaces clear while allowing personal collections to become part of the architecture. The result is a home that feels curated rather than decorated.",
     gallery: ["/images/projects/i1-1.jpg", "/images/projects/i1-2.jpg", "/images/projects/i1-3.jpg"]
   },
   {
@@ -103,7 +103,7 @@ export const INTERIOR_PROJECTS: Project[] = [
     category: "interior",
     coverImage: "/images/projects/i2-cover.jpg",
     summary: "Contemporary residence overlooking Shanghai Bay.",
-    body: "A sophisticated living space featuring panoramic views, natural light, and a harmonious blend of textures and materials that create a sense of warmth and tranquility.",
+    body: "A sophisticated living space featuring panoramic views, natural light, and a harmonious blend of textures and materials that create warmth and tranquility. Floor-to-ceiling windows frame the bay, making the water an ever-present backdrop to daily life.\n\nThe interior composition responds to the exceptional views: low furniture maintains sightlines, while carefully positioned mirrors and reflective surfaces extend the sense of openness. A restrained palette allows the changing colors of sky and water to become the primary source of visual interest.\n\nZoning strategies separate active and contemplative spaces, with the living areas oriented toward sunset views and bedrooms positioned to receive gentle morning light.",
     gallery: ["/images/projects/i2-1.jpg", "/images/projects/i2-2.jpg", "/images/projects/i2-3.jpg"]
   },
   {
@@ -117,7 +117,7 @@ export const INTERIOR_PROJECTS: Project[] = [
     category: "interior",
     coverImage: "/images/projects/i3-cover.jpg",
     summary: "Historic lane house transformed into modern living space.",
-    body: "A thoughtful renovation that preserves the character of a heritage lane house while introducing contemporary comfort and functionality.",
+    body: "A thoughtful renovation that preserves the character of a heritage lane house while introducing contemporary comfort and functionality. Original timber beams and brick walls are celebrated, not concealed, creating a dialogue between old and new.\n\nThe intervention is deliberately minimal: modern systems are integrated invisibly, and new elements are expressed in materials that complement rather than compete with historic fabric. A new skylight floods the central circulation with daylight, transforming what was once a dark corridor into the heart of the home.\n\nThe project demonstrates that preservation and innovation are not opposites—thoughtful design can honor history while meeting contemporary needs.",
     gallery: ["/images/projects/i3-1.jpg", "/images/projects/i3-2.jpg", "/images/projects/i3-3.jpg"]
   },
   {
@@ -131,7 +131,7 @@ export const INTERIOR_PROJECTS: Project[] = [
     category: "interior",
     coverImage: "/images/projects/i4-cover.jpg",
     summary: "Premium showroom for luxury residential development.",
-    body: "An exquisite model apartment showcasing refined material choices, bespoke furniture, and sophisticated spatial design for discerning homebuyers.",
+    body: "An exquisite model apartment showcasing refined material choices, bespoke furniture, and sophisticated spatial design for discerning homebuyers. Every detail has been considered to demonstrate the potential of luxury living in the development.\n\nThe showroom balances aspiration with attainability, featuring standard finishes elevated through expert coordination and custom accent pieces that suggest the possibilities of personalization. Lighting design creates distinct atmospheres for day and evening viewing.\n\nCirculation paths are choreographed to reveal each space at its best angle, with strategic compression and release creating memorable moments throughout the visitor journey.",
     gallery: ["/images/projects/i4-1.jpg", "/images/projects/i4-2.jpg", "/images/projects/i4-3.jpg"]
   },
   {
@@ -145,7 +145,7 @@ export const INTERIOR_PROJECTS: Project[] = [
     category: "interior",
     coverImage: "/images/projects/i5-cover.jpg",
     summary: "Contemporary showroom with warm earth tones.",
-    body: "A refined model unit featuring contemporary furniture, textured walls, and a sophisticated palette of warm neutrals and earth tones.",
+    body: "A refined model unit featuring contemporary furniture, textured walls, and a sophisticated palette of warm neutrals and earth tones. The design speaks to buyers seeking modern comfort with natural warmth.\n\nWall treatments introduce subtle depth through layered plasters and woven textiles, creating surfaces that reward closer inspection. Furniture selections emphasize craftsmanship and tactile quality, positioning the residence as an antidote to disposable culture.\n\nThe showroom narrative centers on sanctuary—a retreat from urban intensity where natural materials and considered proportions create genuine calm.",
     gallery: ["/images/projects/i5-1.jpg", "/images/projects/i5-2.jpg", "/images/projects/i5-3.jpg"]
   },
   {
@@ -159,7 +159,7 @@ export const INTERIOR_PROJECTS: Project[] = [
     category: "interior",
     coverImage: "/images/projects/i6-cover.jpg",
     summary: "Minimalist showroom with natural light emphasis.",
-    body: "A light-filled model apartment emphasizing spatial flow, natural materials, and a restrained color palette that creates a sense of calm.",
+    body: "A light-filled model apartment emphasizing spatial flow, natural materials, and a restrained color palette that creates genuine calm. The design demonstrates how minimalism can feel warm rather than austere.\n\nNatural light is the primary design element: full-height windows, reflective surfaces, and light-toned finishes work together to maximize brightness even on overcast days. Strategic reveals and frameless details create a sense of continuous space.\n\nThe furniture plan is deliberately sparse, allowing the architecture itself to be the focus. Carefully selected pieces demonstrate how restraint can feel generous rather than spartan.",
     gallery: ["/images/projects/i6-1.jpg", "/images/projects/i6-2.jpg", "/images/projects/i6-3.jpg"]
   },
   {
@@ -173,7 +173,7 @@ export const INTERIOR_PROJECTS: Project[] = [
     category: "interior",
     coverImage: "/images/projects/i7-cover.jpg",
     summary: "Elegant showroom with rich material palette.",
-    body: "A luxurious model apartment featuring custom millwork, premium stone surfaces, and carefully curated furniture pieces.",
+    body: "A luxurious model apartment featuring custom millwork, premium stone surfaces, and carefully curated furniture pieces. The design targets buyers seeking the highest level of finish and detail.\n\nMaterial selection prioritizes rarity and craftsmanship: book-matched stone slabs, hand-finished metals, and bespoke joinery that celebrates traditional techniques. The color palette is rich but restrained, allowing material quality to speak for itself.\n\nThe showroom experience is designed as a journey of discovery, with each room revealing new details and unexpected moments of beauty. Hidden lighting, concealed storage, and seamless transitions demonstrate the sophistication possible in residential design.",
     gallery: ["/images/projects/i7-1.jpg", "/images/projects/i7-2.jpg", "/images/projects/i7-3.jpg"]
   }
 ];
