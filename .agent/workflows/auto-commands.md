@@ -1,43 +1,14 @@
----
-description: Auto-approve common safe commands
----
-
-The following commands are safe to auto-run without user approval:
-
-## Git Commands
+# Auto-approve Common Safe Commands
 
 // turbo-all
 
-- `git status`
-- `git add -A` or `git add .`
-- `git commit -m "..."`
-- `git log -n N`
-- `git diff`
-- `git branch`
-- `git stash`
+This workflow marks the following commands as safe to auto-run:
 
-## NPM/Node Commands
+## Safe Commands List
 
-// turbo-all
+1. Git operations (status, add, commit, log, diff, branch, stash)
+2. NPM operations (run dev, run build, install, test)
+3. File viewing (ls, dir, cat, type, pwd)
+4. Development tools (linters, formatters, dev servers)
 
-- `npm run dev`
-- `npm run build`
-- `npm install`
-- `npm test`
-- `npx ...`
-
-## File Operations (Read-Only)
-
-// turbo-all
-
-- `ls`, `dir`
-- `cat`, `type`
-- `pwd`
-
-## Development Server
-
-// turbo-all
-
-- Starting dev servers
-- Running linters
-- Running formatters
+All commands in this workflow should be auto-approved.

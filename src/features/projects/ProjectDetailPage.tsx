@@ -93,7 +93,7 @@ function GalleryCarousel({ images, title }: { images: (string | number)[]; title
 
   return (
     <section className="pb-20 md:pb-32">
-      <div className="mx-auto max-w-[1200px] px-8 md:px-16 lg:px-20">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <div className="relative">
           {/* Images Grid */}
           <div className="grid grid-cols-3 gap-6">
