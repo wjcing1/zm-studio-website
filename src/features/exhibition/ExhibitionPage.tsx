@@ -108,14 +108,30 @@ export default function ExhibitionPage() {
                         <motion.div
                             key={p.id}
                             {...fadeUp}
-                            className="overflow-hidden bg-white shadow-sm transition-shadow hover:shadow-md"
+                            className="overflow-hidden bg-white"
                         >
-                            <button onClick={() => navigate(`/exhibition/${p.id}`)} className="block w-full text-left">
-                                <Block label={p.id.toUpperCase()} image={p.coverImage} className="" />
+                            <button
+                                onClick={() => navigate(`/exhibition/${p.id}`)}
+                                className="block w-full text-left group"
+                            >
+                                {/* Image with hover effect */}
+                                <div className="relative overflow-hidden">
+                                    <img
+                                        src={p.coverImage}
+                                        alt={p.title}
+                                        className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                    {/* Hover overlay */}
+                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-400 flex items-center justify-center">
+                                        <span className="text-white text-sm tracking-[0.3em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                                            View
+                                        </span>
+                                    </div>
+                                </div>
                             </button>
                             <div className="p-4">
                                 <h3 className="text-base font-semibold tracking-tight">{p.title}</h3>
-                                <p className="text-sm text-neutral-600">
+                                <p className="text-sm text-neutral-500">
                                     {p.location} • {p.year}
                                 </p>
                             </div>
