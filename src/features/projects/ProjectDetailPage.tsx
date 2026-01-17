@@ -1,13 +1,12 @@
-// Project Detail Page
+// Project Detail Page - Norm Architects Style
 
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Block from "@/components/shared/Block";
 import { fadeUp } from "@/config/animation";
 import { PROJECTS } from "@/config/data";
 
-// Gallery Image component with hover animation
+// Gallery Image component with hover animation and lightbox
 function GalleryImage({ src, alt }: { src: string; alt: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -15,7 +14,7 @@ function GalleryImage({ src, alt }: { src: string; alt: string }) {
     <>
       {/* Image with hover effect */}
       <motion.div
-        className="relative overflow-hidden cursor-pointer group"
+        className="relative overflow-hidden cursor-pointer group w-full h-full"
         onClick={() => setIsOpen(true)}
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
@@ -23,11 +22,11 @@ function GalleryImage({ src, alt }: { src: string; alt: string }) {
         <img
           src={src}
           alt={alt}
-          className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-400 flex items-center justify-center">
-          <span className="text-white text-sm tracking-[0.3em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-400 transform translate-y-2 group-hover:translate-y-0">
+          <span className="text-white text-sm tracking-[0.3em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-400">
             View
           </span>
         </div>
@@ -62,6 +61,104 @@ function GalleryImage({ src, alt }: { src: string; alt: string }) {
   );
 }
 
+// Gallery Carousel with navigation buttons
+function GalleryCarousel({ images, title }: { images: (string | number)[]; title: string }) {
+  const [startIndex, setStartIndex] = useState(0);
+
+  // Filter to only string image paths
+  const imageUrls = images.filter((img): img is string => typeof img === 'string');
+  const totalImages = imageUrls.length;
+
+  // Get current 3 images to display
+  const getVisibleImages = () => {
+    const visible = [];
+    for (let i = 0; i < 3; i++) {
+      const index = (startIndex + i) % totalImages;
+      visible.push(imageUrls[index]);
+    }
+    return visible;
+  };
+
+  const goNext = () => {
+    setStartIndex((prev) => (prev + 1) % totalImages);
+  };
+
+  const goPrev = () => {
+    setStartIndex((prev) => (prev - 1 + totalImages) % totalImages);
+  };
+
+  if (totalImages === 0) return null;
+
+  const visibleImages = getVisibleImages();
+
+  return (
+    <section className="pb-16 md:pb-24">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-12">
+        <div className="relative">
+          {/* Images Grid */}
+          <div className="grid grid-cols-3 gap-4">
+            {visibleImages.map((src, i) => (
+              <motion.div
+                key={`${startIndex}-${i}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className="overflow-hidden aspect-[3/4]"
+              >
+                <GalleryImage src={src} alt={`${title} - Image ${startIndex + i + 1}`} />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Navigation Buttons */}
+          {totalImages > 3 && (
+            <>
+              {/* Left Button */}
+              <button
+                onClick={goPrev}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-white border border-neutral-200 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                aria-label="Previous images"
+              >
+                <svg className="w-5 h-5 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
+              {/* Right Button */}
+              <button
+                onClick={goNext}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-white border border-neutral-200 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                aria-label="Next images"
+              >
+                <svg className="w-5 h-5 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </>
+          )}
+
+          {/* Dots Indicator */}
+          {totalImages > 3 && (
+            <div className="flex justify-center gap-2 mt-6">
+              {imageUrls.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setStartIndex(i)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${i >= startIndex && i < startIndex + 3
+                    ? 'bg-neutral-800 scale-110'
+                    : 'bg-neutral-300 hover:bg-neutral-400'
+                    }`}
+                  aria-label={`Go to image ${i + 1}`}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function ProjectDetailPage() {
   const { projectId } = useParams<{ projectId: string }>();
   const project = PROJECTS.find((p) => p.id === projectId);
@@ -74,76 +171,130 @@ export default function ProjectDetailPage() {
     );
   }
 
+  // Use all gallery images for the bottom row
+  const galleryImages = project.gallery;
+  // First image for the right column
+  const featureImage = project.gallery[0];
+
   return (
     <main className="bg-white">
-      {/* Hero */}
-      <motion.div {...fadeUp} className="relative">
-        <Block label={project.id.toUpperCase()} image={project.coverImage} className="aspect-[21/9]" />
-        <div className="mx-auto -mt-10 max-w-[1600px] px-6 md:px-12">
-          <div className="bg-white/90 p-6 backdrop-blur">
-            <h1 className="text-3xl font-bold tracking-tight">{project.title}</h1>
-            <p className="text-sm text-neutral-600">
-              {project.location} • {project.year}
-            </p>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Content */}
-      <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 px-6 md:px-12 py-10 md:grid-cols-12">
-        {/* Main content */}
-        <motion.div {...fadeUp} className="md:col-span-8">
-          <h2 className="mb-2 text-xl font-semibold">Overview</h2>
-          <p className="leading-relaxed text-neutral-700">{project.body}</p>
-
-          {/* Gallery with hover animations */}
-          <h3 className="mt-12 mb-6 text-lg font-semibold">Gallery</h3>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {project.gallery.map((item, i) => {
-              const isImagePath = typeof item === 'string';
-              return isImagePath ? (
-                <GalleryImage key={i} src={item} alt={`${project.title} - Image ${i + 1}`} />
-              ) : (
-                <Block key={i} label={`${project.id}-${i + 1}`} className="" />
-              );
-            })}
-          </div>
+      {/* Hero Section - Full width with title overlay */}
+      <section className="relative h-[70vh] md:h-[85vh] overflow-hidden">
+        {/* Background Image */}
+        <motion.div
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute inset-0"
+        >
+          <img
+            src={project.coverImage}
+            alt={project.title}
+            className="w-full h-full object-cover"
+          />
+          {/* Gradient overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50" />
         </motion.div>
 
-        {/* Sticky sidebar */}
-        <motion.aside {...fadeUp} className="md:col-span-4">
-          <div className="md:sticky md:top-24 space-y-6 bg-neutral-50/80 p-6">
-            <div>
-              <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-400 mb-1">Year</p>
-              <p className="text-lg">{project.year}</p>
-            </div>
-            <div>
-              <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-400 mb-1">Location</p>
-              <p className="text-lg">{project.location}</p>
-            </div>
-            <div>
-              <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-400 mb-1">Typology</p>
-              <p className="text-lg">{project.typology}</p>
-            </div>
-            <div>
-              <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-400 mb-1">Status</p>
-              <p className="text-lg">{project.status}</p>
-            </div>
-            {project.tags && project.tags.length > 0 && (
-              <div>
-                <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-400 mb-2">Tags</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, i) => (
-                    <span key={i} className="text-xs px-2 py-1 bg-neutral-200/60 text-neutral-600">
-                      {tag}
-                    </span>
-                  ))}
+        {/* Hero Content */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6">
+          <motion.h1
+            {...fadeUp}
+            className="text-3xl md:text-5xl lg:text-6xl font-light tracking-[0.3em] uppercase"
+          >
+            {project.title}
+          </motion.h1>
+          <motion.div
+            {...fadeUp}
+            className="mt-4 flex items-center gap-3 text-sm tracking-[0.2em] uppercase text-white/80"
+          >
+            <span>{project.typology}</span>
+            <span className="text-white/40">|</span>
+            <span>{project.status}</span>
+          </motion.div>
+          <motion.p
+            {...fadeUp}
+            className="mt-8 max-w-2xl text-sm md:text-base text-white/70 leading-relaxed"
+          >
+            {project.summary}
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Content Section - Three column layout */}
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+            {/* Left Sidebar - Metadata (Fixed/Sticky) */}
+            <motion.aside {...fadeUp} className="lg:col-span-2">
+              <div className="lg:sticky lg:top-24 space-y-6">
+                <div>
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1 font-medium">
+                    Location
+                  </p>
+                  <p className="text-sm text-neutral-700">{project.location}</p>
                 </div>
+                <div>
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1 font-medium">
+                    Category
+                  </p>
+                  <p className="text-sm text-neutral-700">{project.typology}</p>
+                </div>
+                <div>
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1 font-medium">
+                    Year
+                  </p>
+                  <p className="text-sm text-neutral-700">{project.year}</p>
+                </div>
+                {project.tags && project.tags.length > 0 && (
+                  <div>
+                    <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1 font-medium">
+                      Tags
+                    </p>
+                    <div className="flex flex-col gap-1">
+                      {project.tags.map((tag, i) => (
+                        <span key={i} className="text-sm text-neutral-700">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
+            </motion.aside>
+
+            {/* Middle - Description Text */}
+            <motion.div {...fadeUp} className="lg:col-span-5">
+              <div className="prose prose-neutral max-w-none">
+                <p className="text-base leading-relaxed text-neutral-600">
+                  {project.body}
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Right - Feature Image with Caption */}
+            {typeof featureImage === 'string' && (
+              <motion.div {...fadeUp} className="lg:col-span-5">
+                <div className="space-y-3">
+                  <img
+                    src={featureImage}
+                    alt={`${project.title} - Feature`}
+                    className="w-full aspect-[4/3] object-cover"
+                  />
+                  <p className="text-xs text-neutral-400 leading-relaxed">
+                    {project.summary}
+                  </p>
+                </div>
+              </motion.div>
             )}
           </div>
-        </motion.aside>
-      </div>
+        </div>
+      </section>
+
+      {/* Gallery Carousel - Three Images with Navigation */}
+      {galleryImages.length > 0 && (
+        <GalleryCarousel images={galleryImages} title={project.title} />
+      )}
     </main>
   );
 }
