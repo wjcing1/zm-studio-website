@@ -43,14 +43,26 @@
   /* 防止移动端图片缩放问题 */
   img {
     max-width: 100%;
-    height: auto;
     display: block;
+  }
+
+  /* 确保object-cover图片填充容器 */
+  img.object-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   /* 确保背景图片在移动端正确显示 */
   @media (max-width: 768px) {
     [style*="backgroundImage"] {
       background-attachment: scroll !important;
+    }
+    
+    /* 移动端图片容器确保正确比例 */
+    .aspect-\[3\/4\],
+    .aspect-\[4\/3\] {
+      min-height: 0;
     }
   }
 }

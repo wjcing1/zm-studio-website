@@ -61,7 +61,7 @@ function GalleryImage({ src, alt }: { src: string; alt: string }) {
   );
 }
 
-// Gallery Carousel with navigation buttons
+// Gallery Carousel with navigation buttons - responsive for mobile
 function GalleryCarousel({ images, title }: { images: (string | number)[]; title: string }) {
   const [startIndex, setStartIndex] = useState(0);
 
@@ -69,12 +69,13 @@ function GalleryCarousel({ images, title }: { images: (string | number)[]; title
   const imageUrls = images.filter((img): img is string => typeof img === 'string');
   const totalImages = imageUrls.length;
 
-  // Get current 3 images to display
+  // Get visible count based on screen size (using window width detection would require useEffect)
+  // For SSR-safe approach, we render all 3 and hide with CSS
   const getVisibleImages = () => {
     const visible = [];
     for (let i = 0; i < 3; i++) {
       const index = (startIndex + i) % totalImages;
-      visible.push(imageUrls[index]);
+      visible.push({ src: imageUrls[index], originalIndex: index });
     }
     return visible;
   };
@@ -92,66 +93,51 @@ function GalleryCarousel({ images, title }: { images: (string | number)[]; title
   const visibleImages = getVisibleImages();
 
   return (
-    <section className="pb-20 md:pb-32">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+    <section className="pb-16 md:pb-32">
+      <div className="mx-auto max-w-[1400px] px-4 md:px-10">
         <div className="relative">
-          {/* Images Grid */}
-          <div className="grid grid-cols-3 gap-6">
-            {visibleImages.map((src, i) => (
+          {/* Images Grid - responsive: 1 col mobile, 2 col tablet, 3 col desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {visibleImages.map((item, i) => (
               <motion.div
                 key={`${startIndex}-${i}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                className="overflow-hidden aspect-[3/4]"
+                // Hide 2nd image on mobile, 3rd image on tablet
+                className={`overflow-hidden aspect-[3/4] ${i === 1 ? 'hidden md:block' : ''
+                  } ${i === 2 ? 'hidden lg:block' : ''}`}
               >
-                <GalleryImage src={src} alt={`${title} - Image ${startIndex + i + 1}`} />
+                <GalleryImage src={item.src} alt={`${title} - Image ${item.originalIndex + 1}`} />
               </motion.div>
             ))}
           </div>
 
-          {/* Navigation Buttons */}
-          {totalImages > 3 && (
+          {/* Navigation Buttons - elegant minimal design */}
+          {totalImages > 1 && (
             <>
-              {/* Left Button */}
+              {/* Left Button - sleek circular design */}
               <button
                 onClick={goPrev}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-white border border-neutral-200 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="absolute left-3 md:-left-5 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-sm shadow-lg shadow-black/10 flex items-center justify-center transition-all duration-400 hover:bg-neutral-900 hover:shadow-xl group z-10"
                 aria-label="Previous images"
               >
-                <svg className="w-5 h-5 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 md:w-5 md:h-5 text-neutral-600 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
 
-              {/* Right Button */}
+              {/* Right Button - sleek circular design */}
               <button
                 onClick={goNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-white border border-neutral-200 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="absolute right-3 md:-right-5 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-sm shadow-lg shadow-black/10 flex items-center justify-center transition-all duration-400 hover:bg-neutral-900 hover:shadow-xl group z-10"
                 aria-label="Next images"
               >
-                <svg className="w-5 h-5 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 md:w-5 md:h-5 text-neutral-600 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
             </>
-          )}
-
-          {/* Dots Indicator */}
-          {totalImages > 3 && (
-            <div className="flex justify-center gap-2 mt-6">
-              {imageUrls.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setStartIndex(i)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${i >= startIndex && i < startIndex + 3
-                    ? 'bg-neutral-800 scale-110'
-                    : 'bg-neutral-300 hover:bg-neutral-400'
-                    }`}
-                  aria-label={`Go to image ${i + 1}`}
-                />
-              ))}
-            </div>
           )}
         </div>
       </div>

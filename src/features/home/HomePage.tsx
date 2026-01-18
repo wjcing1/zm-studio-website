@@ -67,14 +67,14 @@ export default function HomePage() {
                 <motion.section
                   key={i}
                   {...fadeUp}
-                  className="relative flex min-h-[60vh] md:min-h-screen items-end overflow-hidden"
-                  style={{
-                    backgroundImage: `url(${section.url})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat"
-                  }}
+                  className="relative flex min-h-[75vh] md:min-h-screen items-end overflow-hidden"
                 >
+                  {/* Use img tag with object-cover to prevent mobile distortion */}
+                  <img
+                    src={section.url}
+                    alt={section.title || ""}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                   <div className={`relative z-10 mx-auto grid w-full max-w-[1600px] px-6 md:px-12 py-16 ${section.align === 'left' ? 'place-items-start' : 'place-items-end'}`}>
                     <div className={`max-w-xl bg-white/15 p-6 md:p-8 backdrop-blur-xl shadow-xl shadow-black/10 ${section.align === 'left' ? 'justify-self-start' : 'justify-self-end'}`}>
