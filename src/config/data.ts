@@ -181,6 +181,14 @@ export const INTERIOR_PROJECTS: Project[] = [
 // Combined projects for backward compatibility
 export const PROJECTS: Project[] = [...EXHIBITION_PROJECTS, ...INTERIOR_PROJECTS];
 
+// Featured projects for homepage
+export const FEATURED_EXHIBITION = EXHIBITION_PROJECTS.filter(p =>
+  ['p5', 'p1'].includes(p.id)
+);
+export const FEATURED_INTERIOR = INTERIOR_PROJECTS.filter(p =>
+  ['i1', 'i2', 'i4'].includes(p.id)
+);
+
 
 // Homepage sections data
 export interface HomeSection {
@@ -197,7 +205,7 @@ export const HOME_SECTIONS: HomeSection[] = [
   {
     type: "image",
     title: "ZM Studio",
-    subtitle: "Exhibition & Architecture",
+    subtitle: "Exhibition & Interior Design",
     align: "left",
     url: "/images/home/hero1.jpg"
   },
@@ -208,8 +216,8 @@ export const HOME_SECTIONS: HomeSection[] = [
   },
   {
     type: "image",
-    title: "Food & Beverage Expo",
-    subtitle: "chantilly cream",
+    title: "Exhibition Design",
+    subtitle: "From concept to on-site coordination",
     align: "right",
     url: "/images/home/hero2.jpg"
   },
@@ -220,8 +228,8 @@ export const HOME_SECTIONS: HomeSection[] = [
   },
   {
     type: "image",
-    title: "Labor Protection Exhibition",
-    subtitle: "Plaza buffers noise & parking",
+    title: "Interior Design",
+    subtitle: "Creating harmonious living spaces",
     align: "left",
     url: "/images/home/hero3.jpg"
   },
@@ -232,8 +240,8 @@ export const HOME_SECTIONS: HomeSection[] = [
   },
   {
     type: "image",
-    title: "Hotel & Restaurant Expo Milan",
-    subtitle: "2025 Cafer JEtinno Coffee Machine",
+    title: "Crafted Spaces",
+    subtitle: "Where function meets aesthetics",
     align: "right",
     url: "/images/home/hero4.jpg"
   }
