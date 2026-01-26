@@ -6,73 +6,87 @@ import type { Project } from '@/types';
 export const EXHIBITION_PROJECTS: Project[] = [
   {
     id: "p1",
-    title: "River Loop Pavilion",
+    title: "Highfield Boat Show",
     year: 2025,
-    location: "Milan, IT",
+    location: "Düsseldorf, DE",
     typology: "Exhibition",
-    status: "Competition",
-    tags: ["Landscape", "Pavilion", "Curve"],
+    status: "Built",
+    tags: ["Boat Show", "Trade Fair", "Brand Experience"],
     category: "exhibition",
     coverImage: "/images/exhibition/p1-cover.jpg",
-    summary: "Curvilinear riverside pavilion framing seasonal change.",
-    body: "Soft infrastructure overlays the linear embankment with bulging curves hosting micro-programs. The pavilion responds to the river's seasonal rhythms, creating sheltered gathering spaces during winter and open-air platforms for summer events.\n\nThe design language draws from the organic forms found along the riverbank, translating natural erosion patterns into architectural gesture. Each curve frames a specific view of the water, guiding visitors through a choreographed sequence of experiences.\n\nMateriality emphasizes weathering steel and reclaimed timber, allowing the structure to age gracefully alongside its landscape context. The pavilion serves as both destination and waypoint, activating an underutilized stretch of urban waterfront.",
+    summary: "Premium yacht exhibition booth for Highfield at Boot Düsseldorf 2025.",
+    body: "A striking exhibition space designed for Highfield at Boot Düsseldorf 2025, the world's largest indoor boat show. The booth showcases multiple yacht models in an immersive brand environment.\n\nThe design features a bold turquoise floor that creates a visual connection to the sea, while suspended brand signage and strategic lighting draw attention from across the hall. The layout allows visitors to walk around and inspect each vessel while experiencing the Highfield brand story.\n\nCareful attention was paid to product positioning and sightlines, ensuring each boat is presented at its best angle. The open structure invites exploration while maintaining clear brand presence throughout.",
     gallery: ["/images/exhibition/p1-1.jpg", "/images/exhibition/p1-2.jpg", "/images/exhibition/p1-3.jpg"]
   },
   {
     id: "p2",
-    title: "Y‑Vertiport Research Center",
+    title: "Mode Safety Exhibition",
     year: 2025,
-    location: "Bresso, IT",
+    location: "Düsseldorf, DE",
     typology: "Exhibition",
-    status: "Concept",
-    tags: ["Mobility", "Vertiport", "Y‑form"],
+    status: "Built",
+    tags: ["A+A", "Safety Equipment", "Industrial"],
     category: "exhibition",
     coverImage: "/images/exhibition/p2-cover.jpg",
-    summary: "Y‑shaped hub buffering parking & airside.",
-    body: "Two infrastructural arms shape a civic plaza and mitigate noise from aircraft operations. The Y-form creates a natural buffer zone while maximizing the efficiency of passenger flow between ground transport and aerial vehicles.\n\nThe research center component houses simulation facilities, maintenance workshops, and a public observation deck. Visitors can witness the future of urban air mobility while researchers develop next-generation vertiport standards.\n\nSustainability is embedded in every system: solar canopies power the facility, rainwater collection supports landscape irrigation, and modular construction allows for future expansion as the industry evolves.",
-    gallery: ["/images/exhibition/p2-1.jpg", "/images/exhibition/p2-2.jpg", "/images/exhibition/p2-3.jpg"]
+    summary: "Modern exhibition booth for Mode at A+A 2025 international safety trade fair.",
+    body: "A sophisticated booth design for Mode at A+A 2025, the world's leading trade fair for safety, security and health at work. The design combines professional presentation with approachable brand storytelling.\n\nThe booth features a distinctive black and white color scheme with gold accents, creating a premium yet industrial aesthetic. Display cases showcase safety equipment while wall graphics communicate the brand's commitment to protection and innovation.\n\nThe layout includes dedicated zones for product demonstration, client meetings, and brand immersion, allowing the booth to serve multiple functions throughout the exhibition.",
+    gallery: ["/images/exhibition/p2-1.jpg", "/images/exhibition/p2-2.png", "/images/exhibition/p2-3.png"]
   },
   {
     id: "p3",
-    title: "Aging & Comfort Micro‑Room",
-    year: 2024,
-    location: "Bari, IT",
-    typology: "Exhibition",
-    status: "Prototype",
-    tags: ["Healing", "Color", "Elderly"],
-    category: "exhibition",
-    coverImage: "/images/exhibition/p3-cover.jpg",
-    summary: "9m² color‑regulated space for seniors.",
-    body: "Gradient color and tactile materials anchor daily rituals within a circadian palette that shifts throughout the day. The 9m² prototype demonstrates how thoughtful design can enhance quality of life for elderly residents.\n\nEvery surface has been considered for both safety and sensory pleasure: soft-edge furniture, non-slip flooring with subtle texture variation, and lighting that mimics natural daylight patterns. The color scheme transitions from energizing warm tones in the morning to calming cool hues in the evening.\n\nThe project emerged from extensive research with care facilities and gerontologists, translating clinical findings into spatial poetry that respects dignity and promotes independence.",
-    gallery: ["/images/exhibition/p3-1.jpg", "/images/exhibition/p3-2.jpg", "/images/exhibition/p3-3.jpg"]
-  },
-  {
-    id: "p4",
-    title: "Runway Curve Campus",
-    year: 2025,
-    location: "Iceland",
-    typology: "Exhibition",
-    status: "Concept",
-    tags: ["Curve", "Runway", "Education"],
-    category: "exhibition",
-    coverImage: "/images/exhibition/p4-cover.jpg",
-    summary: "1.1km runway reimagined with five curve rooms.",
-    body: "Straight versus curve defines the identity of this 1.1km educational campus that reimagines a decommissioned runway. Five convex program peaks are stitched together by a continuous promenade, each housing distinct academic functions.\n\nThe linear datum of the original runway is counterpointed by organic classroom pods that swell outward to capture northern light. Between these volumes, sheltered courtyards create microclimates that extend Iceland's short outdoor season.\n\nGeothermal systems heat the entire complex, while the building's orientation and form maximize passive solar gain. The campus becomes a living laboratory for sustainable design in extreme climates.",
-    gallery: ["/images/exhibition/p4-1.jpg", "/images/exhibition/p4-2.jpg", "/images/exhibition/p4-3.jpg"]
-  },
-  {
-    id: "p5",
-    title: "Urban Textile Exhibition",
+    title: "Topband Solar Exhibition",
     year: 2025,
     location: "Shanghai, CN",
     typology: "Exhibition",
-    status: "Built",
-    tags: ["Exhibition", "Textile", "Modular"],
+    status: "Concept",
+    tags: ["Solar", "Energy", "Technology"],
     category: "exhibition",
-    coverImage: "/images/exhibition/p5-cover.jpg",
-    summary: "Modular exhibition system exploring fabric and light.",
-    body: "Lightweight textile modules create flexible exhibition spaces that adapt to various show formats and visitor flows. The system combines precision-engineered aluminum frames with custom-woven fabric panels that can be reconfigured within hours.\n\nLight becomes the primary medium: translucent textiles diffuse daylight by day and become luminous surfaces at night. The interplay of shadow and glow creates constantly shifting atmospheres that keep returning visitors engaged.\n\nDeveloped in partnership with local textile manufacturers, the project showcases Shanghai's heritage in fabric production while pushing material innovation forward. Every component is designed for disassembly and reuse.",
-    gallery: ["/images/exhibition/p5-1.jpg", "/images/exhibition/p5-2.jpg", "/images/exhibition/p5-3.jpg"]
+    coverImage: "/images/exhibition/p3-cover.png",
+    summary: "Innovative exhibition design for Topband at a major solar energy trade fair.",
+    body: "A forward-thinking exhibition concept for Topband, showcasing their solar energy solutions and smart grid technology. The design emphasizes clean energy through its bright, open aesthetic and green accent lighting.\n\nThe booth layout creates distinct zones for different product categories while maintaining visual unity through consistent branding and material choices. Interactive displays allow visitors to explore the technology behind Topband's solar solutions.\n\nSustainability principles informed every design decision, from material selection to lighting efficiency, reinforcing the brand's commitment to a greener future.",
+    gallery: ["/images/exhibition/p3-1.png", "/images/exhibition/p3-2.png", "/images/exhibition/p3-3.png"]
+  },
+  {
+    id: "p4",
+    title: "Safety Workwear Booth",
+    year: 2025,
+    location: "Düsseldorf, DE",
+    typology: "Exhibition",
+    status: "Concept",
+    tags: ["A+A", "Workwear", "Fashion"],
+    category: "exhibition",
+    coverImage: "/images/exhibition/p4-cover.png",
+    summary: "Contemporary booth design featuring safety workwear and protective equipment.",
+    body: "A modern exhibition booth concept blending fashion retail aesthetics with industrial safety equipment presentation. The design creates an elevated experience for safety workwear products.\n\nNatural wood tones and clean white surfaces create a warm, approachable atmosphere that differentiates the booth from typical industrial exhibitions. Mannequin displays show complete workwear ensembles, helping visitors visualize the products in use.\n\nThe semi-enclosed structure provides intimacy for client conversations while the open front maximizes visibility from the aisle.",
+    gallery: ["/images/exhibition/p4-1.png", "/images/exhibition/p4-2.png", "/images/exhibition/p4-3.png"]
+  },
+  {
+    id: "p5",
+    title: "BKT Tires Exhibition",
+    year: 2025,
+    location: "Hanover, DE",
+    typology: "Exhibition",
+    status: "Concept",
+    tags: ["Agricultural", "Tires", "Industrial"],
+    category: "exhibition",
+    coverImage: "/images/exhibition/p5-cover.png",
+    summary: "Dynamic exhibition booth for BKT Tires showcasing agricultural and industrial tire solutions.",
+    body: "A bold exhibition concept for BKT Tires, designed to showcase their range of agricultural and industrial tires. The booth makes a strong visual statement with oversized product displays and the iconic BKT green accent color.\n\nThe centerpiece is a dramatic tire tunnel that draws visitors into the booth while creating an Instagram-worthy photo opportunity. Product displays are strategically positioned to highlight the breadth of the BKT range.\n\nDigital screens and informational graphics help communicate technical specifications while maintaining the visual impact of the physical products.",
+    gallery: ["/images/exhibition/p5-1.png", "/images/exhibition/p5-2.png", "/images/exhibition/p5-3.png"]
+  },
+  {
+    id: "p6",
+    title: "Jetinno Hotel Equipment",
+    year: 2025,
+    location: "Shanghai, CN",
+    typology: "Exhibition",
+    status: "Concept",
+    tags: ["Hospitality", "Coffee", "Equipment"],
+    category: "exhibition",
+    coverImage: "/images/exhibition/p6-cover.png",
+    summary: "Warm and inviting booth design for Jetinno hotel and hospitality equipment.",
+    body: "An inviting exhibition concept for Jetinno, showcasing their range of hotel and hospitality equipment including professional coffee machines. The design creates a café-like atmosphere that allows visitors to experience the products in context.\n\nWarm wood tones, green plant accents, and soft lighting create a welcoming environment that stands out from typical trade show aesthetics. Product displays are integrated into lifestyle vignettes that help buyers visualize the equipment in their own establishments.\n\nThe booth layout encourages exploration and product interaction, with demonstration areas where visitors can see the equipment in action.",
+    gallery: ["/images/exhibition/p6-1.png", "/images/exhibition/p6-2.png", "/images/exhibition/p6-3.png"]
   }
 ];
 
@@ -183,7 +197,7 @@ export const PROJECTS: Project[] = [...EXHIBITION_PROJECTS, ...INTERIOR_PROJECTS
 
 // Featured projects for homepage
 export const FEATURED_EXHIBITION = EXHIBITION_PROJECTS.filter(p =>
-  ['p5', 'p1'].includes(p.id)
+  ['p1', 'p2'].includes(p.id)
 );
 export const FEATURED_INTERIOR = INTERIOR_PROJECTS.filter(p =>
   ['i1', 'i2', 'i4'].includes(p.id)
@@ -216,10 +230,10 @@ export const HOME_SECTIONS: HomeSection[] = [
   },
   {
     type: "image",
-    title: "Exhibition Design",
-    subtitle: "From concept to on-site coordination",
+    title: "Highfield Boat Show",
+    subtitle: "Boot Düsseldorf 2025",
     align: "right",
-    url: "/images/home/hero2.jpg"
+    url: "/images/home/hero-exhibition1.jpg"
   },
   {
     type: "text",
@@ -228,15 +242,29 @@ export const HOME_SECTIONS: HomeSection[] = [
   },
   {
     type: "image",
+    title: "BKT Tires Exhibition",
+    subtitle: "Agricultural Trade Fair",
+    align: "left",
+    url: "/images/home/hero-exhibition2.png"
+  },
+  {
+    type: "image",
     title: "Interior Design",
     subtitle: "Creating harmonious living spaces",
-    align: "left",
+    align: "right",
     url: "/images/home/hero3.jpg"
   },
   {
     type: "text",
     heading: "Practice",
     text: "We work like editors: choose one strong idea, then remove everything that weakens it. Materials are honest, colors do the emotional work, and details guide the body through space."
+  },
+  {
+    type: "image",
+    title: "Topband Solar Exhibition",
+    subtitle: "Clean Energy Trade Fair",
+    align: "left",
+    url: "/images/home/hero-exhibition3.png"
   },
   {
     type: "image",
@@ -259,21 +287,21 @@ export interface Founder {
 export const FOUNDERS: Founder[] = [
   {
     name: "Niko Chew",
-    nameCN: "周尼科",
+    nameCN: "周家桢",
     education: "M.Arch, Politecnico di Milano",
     specialty: "Specializes in end-to-end project management from concept to implementation, coordinating with factories, venue teams, and multiple stakeholders to ensure precise design realization in real environments.",
     photo: "/images/about/niko.jpg"
   },
   {
     name: "Wei Ma",
-    nameCN: "马伟",
+    nameCN: "马威",
     education: "M.Arch, Politecnico di Milano",
     specialty: "Focuses on narrative structure and formal expression in exhibition spaces, specializing in conceptual design, spatial composition, and material language to build unified brand experiences through visual and spatial coherence.",
     photo: "/images/about/wei.jpg"
   },
   {
     name: "Jiachen Wang",
-    nameCN: "王嘉宸",
+    nameCN: "王嘉琛",
     education: "B.Arch, Politecnico di Milano",
     specialty: "Focuses on the connection between brand strategy and spatial expression, specializing in design marketing, brand communication, and visual storytelling to transform spatial experiences into perceptible brand value.",
     photo: "/images/about/jiachen.jpg"
