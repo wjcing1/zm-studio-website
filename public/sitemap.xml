@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Static Routes -->
+  <url>
+    <loc>https://www.zmstudiomilano.it/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.zmstudiomilano.it/about</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.zmstudiomilano.it/exhibition</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.zmstudiomilano.it/interior</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.zmstudiomilano.it/services</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.zmstudiomilano.it/news</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.zmstudiomilano.it/contact</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Exhibition Projects -->
+  <url><loc>https://www.zmstudiomilano.it/exhibition/p1</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.zmstudiomilano.it/exhibition/p2</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.zmstudiomilano.it/exhibition/p3</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.zmstudiomilano.it/exhibition/p4</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.zmstudiomilano.it/exhibition/p5</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.zmstudiomilano.it/exhibition/p6</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Interior Projects -->
+  <url><loc>https://www.zmstudiomilano.it/interior/i1</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.zmstudiomilano.it/interior/i2</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.zmstudiomilano.it/interior/i3</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.zmstudiomilano.it/interior/i4</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.zmstudiomilano.it/interior/i5</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.zmstudiomilano.it/interior/i6</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.zmstudiomilano.it/interior/i7</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+</urlset>
