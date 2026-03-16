@@ -111,17 +111,17 @@ export default function AboutPage() {
 
       {/* Board / Team */}
       <section className="mx-auto max-w-[1600px] px-6 md:px-12 py-20 md:py-32 flex flex-col gap-20">
-        {/* Milan Studio */}
+        {/* Shanghai Studio */}
         <div>
           <motion.div {...fadeUp}>
-            <h2 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-10">Milan Studio</h2>
+            <h2 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-10">Shanghai Studio</h2>
           </motion.div>
           <div className="grid grid-cols-2 gap-4 md:gap-8 lg:grid-cols-4">
-            {MILAN_TEAM.map((member, idx) => (
+            {SHANGHAI_TEAM.map((member, idx) => (
               <motion.div
-                key={`milan-${idx}`}
+                key={`shanghai-${idx}`}
                 {...fadeUp}
-                className="group relative aspect-square md:aspect-[4/5] bg-neutral-100 overflow-hidden cursor-pointer"
+                className="group relative aspect-[4/5] bg-neutral-100 overflow-hidden cursor-pointer"
               >
                 {/* Default State: Photo */}
                 <div
@@ -146,17 +146,17 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Shanghai Studio */}
+        {/* Milan Studio */}
         <div>
           <motion.div {...fadeUp}>
-            <h2 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-10">Shanghai Studio</h2>
+            <h2 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-10">Milan Studio</h2>
           </motion.div>
           <div className="grid grid-cols-2 gap-4 md:gap-8 lg:grid-cols-4">
-            {SHANGHAI_TEAM.map((member, idx) => (
+            {MILAN_TEAM.map((member, idx) => (
               <motion.div
-                key={`shanghai-${idx}`}
+                key={`milan-${idx}`}
                 {...fadeUp}
-                className="group relative aspect-square md:aspect-[4/5] bg-neutral-100 overflow-hidden cursor-pointer"
+                className="group relative aspect-[4/5] bg-neutral-100 overflow-hidden cursor-pointer"
               >
                 {/* Default State: Photo */}
                 <div
