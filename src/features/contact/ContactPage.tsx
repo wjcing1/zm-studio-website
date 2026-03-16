@@ -8,8 +8,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { fadeUp } from "@/config/animation";
 import type { ContactFormData, SubmitStatus } from "@/types";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ContactPage() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState<ContactFormData>({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus | null>(null);
@@ -22,7 +24,13 @@ export default function ContactPage() {
 
     // 前端验证
     if (!formData.name || !formData.email || !formData.message) {
-      setSubmitStatus({ type: 'error', message: '请填写所有字段' });
+      setSubmitStatus({ type: 'error', message: t.contact.fillAllFields });
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus({ type: 'error', message: t.contact.invalidEmail });
       return;
     }
 
@@ -38,14 +46,14 @@ export default function ContactPage() {
       const data = await response.json();
 
       if (response.ok) {
-        setSubmitStatus({ type: 'success', message: data.message });
+        setSubmitStatus({ type: 'success', message: t.contact.successMessage });
         // 清空表单
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setSubmitStatus({ type: 'error', message: data.error || '发送失败，请重试' });
+        setSubmitStatus({ type: 'error', message: data.error || t.contact.sendFailed });
       }
     } catch (error) {
-      setSubmitStatus({ type: 'error', message: '网络错误，请稍后重试' });
+      setSubmitStatus({ type: 'error', message: t.contact.networkError });
     } finally {
       setIsSubmitting(false);
     }
@@ -55,13 +63,13 @@ export default function ContactPage() {
     <main className="bg-white">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12 py-20">
         <motion.h1 {...fadeUp} className="text-3xl font-bold tracking-tight">
-          Contact
+          {t.contact.title}
         </motion.h1>
         <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
           <motion.div {...fadeUp}>
             <form onSubmit={handleSubmit} className="grid gap-4">
               <Input
-                placeholder="Your name"
+                placeholder={t.contact.placeholderName}
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="border-0 border-b border-neutral-300 rounded-none focus:ring-0 focus:border-black"
@@ -69,14 +77,14 @@ export default function ContactPage() {
               />
               <Input
                 type="email"
-                placeholder="Email"
+                placeholder={t.contact.placeholderEmail}
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="border-0 border-b border-neutral-300 rounded-none focus:ring-0 focus:border-black"
                 required
               />
               <Textarea
-                placeholder="Message"
+                placeholder={t.contact.placeholderMessage}
                 rows={6}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -92,7 +100,7 @@ export default function ContactPage() {
               )}
 
               <Button type="submit" className="w-fit" disabled={isSubmitting}>
-                {isSubmitting ? '发送中...' : 'Send message'}
+                {isSubmitting ? t.contact.sending : t.contact.sendMessage}
               </Button>
             </form>
           </motion.div>
@@ -110,7 +118,7 @@ export default function ContactPage() {
               </a>
             </div>
             <div>
-              <MapPin className="inline size-4 mr-2" /> Milan, Italy
+              <MapPin className="inline size-4 mr-2" /> {t.contact.addressText}
             </div>
           </motion.div>
         </div>

@@ -19,8 +19,12 @@ import { fadeUp } from "@/config/animation";
 import { PROJECTS } from "@/config/data";
 import { TYPOLOGIES, STATUSES } from "@/config/constants";
 import type { Typology, Status } from "@/types";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getLocalizedText, getLocalizedTextList } from "@/lib/i18n";
+import { getStatusLabel, getTypologyLabel } from "@/lib/projectMeta";
 
 export default function ProjectsPage() {
+  const { language, t } = useLanguage();
   const [query, setQuery] = useState("");
   const [typo, setTypo] = useState<Typology>("All");
   const [status, setStatus] = useState<Status>("Any");
@@ -29,7 +33,13 @@ export default function ProjectsPage() {
 
   const filtered = useMemo(() => {
     return PROJECTS.filter((p) => {
-      const matchesQuery = [p.title, p.location, p.typology, p.status, p.tags.join(" ")]
+      const matchesQuery = [
+        getLocalizedText(p.title, language),
+        getLocalizedText(p.location, language),
+        getTypologyLabel(p.typology, t),
+        getStatusLabel(p.status, t),
+        getLocalizedTextList(p.tags, language).join(" ")
+      ]
         .join(" ")
         .toLowerCase()
         .includes(query.toLowerCase());
@@ -37,7 +47,7 @@ export default function ProjectsPage() {
       const matchesStatus = status === 'Any' || p.status === status;
       return matchesQuery && matchesTypo && matchesStatus;
     });
-  }, [query, typo, status]);
+  }, [language, query, typo, status, t]);
 
   const Toolbar = () => (
     <div className="border-b bg-white/80">
@@ -45,7 +55,7 @@ export default function ProjectsPage() {
         <div className="relative grow md:max-w-md">
           <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-neutral-400" />
           <Input
-            placeholder="Search title, tags, city…"
+            placeholder={t.filters.searchProjectsExtended}
             className="pl-9"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -54,19 +64,19 @@ export default function ProjectsPage() {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="gap-2">
-              <Filter className="size-4" /> Typology <ChevronDown className="size-4" />
+              <Filter className="size-4" /> {t.filters.typology} <ChevronDown className="size-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuLabel>Typology</DropdownMenuLabel>
+            <DropdownMenuLabel>{t.filters.typology}</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            {TYPOLOGIES.map((t) => (
+            {TYPOLOGIES.map((typology) => (
               <DropdownMenuItem
-                key={t}
-                onClick={() => setTypo(t)}
-                className={typo === t ? "font-semibold" : ""}
+                key={typology}
+                onClick={() => setTypo(typology)}
+                className={typo === typology ? "font-semibold" : ""}
               >
-                {t}
+                {getTypologyLabel(typology, t)}
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>
@@ -74,11 +84,11 @@ export default function ProjectsPage() {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="gap-2">
-              Status <ChevronDown className="size-4" />
+              {t.filters.status} <ChevronDown className="size-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuLabel>Project status</DropdownMenuLabel>
+            <DropdownMenuLabel>{t.filters.projectStatus}</DropdownMenuLabel>
             <DropdownMenuSeparator />
             {STATUSES.map((s) => (
               <DropdownMenuItem
@@ -86,7 +96,7 @@ export default function ProjectsPage() {
                 onClick={() => setStatus(s)}
                 className={status === s ? "font-semibold" : ""}
               >
-                {s}
+                {getStatusLabel(s, t)}
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>
@@ -95,7 +105,7 @@ export default function ProjectsPage() {
           variant="outline"
           size="icon"
           onClick={() => setView(view === 'grid' ? 'list' : 'grid')}
-          aria-label="Toggle view"
+          aria-label={`${t.common.view}: ${view === 'grid' ? t.common.list : t.common.grid}`}
         >
           {view === 'grid' ? <List className="size-4" /> : <LayoutGrid className="size-4" />}
         </Button>
@@ -107,7 +117,7 @@ export default function ProjectsPage() {
     <main className="bg-white">
       <Toolbar />
       <div className="mx-auto max-w-[1600px] px-6 md:px-12 py-3 text-sm text-neutral-600">
-        {filtered.length} project{filtered.length !== 1 ? 's' : ''} • View: {view}
+        {filtered.length} {filtered.length !== 1 ? t.common.projects : t.common.project} • {t.common.view}: {view === "grid" ? t.common.grid : t.common.list}
       </div>
       {view === 'grid' ? (
         <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-6 px-6 md:px-12 pb-20 md:grid-cols-2 lg:grid-cols-3">
@@ -121,9 +131,9 @@ export default function ProjectsPage() {
                 <Block label={p.id.toUpperCase()} image={p.coverImage} className="" />
               </button>
               <div className="p-4">
-                <h3 className="text-base font-semibold tracking-tight">{p.title}</h3>
+                <h3 className="text-base font-semibold tracking-tight">{getLocalizedText(p.title, language)}</h3>
                 <p className="text-sm text-neutral-600">
-                  {p.location} • {p.year}
+                  {getLocalizedText(p.location, language)} • {p.year}
                 </p>
               </div>
             </motion.div>
@@ -139,17 +149,17 @@ export default function ProjectsPage() {
                 </button>
                 <div className="min-w-0 grow">
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                    <h3 className="text-xl font-semibold tracking-tight">{p.title}</h3>
+                    <h3 className="text-xl font-semibold tracking-tight">{getLocalizedText(p.title, language)}</h3>
                     <div className="flex items-center gap-2 text-sm text-neutral-500">
-                      <span>{p.location}</span>
+                      <span>{getLocalizedText(p.location, language)}</span>
                       <span>•</span>
                       <span>{p.year}</span>
                     </div>
                   </div>
-                  <p className="mt-2 text-neutral-600">{p.summary}</p>
+                  <p className="mt-2 text-neutral-600">{getLocalizedText(p.summary, language)}</p>
                   <div className="mt-4">
                     <Button variant="ghost" onClick={() => navigate(`/projects/${p.id}`)} className="gap-2 px-0">
-                      Open details
+                      {t.common.openDetails}
                     </Button>
                   </div>
                 </div>

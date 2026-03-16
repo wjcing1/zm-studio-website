@@ -1,8 +1,11 @@
 // Footer component - Norm Architects inspired minimal design
 
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="border-t border-neutral-200/60 py-16 md:py-24">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
@@ -10,20 +13,20 @@ export default function Footer() {
           {/* Work */}
           <div>
             <h4 className="text-[11px] font-medium uppercase tracking-[0.2em] text-neutral-400 mb-6">
-              Work
+              {t.footer.work}
             </h4>
             <nav className="space-y-3">
               <Link
                 to="/exhibition"
                 className="block text-sm text-neutral-600 hover:opacity-60 transition-opacity duration-300"
               >
-                Exhibition
+                {t.nav.exhibition}
               </Link>
               <Link
                 to="/interior"
                 className="block text-sm text-neutral-600 hover:opacity-60 transition-opacity duration-300"
               >
-                Interior
+                {t.nav.interior}
               </Link>
             </nav>
           </div>
@@ -31,26 +34,26 @@ export default function Footer() {
           {/* Studio */}
           <div>
             <h4 className="text-[11px] font-medium uppercase tracking-[0.2em] text-neutral-400 mb-6">
-              Studio
+              {t.footer.studio}
             </h4>
             <nav className="space-y-3">
               <Link
                 to="/about"
                 className="block text-sm text-neutral-600 hover:opacity-60 transition-opacity duration-300"
               >
-                About
+                {t.nav.about}
               </Link>
               <Link
                 to="/services"
                 className="block text-sm text-neutral-600 hover:opacity-60 transition-opacity duration-300"
               >
-                Services
+                {t.nav.services}
               </Link>
               <Link
                 to="/news"
                 className="block text-sm text-neutral-600 hover:opacity-60 transition-opacity duration-300"
               >
-                News
+                {t.nav.news}
               </Link>
             </nav>
           </div>
@@ -58,7 +61,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-[11px] font-medium uppercase tracking-[0.2em] text-neutral-400 mb-6">
-              Contact
+              {t.footer.contact}
             </h4>
             <nav className="space-y-3">
               <a
@@ -74,7 +77,7 @@ export default function Footer() {
           {/* Follow */}
           <div>
             <h4 className="text-[11px] font-medium uppercase tracking-[0.2em] text-neutral-400 mb-6">
-              Follow
+              {t.footer.follow}
             </h4>
             <nav className="space-y-3">
               <a
@@ -103,7 +106,7 @@ export default function Footer() {
             ZM Studio
           </p>
           <p className="text-[11px] text-neutral-400">
-            © {new Date().getFullYear()} All rights reserved
+            © {new Date().getFullYear()} {t.footer.rightsReserved}
           </p>
         </div>
       </div>

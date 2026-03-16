@@ -7,20 +7,21 @@ import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { fadeUp } from "@/config/animation";
 import { HOME_SECTIONS, FEATURED_EXHIBITION, FEATURED_INTERIOR } from "@/config/data";
 import { Button } from "@/components/ui/button";
-
-// Get hero images from existing HOME_SECTIONS
-const heroSlides = HOME_SECTIONS
-  .filter(s => s.type === "image" && s.url)
-  .map(s => ({
-    url: s.url!,
-    title: s.title || "",
-    subtitle: s.subtitle || ""
-  }));
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getLocalizedText } from "@/lib/i18n";
 
 export default function HomePage() {
+  const { language, t } = useLanguage();
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const loadedCountRef = useRef(0);
+  const heroSlides = HOME_SECTIONS
+    .filter(s => s.type === "image" && s.url)
+    .map(s => ({
+      url: s.url!,
+      title: s.title ? getLocalizedText(s.title, language) : "",
+      subtitle: s.subtitle ? getLocalizedText(s.subtitle, language) : ""
+    }));
   const totalImages = heroSlides.length;
   const navigate = useNavigate();
 
@@ -129,11 +130,9 @@ export default function HomePage() {
           className="mx-auto flex min-h-[50svh] max-w-4xl items-center justify-center px-6 md:px-12 py-24 md:py-32 text-center"
         >
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">Design Philosophy</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">{t.home.designPhilosophy}</h2>
             <p className="mt-6 text-lg md:text-xl leading-relaxed text-neutral-600">
-              We believe architecture is not static — it moves, adapts, and connects to emotion.
-              Each project is a deep exploration of space, time, and human experience,
-              combining parametric precision with craft aesthetics.
+              {t.home.designPhilosophyText}
             </p>
           </div>
         </motion.div>
@@ -144,15 +143,15 @@ export default function HomePage() {
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <motion.div {...fadeUp} className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
             <div>
-              <p className="text-sm text-neutral-500 tracking-widest uppercase mb-2">Featured Work</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900">Exhibition Design</h2>
+              <p className="text-sm text-neutral-500 tracking-widest uppercase mb-2">{t.common.featuredWork}</p>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900">{t.exhibition.title}</h2>
             </div>
             <Button
               variant="outline"
               className="self-start md:self-auto"
               onClick={() => navigate("/exhibition")}
             >
-              View All <ArrowRight className="ml-2 size-4" />
+              {t.common.viewAll} <ArrowRight className="ml-2 size-4" />
             </Button>
           </motion.div>
 
@@ -166,14 +165,14 @@ export default function HomePage() {
                   <div className="relative overflow-hidden aspect-[16/10]">
                     <img
                       src={p.coverImage}
-                      alt={p.title}
+                      alt={getLocalizedText(p.title, language)}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500" />
                   </div>
                   <div className="mt-4">
-                    <h3 className="text-xl font-semibold tracking-tight text-neutral-900 group-hover:text-neutral-600 transition-colors">{p.title}</h3>
-                    <p className="text-sm text-neutral-500 mt-1">{p.location} • {p.year}</p>
+                    <h3 className="text-xl font-semibold tracking-tight text-neutral-900 group-hover:text-neutral-600 transition-colors">{getLocalizedText(p.title, language)}</h3>
+                    <p className="text-sm text-neutral-500 mt-1">{getLocalizedText(p.location, language)} • {p.year}</p>
                   </div>
                 </button>
               </motion.div>
@@ -187,15 +186,15 @@ export default function HomePage() {
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <motion.div {...fadeUp} className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
             <div>
-              <p className="text-sm text-neutral-500 tracking-widest uppercase mb-2">Featured Work</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900">Interior Design</h2>
+              <p className="text-sm text-neutral-500 tracking-widest uppercase mb-2">{t.common.featuredWork}</p>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900">{t.interior.title}</h2>
             </div>
             <Button
               variant="outline"
               className="self-start md:self-auto"
               onClick={() => navigate("/interior")}
             >
-              View All <ArrowRight className="ml-2 size-4" />
+              {t.common.viewAll} <ArrowRight className="ml-2 size-4" />
             </Button>
           </motion.div>
 
@@ -209,14 +208,14 @@ export default function HomePage() {
                   <div className="relative overflow-hidden aspect-[4/3]">
                     <img
                       src={p.coverImage}
-                      alt={p.title}
+                      alt={getLocalizedText(p.title, language)}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500" />
                   </div>
                   <div className="mt-4">
-                    <h3 className="text-lg font-semibold tracking-tight group-hover:text-neutral-600 transition-colors">{p.title}</h3>
-                    <p className="text-sm text-neutral-500 mt-1">{p.location} • {p.year}</p>
+                    <h3 className="text-lg font-semibold tracking-tight group-hover:text-neutral-600 transition-colors">{getLocalizedText(p.title, language)}</h3>
+                    <p className="text-sm text-neutral-500 mt-1">{getLocalizedText(p.location, language)} • {p.year}</p>
                   </div>
                 </button>
               </motion.div>
@@ -228,17 +227,16 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="bg-white py-20 md:py-28">
         <motion.div {...fadeUp} className="mx-auto max-w-3xl px-6 md:px-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Let's Create Together</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{t.home.ctaTitle}</h2>
           <p className="mt-4 text-lg text-neutral-600">
-            Whether it's a compelling exhibition or a harmonious living space,
-            we're ready to bring your vision to life.
+            {t.home.ctaText}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" onClick={() => navigate("/contact")}>
-              Get in Touch <ArrowRight className="ml-2 size-4" />
+              {t.home.getInTouch} <ArrowRight className="ml-2 size-4" />
             </Button>
             <Button size="lg" variant="outline" onClick={() => navigate("/services")}>
-              Our Services
+              {t.common.ourServices}
             </Button>
           </div>
         </motion.div>

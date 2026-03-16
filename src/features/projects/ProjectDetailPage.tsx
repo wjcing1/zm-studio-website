@@ -5,9 +5,12 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { fadeUp } from "@/config/animation";
 import { PROJECTS } from "@/config/data";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getLocalizedText, getLocalizedTextList } from "@/lib/i18n";
+import { getStatusLabel, getTypologyLabel } from "@/lib/projectMeta";
 
 // Gallery Image component with hover animation and lightbox
-function GalleryImage({ src, alt }: { src: string; alt: string }) {
+function GalleryImage({ src, alt, viewLabel, closeLabel }: { src: string; alt: string; viewLabel: string; closeLabel: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -27,7 +30,7 @@ function GalleryImage({ src, alt }: { src: string; alt: string }) {
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-400 flex items-center justify-center">
           <span className="text-white text-sm tracking-[0.3em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-            View
+            {viewLabel}
           </span>
         </div>
       </motion.div>
@@ -53,7 +56,7 @@ function GalleryImage({ src, alt }: { src: string; alt: string }) {
             className="absolute top-6 right-6 text-white/80 hover:text-white text-sm tracking-[0.2em] uppercase transition-colors"
             onClick={() => setIsOpen(false)}
           >
-            Close
+            {closeLabel}
           </button>
         </motion.div>
       )}
@@ -62,7 +65,7 @@ function GalleryImage({ src, alt }: { src: string; alt: string }) {
 }
 
 // Gallery Carousel with navigation buttons - responsive for mobile
-function GalleryCarousel({ images, title }: { images: (string | number)[]; title: string }) {
+function GalleryCarousel({ images, title, viewLabel, closeLabel, previousLabel, nextLabel }: { images: (string | number)[]; title: string; viewLabel: string; closeLabel: string; previousLabel: string; nextLabel: string }) {
   const [startIndex, setStartIndex] = useState(0);
 
   // Filter to only string image paths
@@ -108,7 +111,7 @@ function GalleryCarousel({ images, title }: { images: (string | number)[]; title
                 className={`overflow-hidden aspect-[3/4] ${i === 1 ? 'hidden md:block' : ''
                   } ${i === 2 ? 'hidden lg:block' : ''}`}
               >
-                <GalleryImage src={item.src} alt={`${title} - Image ${item.originalIndex + 1}`} />
+                <GalleryImage src={item.src} alt={`${title} - Image ${item.originalIndex + 1}`} viewLabel={viewLabel} closeLabel={closeLabel} />
               </motion.div>
             ))}
           </div>
@@ -120,7 +123,7 @@ function GalleryCarousel({ images, title }: { images: (string | number)[]; title
               <button
                 onClick={goPrev}
                 className="absolute left-3 md:-left-5 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-sm shadow-lg shadow-black/10 flex items-center justify-center transition-all duration-400 hover:bg-neutral-900 hover:shadow-xl group z-10"
-                aria-label="Previous images"
+                aria-label={previousLabel}
               >
                 <svg className="w-4 h-4 md:w-5 md:h-5 text-neutral-600 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
@@ -131,7 +134,7 @@ function GalleryCarousel({ images, title }: { images: (string | number)[]; title
               <button
                 onClick={goNext}
                 className="absolute right-3 md:-right-5 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-sm shadow-lg shadow-black/10 flex items-center justify-center transition-all duration-400 hover:bg-neutral-900 hover:shadow-xl group z-10"
-                aria-label="Next images"
+                aria-label={nextLabel}
               >
                 <svg className="w-4 h-4 md:w-5 md:h-5 text-neutral-600 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
@@ -146,13 +149,14 @@ function GalleryCarousel({ images, title }: { images: (string | number)[]; title
 }
 
 export default function ProjectDetailPage() {
+  const { language, t } = useLanguage();
   const { projectId } = useParams<{ projectId: string }>();
   const project = PROJECTS.find((p) => p.id === projectId);
 
   if (!project) {
     return (
       <main className="mx-auto max-w-[1600px] px-6 md:px-12 py-20">
-        <h1 className="text-2xl font-bold">Not found</h1>
+        <h1 className="text-2xl font-bold">{t.projectDetail.notFound}</h1>
       </main>
     );
   }
@@ -161,6 +165,11 @@ export default function ProjectDetailPage() {
   const galleryImages = project.gallery;
   // First image for the right column
   const featureImage = project.gallery[0];
+  const title = getLocalizedText(project.title, language);
+  const location = getLocalizedText(project.location, language);
+  const summary = getLocalizedText(project.summary, language);
+  const body = getLocalizedText(project.body, language);
+  const tags = getLocalizedTextList(project.tags, language);
 
   return (
     <main className="bg-white">
@@ -175,7 +184,7 @@ export default function ProjectDetailPage() {
         >
           <img
             src={project.coverImage}
-            alt={project.title}
+            alt={title}
             className="w-full h-full object-cover"
           />
           {/* Gradient overlay for better text readability */}
@@ -188,21 +197,21 @@ export default function ProjectDetailPage() {
             {...fadeUp}
             className="text-3xl md:text-5xl lg:text-6xl font-light tracking-[0.3em] uppercase"
           >
-            {project.title}
+            {title}
           </motion.h1>
           <motion.div
             {...fadeUp}
             className="mt-4 flex items-center gap-3 text-sm tracking-[0.2em] uppercase text-white/80"
           >
-            <span>{project.typology}</span>
+            <span>{getTypologyLabel(project.typology, t)}</span>
             <span className="text-white/40">|</span>
-            <span>{project.status}</span>
+            <span>{getStatusLabel(project.status, t)}</span>
           </motion.div>
           <motion.p
             {...fadeUp}
             className="mt-8 max-w-2xl text-sm md:text-base text-white/70 leading-relaxed"
           >
-            {project.summary}
+            {summary}
           </motion.p>
         </div>
       </section>
@@ -216,29 +225,29 @@ export default function ProjectDetailPage() {
               <div className="lg:sticky lg:top-28 space-y-8">
                 <div>
                   <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1 font-medium">
-                    Location
+                    {t.projectDetail.location}
                   </p>
-                  <p className="text-sm text-neutral-700">{project.location}</p>
+                  <p className="text-sm text-neutral-700">{location}</p>
                 </div>
                 <div>
                   <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1 font-medium">
-                    Category
+                    {t.projectDetail.category}
                   </p>
-                  <p className="text-sm text-neutral-700">{project.typology}</p>
+                  <p className="text-sm text-neutral-700">{getTypologyLabel(project.typology, t)}</p>
                 </div>
                 <div>
                   <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1 font-medium">
-                    Year
+                    {t.projectDetail.year}
                   </p>
                   <p className="text-sm text-neutral-700">{project.year}</p>
                 </div>
-                {project.tags && project.tags.length > 0 && (
+                {tags.length > 0 && (
                   <div>
                     <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 mb-1 font-medium">
-                      Tags
+                      {t.projectDetail.tags}
                     </p>
                     <div className="flex flex-col gap-1">
-                      {project.tags.map((tag, i) => (
+                      {tags.map((tag, i) => (
                         <span key={i} className="text-sm text-neutral-700">
                           {tag}
                         </span>
@@ -252,7 +261,7 @@ export default function ProjectDetailPage() {
             {/* Middle - Description Text */}
             <motion.div {...fadeUp} className="lg:col-span-6">
               <div className="space-y-6">
-                {project.body.split('\n\n').map((paragraph, i) => (
+                {body.split('\n\n').map((paragraph, i) => (
                   <p key={i} className="text-base leading-[1.8] text-neutral-600 tracking-wide">
                     {paragraph}
                   </p>
@@ -266,11 +275,11 @@ export default function ProjectDetailPage() {
                 <div className="space-y-3 max-w-[280px] ml-auto">
                   <img
                     src={featureImage}
-                    alt={`${project.title} - Feature`}
+                    alt={`${title} - Feature`}
                     className="w-full aspect-[3/4] object-cover"
                   />
                   <p className="text-[11px] text-neutral-500 leading-relaxed">
-                    {project.summary}
+                    {summary}
                   </p>
                 </div>
               </motion.div>
@@ -281,7 +290,14 @@ export default function ProjectDetailPage() {
 
       {/* Gallery Carousel - Three Images with Navigation */}
       {galleryImages.length > 0 && (
-        <GalleryCarousel images={galleryImages} title={project.title} />
+        <GalleryCarousel
+          images={galleryImages}
+          title={title}
+          viewLabel={t.projectDetail.viewImage}
+          closeLabel={t.projectDetail.closeLightbox}
+          previousLabel={t.projectDetail.previousImages}
+          nextLabel={t.projectDetail.nextImages}
+        />
       )}
     </main>
   );

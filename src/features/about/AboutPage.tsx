@@ -3,9 +3,21 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/config/animation";
-import { MILAN_TEAM, SHANGHAI_TEAM } from "@/config/data";
+import {
+  ABOUT_KEYWORDS,
+  ABOUT_MUTUAL_CONDUCT_PARAGRAPHS,
+  ABOUT_QUALITY_BULLETS,
+  ABOUT_QUALITY_PARAGRAPHS,
+  ABOUT_SERVICE_CARDS,
+  ABOUT_STUDIO_PARAGRAPHS,
+  MILAN_TEAM,
+  SHANGHAI_TEAM
+} from "@/config/data";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getLocalizedText } from "@/lib/i18n";
 
 export default function AboutPage() {
+  const { language, t } = useLanguage();
   const [heroLoaded, setHeroLoaded] = useState(false);
 
   // Preload hero image
@@ -29,9 +41,9 @@ export default function AboutPage() {
               WebkitTextFillColor: 'transparent'
             }}
           >
-            <div>WITH HONEST MATERIALS</div>
-            <div className="mt-2">AND REAL EXECUTION,</div>
-            <div className="mt-2">WE CREATE SPATIAL EXPERIENCES.</div>
+            <div>{t.about.heroLine1}</div>
+            <div className="mt-2">{t.about.heroLine2}</div>
+            <div className="mt-2">{t.about.heroLine3}</div>
           </h1>
         </motion.div>
       </section>
@@ -43,7 +55,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 flex items-center justify-center min-h-[70vh] md:min-h-screen">
             <div className="text-center">
               <div className="w-16 h-16 border-4 border-neutral-300 border-t-neutral-600 rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-sm text-neutral-500 font-medium">Loading...</p>
+              <p className="text-sm text-neutral-500 font-medium">{t.common.loading}</p>
             </div>
           </div>
         )}
@@ -81,27 +93,20 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[1600px] px-6 md:px-12 py-20 md:py-32">
           <motion.div {...fadeUp} className="grid grid-cols-1 gap-12 md:grid-cols-12">
             <div className="md:col-span-8">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Studio</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">{t.about.studioTitle}</h2>
               <div className="space-y-6 text-lg leading-relaxed text-neutral-700">
-                <p>
-                  ZM Studio was founded by three graduates of Politecnico di Milano's School of Architecture. Based in Milan, the studio focuses on exhibition design, brand narrative spaces, and art installations.
-                </p>
-                <p>
-                  We care about spatial experience and material details. Through understanding brand identity and storytelling, we abstract concepts into spatial forms with tactile qualities and emotional power.
-                </p>
-                <p>
-                  The studio maintains long-term partnerships with manufacturing and processing facilities located in Italy, Poland, and Germany, enabling rapid progression from sketches to implementation. We provide comprehensive support for design, production, and installation across Europe.
-                </p>
+                {ABOUT_STUDIO_PARAGRAPHS.map((paragraph, index) => (
+                  <p key={index}>{getLocalizedText(paragraph, language)}</p>
+                ))}
               </div>
             </div>
             <div className="md:col-span-4">
               <div className="bg-white p-8">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-neutral-500 mb-4">Keywords</h3>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-neutral-500 mb-4">{t.about.keywordsTitle}</h3>
                 <ul className="space-y-2 text-neutral-700">
-                  <li>Spatial Storytelling</li>
-                  <li>Material Experimentation</li>
-                  <li>On-site Implementation</li>
-                  <li>International Supply Chain</li>
+                  {ABOUT_KEYWORDS.map((keyword, index) => (
+                    <li key={index}>{getLocalizedText(keyword, language)}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -114,7 +119,7 @@ export default function AboutPage() {
         {/* Shanghai Studio */}
         <div>
           <motion.div {...fadeUp}>
-            <h2 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-10">Shanghai Studio</h2>
+            <h2 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-10">{t.about.shanghaiStudio}</h2>
           </motion.div>
           <div className="grid grid-cols-2 gap-4 md:gap-8 lg:grid-cols-4">
             {SHANGHAI_TEAM.map((member, idx) => (
@@ -139,7 +144,7 @@ export default function AboutPage() {
                     {member.name}
                     <span className="block mt-1 text-xl">{member.nameCN}</span>
                   </h3>
-                  <p className="text-lg md:text-xl font-bold tracking-wide text-black">{member.role}</p>
+                  <p className="text-lg md:text-xl font-bold tracking-wide text-black">{getLocalizedText(member.role, language)}</p>
                 </div>
               </motion.div>
             ))}
@@ -149,7 +154,7 @@ export default function AboutPage() {
         {/* Milan Studio */}
         <div>
           <motion.div {...fadeUp}>
-            <h2 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-10">Milan Studio</h2>
+            <h2 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-10">{t.about.milanStudio}</h2>
           </motion.div>
           <div className="grid grid-cols-2 gap-4 md:gap-8 lg:grid-cols-4">
             {MILAN_TEAM.map((member, idx) => (
@@ -174,7 +179,7 @@ export default function AboutPage() {
                     {member.name}
                     <span className="block mt-1 text-xl">{member.nameCN}</span>
                   </h3>
-                  <p className="text-lg md:text-xl font-bold tracking-wide text-black">{member.role}</p>
+                  <p className="text-lg md:text-xl font-bold tracking-wide text-black">{getLocalizedText(member.role, language)}</p>
                 </div>
               </motion.div>
             ))}
@@ -186,51 +191,25 @@ export default function AboutPage() {
       <section style={{ backgroundColor: '#F4F3F1', backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' opacity=\'0.03\'/%3E%3C/svg%3E")' }}>
         <div className="mx-auto max-w-[1600px] px-6 md:px-12 py-20 md:py-32">
           <motion.div {...fadeUp}>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-16">What We Do</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-16">{t.about.whatWeDoTitle}</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <motion.div {...fadeUp} className="bg-white p-8">
-              <h3 className="text-xl font-bold tracking-tight mb-4">Exhibition & Brand Space Design</h3>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-2">We Provide</p>
-                  <p className="text-neutral-700">Concept → 3D → Detail drawings → On-site coordination</p>
+            {ABOUT_SERVICE_CARDS.map((card, index) => (
+              <motion.div key={index} {...fadeUp} className="bg-white p-8">
+                <h3 className="text-xl font-bold tracking-tight mb-4">{getLocalizedText(card.title, language)}</h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-2">{t.about.provideLabel}</p>
+                    <p className="text-neutral-700">{getLocalizedText(card.provide, language)}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-2">{t.about.resultLabel}</p>
+                    <p className="text-neutral-700">{getLocalizedText(card.result, language)}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-2">You Get</p>
-                  <p className="text-neutral-700">Unique brand presentation and immersive experiences</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div {...fadeUp} className="bg-white p-8">
-              <h3 className="text-xl font-bold tracking-tight mb-4">Booth Production & Installation</h3>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-2">We Provide</p>
-                  <p className="text-neutral-700">Multi-location partner factories + Transport + Installation teams</p>
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-2">You Get</p>
-                  <p className="text-neutral-700">Fast, reliable, cost-effective implementation solutions</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div {...fadeUp} className="bg-white p-8">
-              <h3 className="text-xl font-bold tracking-tight mb-4">Art & Interactive Installations</h3>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-2">We Provide</p>
-                  <p className="text-neutral-700">Material experiments + Model development + Prototype testing</p>
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-2">You Get</p>
-                  <p className="text-neutral-700">Tangible, perceptible brand narratives that tell your story</p>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -238,47 +217,42 @@ export default function AboutPage() {
       {/* Policies */}
       <section className="mx-auto max-w-[1600px] px-6 md:px-12 py-20 md:py-32">
         <motion.div {...fadeUp}>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-16">Policies</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-16">{t.about.policiesTitle}</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
           {/* Mutual Code of Conduct */}
           <motion.div {...fadeUp} className="space-y-4">
-            <h3 className="text-2xl font-bold tracking-tight">Mutual Code of Conduct</h3>
+            <h3 className="text-2xl font-bold tracking-tight">{t.about.mutualConductTitle}</h3>
             <div className="space-y-4 text-neutral-700 leading-relaxed">
-              <p>
-                We value respectful collaboration and transparent communication.
-              </p>
-              <p>
-                Clients, partners, and suppliers working with ZM Studio are expected to maintain professional conduct, support fair working conditions, and respect intellectual and creative work.
-              </p>
+              {ABOUT_MUTUAL_CONDUCT_PARAGRAPHS.map((paragraph, index) => (
+                <p key={index}>{getLocalizedText(paragraph, language)}</p>
+              ))}
               <p className="text-sm italic text-neutral-600">
-                Our full Mutual Code of Conduct is available upon request.
+                {t.about.mutualConductNote}
               </p>
             </div>
           </motion.div>
 
           {/* Quality Management */}
           <motion.div {...fadeUp} className="space-y-4">
-            <h3 className="text-2xl font-bold tracking-tight">Quality Management</h3>
+            <h3 className="text-2xl font-bold tracking-tight">{t.about.qualityManagementTitle}</h3>
             <div className="space-y-4 text-neutral-700 leading-relaxed">
-              <p>
-                ZM Studio is committed to delivering spaces that are both conceptually strong and precisely executed. We work closely with our fabrication partners to ensure consistent quality from design to installation.
-              </p>
+              {ABOUT_QUALITY_PARAGRAPHS.map((paragraph, index) => (
+                <p key={index}>{getLocalizedText(paragraph, language)}</p>
+              ))}
 
               <div>
-                <p className="font-medium mb-3">Our quality approach focuses on:</p>
+                <p className="font-medium mb-3">{t.about.qualityApproachTitle}</p>
                 <ul className="space-y-2 text-neutral-700">
-                  <li>• Understanding each client's narrative and transforming it into spatial experience.</li>
-                  <li>• Maintaining reliable communication between design, fabrication, and on-site teams.</li>
-                  <li>• Ensuring clarity in drawings, materials, and construction details to reduce implementation risk.</li>
-                  <li>• Continuously improving workflows based on project feedback and installation experience.</li>
-                  <li>• Conducting our work responsibly and in compliance with local regulations and safety standards.</li>
+                  {ABOUT_QUALITY_BULLETS.map((item, index) => (
+                    <li key={index}>• {getLocalizedText(item, language)}</li>
+                  ))}
                 </ul>
               </div>
 
               <p className="text-sm italic text-neutral-600 pt-4">
-                We believe quality comes from clear design intent + precise execution + consistent coordination.
+                {t.about.qualityQuote}
               </p>
             </div>
           </motion.div>
