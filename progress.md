@@ -76,3 +76,35 @@
 | What's the goal? | Full-site EN/ZH/IT switching for UI and content |
 | What have I learned? | Whole-site switching required both dictionary expansion and content-data localization |
 | What have I done? | Implemented the feature, built it, and browser-verified key pages |
+
+## Session: 2026-03-16 Copy Refinement Follow-up
+
+### Phase 6: Copy Localization Refresh
+- **Status:** in_progress
+- Actions taken:
+  - Confirmed the user wants a whole-site Chinese and Italian copy refinement pass.
+  - Agreed on a professional, restrained studio tone for Chinese and a more idiomatic editorial tone for Italian.
+  - Audited the main localized copy sources in `src/i18n/zh.ts`, `src/i18n/it.ts`, and `src/config/data.ts`.
+  - Wrote a dedicated design doc and implementation plan for the copy rewrite.
+  - Rewrote Chinese and Italian UI copy in `src/i18n/zh.ts` and `src/i18n/it.ts`.
+  - Rewrote Chinese and Italian long-form content in `src/config/data.ts`, including homepage sections, team bios, services, news, and project summaries/bodies.
+  - Ran `npm run build` and verified key pages with Playwright snapshots in Chinese and Italian.
+- Files created/modified:
+  - `task_plan.md`
+  - `findings.md`
+  - `progress.md`
+  - `docs/plans/2026-03-16-copy-localization-refresh-design.md`
+  - `docs/plans/2026-03-16-copy-localization-refresh-implementation.md`
+  - `src/i18n/zh.ts`
+  - `src/i18n/it.ts`
+  - `src/config/data.ts`
+
+## Additional Test Results
+| Test | Input | Expected | Actual | Status |
+|------|-------|----------|--------|--------|
+| Production build after copy rewrite | `npm run build` | Build succeeds after localization edits | Build succeeded | ✓ |
+| Chinese homepage copy | Playwright snapshot on `/` | Updated Chinese nav, CTA, and homepage copy render naturally | Verified | ✓ |
+| Italian homepage copy | Playwright click `IT` on `/` | Updated Italian nav, CTA, and homepage copy render naturally | Verified | ✓ |
+| Chinese About copy | Playwright snapshot on `/about` | Updated Chinese long-form studio copy renders without layout issues | Verified | ✓ |
+| Italian About copy | Playwright click `IT` on `/about` | Updated Italian long-form studio copy renders without layout issues | Verified | ✓ |
+| Project detail copy | Playwright snapshots on `/exhibition/p1` in `zh` and `it` | Updated project summary/body copy renders correctly in both languages | Verified | ✓ |
