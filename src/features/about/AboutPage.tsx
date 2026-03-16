@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/config/animation";
-import { FOUNDERS } from "@/config/data";
+import { MILAN_TEAM, SHANGHAI_TEAM } from "@/config/data";
 
 export default function AboutPage() {
   const [heroLoaded, setHeroLoaded] = useState(false);
@@ -109,44 +109,76 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* The Founders */}
-      <section className="mx-auto max-w-[1600px] px-6 md:px-12 py-20 md:py-32">
-        <motion.div {...fadeUp}>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-16">The Founders</h2>
-        </motion.div>
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-          {FOUNDERS.map((founder, idx) => (
-            <motion.div
-              key={idx}
-              {...fadeUp}
-              className="space-y-4"
-            >
-              {/* Founder headshot photo */}
-              <div
-                className="aspect-square w-48 mx-auto rounded-full overflow-hidden bg-neutral-200"
-                style={{
-                  backgroundImage: `url(${founder.photo})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
+      {/* Board / Team */}
+      <section className="mx-auto max-w-[1600px] px-6 md:px-12 py-20 md:py-32 flex flex-col gap-20">
+        {/* Milan Studio */}
+        <div>
+          <motion.div {...fadeUp}>
+            <h2 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-10">Milan Studio</h2>
+          </motion.div>
+          <div className="grid grid-cols-2 gap-4 md:gap-8 lg:grid-cols-4">
+            {MILAN_TEAM.map((member, idx) => (
+              <motion.div
+                key={`milan-${idx}`}
+                {...fadeUp}
+                className="group relative aspect-square md:aspect-[4/5] bg-neutral-100 overflow-hidden cursor-pointer"
               >
-                {/* Fallback text if image doesn't load */}
-                <div className="w-full h-full grid place-items-center text-2xl font-semibold text-neutral-400" style={{ display: 'none' }}>
-                  PHOTO
+                {/* Default State: Photo */}
+                <div
+                  className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
+                  style={{
+                    backgroundImage: `url(${member.photo})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                />
+
+                {/* Hover State: Text inside White Background */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">
+                    {member.name}
+                    <span className="block mt-1 text-xl">{member.nameCN}</span>
+                  </h3>
+                  <p className="text-lg md:text-xl font-bold tracking-wide text-black">{member.role}</p>
                 </div>
-              </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
-              <div className="text-center">
-                <h3 className="text-2xl font-bold tracking-tight">{founder.name}</h3>
-                <p className="text-sm text-neutral-500 mt-1">{founder.nameCN}</p>
-                <p className="text-sm font-medium text-neutral-600 mt-2">{founder.education}</p>
-              </div>
+        {/* Shanghai Studio */}
+        <div>
+          <motion.div {...fadeUp}>
+            <h2 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-10">Shanghai Studio</h2>
+          </motion.div>
+          <div className="grid grid-cols-2 gap-4 md:gap-8 lg:grid-cols-4">
+            {SHANGHAI_TEAM.map((member, idx) => (
+              <motion.div
+                key={`shanghai-${idx}`}
+                {...fadeUp}
+                className="group relative aspect-square md:aspect-[4/5] bg-neutral-100 overflow-hidden cursor-pointer"
+              >
+                {/* Default State: Photo */}
+                <div
+                  className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
+                  style={{
+                    backgroundImage: `url(${member.photo})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                />
 
-              <div className="text-sm leading-relaxed text-neutral-700">
-                <p>{founder.specialty}</p>
-              </div>
-            </motion.div>
-          ))}
+                {/* Hover State: Text inside White Background */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">
+                    {member.name}
+                    <span className="block mt-1 text-xl">{member.nameCN}</span>
+                  </h3>
+                  <p className="text-lg md:text-xl font-bold tracking-wide text-black">{member.role}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

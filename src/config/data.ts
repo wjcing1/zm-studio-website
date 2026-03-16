@@ -279,35 +279,81 @@ export const HOME_SECTIONS: HomeSection[] = [
 export interface Founder {
   name: string;
   nameCN: string;
+  role: string;
   education: string;
   specialty: string;
   photo: string;
 }
 
-export const FOUNDERS: Founder[] = [
+export const MILAN_TEAM: Founder[] = [
   {
     name: "Niko Chew",
     nameCN: "周家桢",
+    role: "Partner / Project Manager",
     education: "M.Arch, Politecnico di Milano",
     specialty: "Specializes in end-to-end project management from concept to implementation, coordinating with factories, venue teams, and multiple stakeholders to ensure precise design realization in real environments.",
-    photo: "/images/about/niko.jpg"
+    photo: "/images/about/niko.png"
   },
   {
     name: "Wei Ma",
     nameCN: "马威",
+    role: "Partner / Architect",
     education: "M.Arch, Politecnico di Milano",
     specialty: "Focuses on narrative structure and formal expression in exhibition spaces, specializing in conceptual design, spatial composition, and material language to build unified brand experiences through visual and spatial coherence.",
-    photo: "/images/about/wei.jpg"
+    photo: "/images/about/wei.png"
   },
   {
     name: "Jiachen Wang",
     nameCN: "王嘉琛",
+    role: "Partner / Brand Strategist",
     education: "B.Arch, Politecnico di Milano",
     specialty: "Focuses on the connection between brand strategy and spatial expression, specializing in design marketing, brand communication, and visual storytelling to transform spatial experiences into perceptible brand value.",
-    photo: "/images/about/jiachen.jpg"
+    photo: "/images/about/jiachen.png"
   }
 ];
 
+export const SHANGHAI_TEAM: Founder[] = [
+  {
+    name: "Minjun Fan",
+    nameCN: "范敏俊",
+    role: "Founder / Principal Designer",
+    education: "Renowned Interior Designer & Crossover Artist",
+    specialty: "Born in Shanghai, MJ has designed and transformed over 1000 historic lane houses and apartments. His representative work was featured in 'The Most Beautiful Rooms in the World' by AD Magazine, and he won the 2021 China Interior Design Award.",
+    photo: "/images/about/shanghai1.png"
+  },
+  {
+    name: "Jian Liu",
+    nameCN: "刘健",
+    role: "Shanghai Studio Director",
+    education: "Architectural Design",
+    specialty: "Oversees the Shanghai studio's operations and leads the design team in executing high-quality residential and commercial projects.",
+    photo: "/images/about/shanghai2.png"
+  },
+  {
+    name: "Luna",
+    nameCN: "Luna",
+    role: "Designer",
+    education: "Interior Design",
+    specialty: "Focuses on spatial planning, material selection, and bringing conceptual designs to life with rigorous attention to detail.",
+    photo: "/images/about/shanghai3.png"
+  },
+  {
+    name: "Jerry",
+    nameCN: "Jerry",
+    role: "Designer",
+    education: "Interior Design",
+    specialty: "Specializes in 3D visualization, technical drawing, and coordinating with contractors to ensure design intent is fully realized.",
+    photo: "/images/about/shanghai4.png"
+  },
+  {
+    name: "May",
+    nameCN: "May",
+    role: "Designer",
+    education: "Interior Design",
+    specialty: "Passionate about creating unique spatial narratives through custom furniture, lighting design, and soft furnishings.",
+    photo: "/images/about/shanghai5.png"
+  }
+];
 // Services data
 export interface Service {
   title: string;
