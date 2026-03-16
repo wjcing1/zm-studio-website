@@ -106,7 +106,7 @@ export default function InteriorPage() {
                         <img
                             src="/images/interior-logo.png"
                             alt="Interior studio logo"
-                            className="h-8 w-auto md:h-11"
+                            className="h-9 w-auto md:h-[3.75rem]"
                         />
                     </motion.div>
                     <motion.p {...fadeUp} className="mt-4 text-lg md:text-xl text-neutral-600 max-w-2xl">

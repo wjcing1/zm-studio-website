@@ -33,9 +33,9 @@ export default function AboutPage() {
       <section className="mx-auto max-w-[1600px] px-6 md:px-12 py-32 md:py-48">
         <motion.div {...fadeUp} className="max-w-6xl">
           <h1
-            className="text-[2.7rem] md:text-[3.8rem] lg:text-[4.3rem] leading-[1.1] tracking-tight uppercase"
+            className={`text-[2.7rem] md:text-[3.8rem] lg:text-[4.3rem] leading-[1.1] tracking-tight uppercase ${language === "zh" ? "zh-serif-display" : ""}`}
             style={{
-              fontFamily: "'IBM Plex Sans', -apple-system, sans-serif",
+              fontFamily: language === "zh" ? undefined : "'IBM Plex Sans', -apple-system, sans-serif",
               fontWeight: 500,
               WebkitTextStroke: '2px black',
               WebkitTextFillColor: 'transparent'

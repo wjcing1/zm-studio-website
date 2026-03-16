@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -40,6 +42,19 @@
     min-height: 100vh;
   }
 
+  html[lang="zh"] h1,
+  html[lang="zh"] h2,
+  html[lang="zh"] h3 {
+    font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+  }
+
+  html[lang="zh"] .zh-serif-display {
+    font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+    letter-spacing: -0.035em;
+  }
+
   /* 防止移动端图片缩放问题 */
   img {
     max-width: 100%;
@@ -66,4 +81,3 @@
     }
   }
 }
-
