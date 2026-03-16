@@ -314,14 +314,6 @@ export const MILAN_TEAM: Founder[] = [
 
 export const SHANGHAI_TEAM: Founder[] = [
   {
-    name: "Minjun Fan",
-    nameCN: "范敏俊",
-    role: "Founder / Principal Designer",
-    education: "Renowned Interior Designer & Crossover Artist",
-    specialty: "Born in Shanghai, MJ has designed and transformed over 1000 historic lane houses and apartments. His representative work was featured in 'The Most Beautiful Rooms in the World' by AD Magazine, and he won the 2021 China Interior Design Award.",
-    photo: "/images/about/shanghai1.png"
-  },
-  {
     name: "Jian Liu",
     nameCN: "刘健",
     role: "Shanghai Studio Director",
