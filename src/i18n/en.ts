@@ -22,6 +22,7 @@ export const en = {
   common: {
     loading: "Loading...",
     view: "View",
+    viewMode: "View",
     viewAll: "View All",
     openDetails: "Open details",
     close: "Close",

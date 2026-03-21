@@ -46,6 +46,7 @@ export default function InteriorPage() {
             return matchesQuery && matchesStatus;
         });
     }, [language, query, status, t]);
+    const viewModeLabel = t.common.viewMode;
 
     const Toolbar = () => (
         <div className="border-b bg-white/80">
@@ -83,7 +84,7 @@ export default function InteriorPage() {
                     variant="outline"
                     size="icon"
                     onClick={() => setView(view === 'grid' ? 'list' : 'grid')}
-                    aria-label={`${t.common.view}: ${view === 'grid' ? t.common.list : t.common.grid}`}
+                    aria-label={`${viewModeLabel}: ${view === 'grid' ? t.common.list : t.common.grid}`}
                 >
                     {view === 'grid' ? <List className="size-4" /> : <LayoutGrid className="size-4" />}
                 </Button>
@@ -105,7 +106,7 @@ export default function InteriorPage() {
                         </h1>
                         <img
                             src="/images/interior-logo.png"
-                            alt="Interior studio logo"
+                            alt=""
                             className="h-9 w-auto md:h-[3.75rem]"
                         />
                     </motion.div>
@@ -117,7 +118,7 @@ export default function InteriorPage() {
 
             <Toolbar />
             <div className="mx-auto max-w-[1600px] px-6 md:px-12 py-3 text-sm text-neutral-600">
-                {filtered.length} {filtered.length !== 1 ? t.common.projects : t.common.project} • {t.common.view}: {view === "grid" ? t.common.grid : t.common.list}
+                {filtered.length} {filtered.length !== 1 ? t.common.projects : t.common.project} • {viewModeLabel}: {view === "grid" ? t.common.grid : t.common.list}
             </div>
             {view === 'grid' ? (
                 <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-6 px-6 md:px-12 pb-20 md:grid-cols-2 lg:grid-cols-3">

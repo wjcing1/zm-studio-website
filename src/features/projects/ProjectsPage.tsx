@@ -48,6 +48,7 @@ export default function ProjectsPage() {
       return matchesQuery && matchesTypo && matchesStatus;
     });
   }, [language, query, typo, status, t]);
+  const viewModeLabel = t.common.viewMode;
 
   const Toolbar = () => (
     <div className="border-b bg-white/80">
@@ -105,7 +106,7 @@ export default function ProjectsPage() {
           variant="outline"
           size="icon"
           onClick={() => setView(view === 'grid' ? 'list' : 'grid')}
-          aria-label={`${t.common.view}: ${view === 'grid' ? t.common.list : t.common.grid}`}
+          aria-label={`${viewModeLabel}: ${view === 'grid' ? t.common.list : t.common.grid}`}
         >
           {view === 'grid' ? <List className="size-4" /> : <LayoutGrid className="size-4" />}
         </Button>
@@ -117,7 +118,7 @@ export default function ProjectsPage() {
     <main className="bg-white">
       <Toolbar />
       <div className="mx-auto max-w-[1600px] px-6 md:px-12 py-3 text-sm text-neutral-600">
-        {filtered.length} {filtered.length !== 1 ? t.common.projects : t.common.project} • {t.common.view}: {view === "grid" ? t.common.grid : t.common.list}
+        {filtered.length} {filtered.length !== 1 ? t.common.projects : t.common.project} • {viewModeLabel}: {view === "grid" ? t.common.grid : t.common.list}
       </div>
       {view === 'grid' ? (
         <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-6 px-6 md:px-12 pb-20 md:grid-cols-2 lg:grid-cols-3">

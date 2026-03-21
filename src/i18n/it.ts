@@ -22,6 +22,7 @@ export const it = {
   common: {
     loading: "Caricamento...",
     view: "Vedi",
+    viewMode: "Vista",
     viewAll: "Vedi tutto",
     openDetails: "Apri il progetto",
     close: "Chiudi",

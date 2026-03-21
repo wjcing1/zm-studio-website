@@ -70,7 +70,7 @@ export default function Footer() {
               >
                 info@zmstudiomilano.it
               </a>
-              <p className="text-sm text-neutral-500">Milan, Italy</p>
+              <p className="text-sm text-neutral-500">{t.contact.addressText}</p>
             </nav>
           </div>
 

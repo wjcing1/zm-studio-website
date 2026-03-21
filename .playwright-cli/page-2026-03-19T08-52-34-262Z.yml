@@ -1,0 +1,138 @@
+- generic [ref=e9]:
+  - banner [ref=e10]:
+    - generic [ref=e11]:
+      - link "ZM Studio" [ref=e13] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e14]:
+        - link "首页" [ref=e15] [cursor=pointer]:
+          - /url: /
+        - link "工作室" [ref=e16] [cursor=pointer]:
+          - /url: /about
+        - link "展览设计" [ref=e17] [cursor=pointer]:
+          - /url: /exhibition
+        - link "室内设计" [ref=e18] [cursor=pointer]:
+          - /url: /interior
+        - link "服务内容" [ref=e19] [cursor=pointer]:
+          - /url: /services
+        - link "动态" [ref=e20] [cursor=pointer]:
+          - /url: /news
+        - link "联系" [ref=e21] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - 'button "语言: EN" [ref=e24] [cursor=pointer]': EN
+          - 'button "语言: 中" [ref=e25] [cursor=pointer]': 中
+          - 'button "语言: IT" [ref=e26] [cursor=pointer]': IT
+        - link "开始合作" [ref=e27] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - img "ZM Studio" [ref=e31]
+      - img "Highfield 游艇展" [ref=e34]
+      - img "BKT 轮胎展位" [ref=e37]
+      - img "室内设计" [ref=e40]
+      - img "拓邦光伏展位" [ref=e43]
+      - img "精心雕琢的空间" [ref=e46]
+      - generic [ref=e50]:
+        - heading "ZM Studio" [level=1] [ref=e51]
+        - paragraph [ref=e52]: 展览与室内设计
+      - button [ref=e53] [cursor=pointer]:
+        - img [ref=e54]
+      - button [ref=e56] [cursor=pointer]:
+        - img [ref=e57]
+      - generic [ref=e59]:
+        - button [ref=e60] [cursor=pointer]
+        - button [ref=e61] [cursor=pointer]
+        - button [ref=e62] [cursor=pointer]
+        - button [ref=e63] [cursor=pointer]
+        - button [ref=e64] [cursor=pointer]
+        - button [ref=e65] [cursor=pointer]
+    - generic [ref=e68]:
+      - heading "设计理念" [level=2] [ref=e69]
+      - paragraph [ref=e70]: 我们不把建筑看作静止的对象，而把它理解为会回应环境、适应使用，也能承接情绪的空间。每个项目都是对空间、时间与人的体验的反复推敲，让精确的系统性与材料的触感在同一个场所里成立。
+    - generic [ref=e72]:
+      - generic [ref=e73]:
+        - generic [ref=e74]:
+          - paragraph [ref=e75]: 精选项目
+          - heading "展览设计" [level=2] [ref=e76]
+        - button "查看全部" [ref=e77] [cursor=pointer]:
+          - text: 查看全部
+          - img [ref=e78]
+      - generic [ref=e80]:
+        - button "Highfield 游艇展 Highfield 游艇展 杜塞尔多夫，德国 • 2025" [ref=e82] [cursor=pointer]:
+          - img "Highfield 游艇展" [ref=e84]
+          - generic [ref=e86]:
+            - heading "Highfield 游艇展" [level=3] [ref=e87]
+            - paragraph [ref=e88]: 杜塞尔多夫，德国 • 2025
+        - button "Mode 安全设备展位 Mode 安全设备展位 杜塞尔多夫，德国 • 2025" [ref=e90] [cursor=pointer]:
+          - img "Mode 安全设备展位" [ref=e92]
+          - generic [ref=e94]:
+            - heading "Mode 安全设备展位" [level=3] [ref=e95]
+            - paragraph [ref=e96]: 杜塞尔多夫，德国 • 2025
+    - generic [ref=e98]:
+      - generic [ref=e99]:
+        - generic [ref=e100]:
+          - paragraph [ref=e101]: 精选项目
+          - heading "室内设计" [level=2] [ref=e102]
+        - button "查看全部" [ref=e103] [cursor=pointer]:
+          - text: 查看全部
+          - img [ref=e104]
+      - generic [ref=e106]:
+        - button "兴国路住宅 兴国路住宅 上海，中国 • 2023" [ref=e108] [cursor=pointer]:
+          - img "兴国路住宅" [ref=e110]
+          - generic [ref=e112]:
+            - heading "兴国路住宅" [level=3] [ref=e113]
+            - paragraph [ref=e114]: 上海，中国 • 2023
+        - button "上海湾住宅 上海湾住宅 上海，中国 • 2024" [ref=e116] [cursor=pointer]:
+          - img "上海湾住宅" [ref=e118]
+          - generic [ref=e120]:
+            - heading "上海湾住宅" [level=3] [ref=e121]
+            - paragraph [ref=e122]: 上海，中国 • 2024
+        - button "藏家公馆样板间 I 藏家公馆样板间 I 上海，中国 • 2024" [ref=e124] [cursor=pointer]:
+          - img "藏家公馆样板间 I" [ref=e126]
+          - generic [ref=e128]:
+            - heading "藏家公馆样板间 I" [level=3] [ref=e129]
+            - paragraph [ref=e130]: 上海，中国 • 2024
+    - generic [ref=e132]:
+      - heading "把想法做成空间" [level=2] [ref=e133]
+      - paragraph [ref=e134]: 无论是展览、品牌空间还是室内项目，我们都可以一起把它推进到落地。
+      - generic [ref=e135]:
+        - button "联系洽谈" [ref=e136] [cursor=pointer]:
+          - text: 联系洽谈
+          - img [ref=e137]
+        - button "服务内容" [ref=e139] [cursor=pointer]
+  - contentinfo [ref=e140]:
+    - generic [ref=e141]:
+      - generic [ref=e142]:
+        - generic [ref=e143]:
+          - heading "项目" [level=4] [ref=e144]
+          - navigation [ref=e145]:
+            - link "展览设计" [ref=e146] [cursor=pointer]:
+              - /url: /exhibition
+            - link "室内设计" [ref=e147] [cursor=pointer]:
+              - /url: /interior
+        - generic [ref=e148]:
+          - heading "工作室" [level=4] [ref=e149]
+          - navigation [ref=e150]:
+            - link "工作室" [ref=e151] [cursor=pointer]:
+              - /url: /about
+            - link "服务内容" [ref=e152] [cursor=pointer]:
+              - /url: /services
+            - link "动态" [ref=e153] [cursor=pointer]:
+              - /url: /news
+        - generic [ref=e154]:
+          - heading "联系" [level=4] [ref=e155]
+          - navigation [ref=e156]:
+            - link "info@zmstudiomilano.it" [ref=e157] [cursor=pointer]:
+              - /url: mailto:info@zmstudiomilano.it
+            - paragraph [ref=e158]: 米兰，意大利
+        - generic [ref=e159]:
+          - heading "关注" [level=4] [ref=e160]
+          - navigation [ref=e161]:
+            - link "Instagram" [ref=e162] [cursor=pointer]:
+              - /url: https://instagram.com
+            - link "LinkedIn" [ref=e163] [cursor=pointer]:
+              - /url: https://linkedin.com
+      - generic [ref=e164]:
+        - paragraph [ref=e165]: ZM Studio
+        - paragraph [ref=e166]: © 2026 版权所有
