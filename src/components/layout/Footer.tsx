@@ -23,10 +23,10 @@ export default function Footer() {
                 {t.nav.exhibition}
               </Link>
               <Link
-                to="/interior"
+                to="/ai"
                 className="block text-sm text-neutral-600 hover:opacity-60 transition-opacity duration-300"
               >
-                {t.nav.interior}
+                {t.nav.ai}
               </Link>
             </nav>
           </div>

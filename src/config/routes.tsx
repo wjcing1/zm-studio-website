@@ -7,7 +7,7 @@ import type { RouteObject } from 'react-router-dom';
 const HomePage = lazy(() => import('@/features/home/HomePage'));
 const AboutPage = lazy(() => import('@/features/about/AboutPage'));
 const ExhibitionPage = lazy(() => import('@/features/exhibition/ExhibitionPage'));
-const InteriorPage = lazy(() => import('@/features/interior/InteriorPage'));
+const AiPage = lazy(() => import('@/features/ai/AiPage'));
 const ProjectDetailPage = lazy(() => import('@/features/projects/ProjectDetailPage'));
 const ServicesPage = lazy(() => import('@/features/services/ServicesPage'));
 const NewsPage = lazy(() => import('@/features/news/NewsPage'));
@@ -32,12 +32,8 @@ export const routes: RouteObject[] = [
     element: <ProjectDetailPage />
   },
   {
-    path: '/interior',
-    element: <InteriorPage />
-  },
-  {
-    path: '/interior/:projectId',
-    element: <ProjectDetailPage />
+    path: '/ai',
+    element: <AiPage />
   },
   {
     path: '/services',
@@ -56,4 +52,3 @@ export const routes: RouteObject[] = [
     element: <NotFoundPage />
   }
 ];
-

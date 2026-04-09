@@ -4,9 +4,9 @@ import type { Typology, Status } from '@/types';
 
 export const TYPOLOGIES: readonly Typology[] = [
   "All",
+  "Exhibition",
   "Installation",
   "Research",
-  "Interior",
   "Masterplan"
 ] as const;
 

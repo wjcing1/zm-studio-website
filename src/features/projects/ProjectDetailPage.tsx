@@ -163,7 +163,6 @@ export default function ProjectDetailPage() {
 
   // Use all gallery images for the bottom row
   const galleryImages = project.gallery;
-  // First image for the right column
   const featureImage = project.gallery[0];
   const title = getLocalizedText(project.title, language);
   const location = getLocalizedText(project.location, language);

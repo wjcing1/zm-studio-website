@@ -10,8 +10,7 @@ import {
   ABOUT_QUALITY_PARAGRAPHS,
   ABOUT_SERVICE_CARDS,
   ABOUT_STUDIO_PARAGRAPHS,
-  MILAN_TEAM,
-  SHANGHAI_TEAM
+  MILAN_TEAM
 } from "@/config/data";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getLocalizedText } from "@/lib/i18n";
@@ -116,41 +115,6 @@ export default function AboutPage() {
 
       {/* Board / Team */}
       <section className="mx-auto max-w-[1600px] px-6 md:px-12 py-20 md:py-32 flex flex-col gap-20">
-        {/* Shanghai Studio */}
-        <div>
-          <motion.div {...fadeUp}>
-            <h2 className="text-xl md:text-2xl font-bold uppercase tracking-wider mb-10">{t.about.shanghaiStudio}</h2>
-          </motion.div>
-          <div className="grid grid-cols-2 gap-4 md:gap-8 lg:grid-cols-4">
-            {SHANGHAI_TEAM.map((member, idx) => (
-              <motion.div
-                key={`shanghai-${idx}`}
-                {...fadeUp}
-                className="group relative aspect-[4/5] bg-neutral-100 overflow-hidden cursor-pointer"
-              >
-                {/* Default State: Photo */}
-                <div
-                  className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
-                  style={{
-                    backgroundImage: `url(${member.photo})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
-                  }}
-                />
-
-                {/* Hover State: Text inside White Background */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">
-                    {member.name}
-                    <span className="block mt-1 text-xl">{member.nameCN}</span>
-                  </h3>
-                  <p className="text-lg md:text-xl font-bold tracking-wide text-black">{getLocalizedText(member.role, language)}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
         {/* Milan Studio */}
         <div>
           <motion.div {...fadeUp}>
@@ -169,7 +133,7 @@ export default function AboutPage() {
                   style={{
                     backgroundImage: `url(${member.photo})`,
                     backgroundSize: 'cover',
-                    backgroundPosition: 'center'
+                    backgroundPosition: member.photoPosition ?? 'center'
                   }}
                 />
 
@@ -177,7 +141,9 @@ export default function AboutPage() {
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">
                     {member.name}
-                    <span className="block mt-1 text-xl">{member.nameCN}</span>
+                    {member.nameCN && member.nameCN !== member.name ? (
+                      <span className="block mt-1 text-xl">{member.nameCN}</span>
+                    ) : null}
                   </h3>
                   <p className="text-lg md:text-xl font-bold tracking-wide text-black">{getLocalizedText(member.role, language)}</p>
                 </div>

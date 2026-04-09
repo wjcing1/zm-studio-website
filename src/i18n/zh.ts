@@ -3,6 +3,7 @@ export const zh = {
     home: "首页",
     about: "工作室",
     exhibition: "展览设计",
+    ai: "AI",
     interior: "室内设计",
     services: "服务",
     news: "动态",
@@ -10,6 +11,7 @@ export const zh = {
     startProject: "项目咨询",
     navigation: "站点导航",
     openMenu: "打开导航",
+    menuDescription: "浏览 ZM Studio 网站的主要栏目。",
     language: "语言"
   },
   footer: {
@@ -57,7 +59,7 @@ export const zh = {
     designPhilosophy: "设计理念",
     designPhilosophyText: "我们不把建筑看成静止的对象，而把它理解为会回应环境、适应使用，也能承接情绪的空间。每个项目都是对空间、时间与体验的反复推敲，让系统的精确与材料的触感在同一个场所里成立。",
     ctaTitle: "把想法做成空间",
-    ctaText: "从展览、品牌空间到室内项目，我们会陪你把概念一步步推进到落地。",
+    ctaText: "从展览、品牌空间到制作统筹，我们会陪你把概念推进成真正能落地的空间。",
     getInTouch: "联系洽谈"
   },
   exhibition: {
@@ -105,6 +107,21 @@ export const zh = {
   services: {
     title: "服务内容",
     subtitle: "ZM Studio"
+  },
+  ai: {
+    title: "AI",
+    subtitle: "这是一个为 AI 辅助概念开发、图像迭代与工作流研究预留的页面。",
+    introTitle: "AI 作为工作室的方法层",
+    introText: "我们正在准备一个新的页面，用来呈现 AI 如何参与展览概念、视觉推演与协同流程。当前这一页先作为方向预留，后续会逐步补完整。",
+    focusTitle: "当前关注",
+    focus1Title: "概念研究",
+    focus1Text: "用 AI 更快测试方向、参考与叙事可能性，让前期判断更集中。",
+    focus2Title: "图像迭代",
+    focus2Text: "在保持设计判断的前提下，更高效地探索构图、氛围与渲染变化。",
+    focus3Title: "流程支持",
+    focus3Text: "把图像整理、汇报表达与制作沟通发展成更稳定的工作方法。",
+    ctaTitle: "如果你想尝试 AI 参与项目流程",
+    ctaText: "我们可以一起讨论，AI 应该在项目里参与到什么程度才真正有价值。"
   },
   news: {
     title: "动态"

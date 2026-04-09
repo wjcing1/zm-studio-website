@@ -7,351 +7,283 @@ const list = (en: string[], zh: string[], it: string[]) => ({ en, zh, it });
 export const EXHIBITION_PROJECTS: Project[] = [
   {
     id: "p1",
-    title: loc("Highfield Boat Show", "Highfield 游艇展", "Salone nautico Highfield"),
+    title: loc(
+      "International Boat Show",
+      "国际游艇展",
+      "International Boat Show"
+    ),
     year: 2025,
     location: loc("Dusseldorf, Germany", "杜塞尔多夫，德国", "Dusseldorf, Germania"),
     typology: "Exhibition",
     status: "Built",
     tags: list(
-      ["Boat Show", "Trade Fair", "Brand Experience"],
-      ["游艇展", "贸易展", "品牌体验"],
-      ["Salone nautico", "Fiera", "Esperienza di brand"]
+      ["Marine", "Boat Show", "Brand Experience"],
+      ["船艇", "游艇展", "品牌体验"],
+      ["Nautica", "Salone", "Esperienza di brand"]
     ),
     category: "exhibition",
     coverImage: "/images/exhibition/p1-cover.jpg",
     summary: loc(
-      "A premium exhibition booth for Highfield at Boot Dusseldorf 2025.",
-      "Highfield 在 2025 杜塞尔多夫游艇展上的品牌展台。",
-      "Uno stand premium progettato per Highfield a Boot Dusseldorf 2025."
+      "A warm, open exhibition booth for International Boat Show in Dusseldorf, organized around strong visibility and clear visitor flow.",
+      "为杜塞尔多夫国际游艇展打造的展台，以开放动线、清晰识别和温暖材料建立现场气质。",
+      "Uno stand aperto e riconoscibile per l'International Boat Show di Dusseldorf, costruito su visibilita immediata e flussi chiari."
     ),
     body: loc(
-      "This project was designed for Highfield at Boot Dusseldorf 2025, the world's largest indoor boat show. The booth presents multiple yacht models within an open and highly recognizable brand environment.\n\nA bold turquoise floor establishes an immediate connection to the sea, while suspended brand signage and focused lighting attract attention from long distances. The circulation allows visitors to move around each vessel freely and understand the product range step by step.\n\nThe overall composition balances spectacle and clarity. Product positioning, sightlines, and visitor movement were carefully coordinated so every boat could be experienced at its strongest angle.",
-      "Highfield 在 2025 年杜塞尔多夫国际游艇展上的展台，以开放的展陈结构容纳多艘船艇，同时让品牌识别与产品展示并行成立。\n\n蓝绿色地面把海洋意象直接带入展馆，悬挂标识与重点照明则把识别度拉到远距离也清晰可见。观众可以围绕每艘船自由穿行，在连贯动线中逐步理解产品序列。\n\n整个空间在视觉张力与信息清晰之间保持平衡。产品摆位、视线组织和参观路径都经过细致推敲，让每艘船都能以最合适的角度被看见。",
-      "Il progetto e stato sviluppato per Highfield in occasione di Boot Dusseldorf 2025. Lo stand accoglie piu modelli di yacht in un impianto aperto e leggibile, dove identita di brand e presenza del prodotto si rafforzano a vicenda.\n\nIl pavimento turchese costruisce un richiamo immediato al mare, mentre l'insegna sospesa e l'illuminazione mirata aumentano la riconoscibilita a distanza. Il percorso permette di girare attorno a ogni imbarcazione e di leggere la gamma in modo progressivo.\n\nL'insieme bilancia impatto scenico e chiarezza. Posizionamento dei prodotti, visuali e flussi sono coordinati con precisione, cosi che ogni barca possa essere percepita dal punto di vista piu efficace."
+      "This project frames the boat-show presentation through a calm but high-impact spatial language. Warm timber elements, suspended branding, and a broad central opening give the booth a premium presence without making it feel closed.\n\nThe plan is organized to support circulation around large products while keeping the brand legible from long distances. Visitors can read the booth in one glance, then move deeper into the display at an easy rhythm.\n\nRather than relying on spectacle alone, the design works through proportion, material balance, and clear sightlines. The result is a stand that feels confident, approachable, and easy to navigate.",
+      "这个项目以克制但有力度的空间语言来组织游艇展现场。温暖木质、清晰吊牌与开敞入口共同建立出更成熟的品牌形象，也让展台不会显得封闭。\n\n平面围绕大体量展品的观看与绕行来组织，同时保证远距离识别足够明确。观众可以先快速读懂整体，再自然进入更细的展示层次。\n\n它并不依赖单纯的视觉冲击，而是通过比例、材质平衡和视线组织来建立说服力。最终形成的是一个自信、友好、也便于停留的展台。",
+      "Il progetto costruisce la presenza del brand con un linguaggio misurato ma incisivo. Legno caldo, insegne sospese e una grande apertura frontale danno allo stand un'identita premium senza irrigidirlo.\n\nL'impianto accompagna la lettura di prodotti di grande scala mantenendo il brand leggibile gia da lontano. Il visitatore coglie subito il quadro generale e poi entra nello spazio con un ritmo naturale.\n\nIl risultato non dipende dall'effetto scenico puro, ma da proporzioni, materiali e visuali ben controllate. Ne nasce uno stand sicuro, accogliente e facile da attraversare."
     ),
-    gallery: ["/images/exhibition/p1-1.jpg", "/images/exhibition/p1-2.jpg", "/images/exhibition/p1-3.jpg"]
+    gallery: [
+      "/images/exhibition/p1-1.jpg",
+      "/images/exhibition/p1-2.jpg"
+    ]
   },
   {
     id: "p2",
-    title: loc("Mode Safety Exhibition", "Mode 安全设备展位", "Stand Mode Safety"),
-    year: 2025,
-    location: loc("Dusseldorf, Germany", "杜塞尔多夫，德国", "Dusseldorf, Germania"),
+    title: loc("The Elevator Show", "电梯展", "The Elevator Show"),
+    year: 2026,
+    location: loc("Dubai, UAE", "迪拜，阿联酋", "Dubai, Emirati Arabi Uniti"),
     typology: "Exhibition",
-    status: "Built",
+    status: "Concept",
     tags: list(
-      ["A+A", "Safety Equipment", "Industrial"],
-      ["A+A", "安全设备", "工业"],
-      ["A+A", "Sicurezza", "Industriale"]
+      ["Elevator", "Hospitality", "Trade Fair"],
+      ["电梯", "接待体验", "行业展会"],
+      ["Ascensori", "Ospitalita", "Fiera di settore"]
     ),
     category: "exhibition",
     coverImage: "/images/exhibition/p2-cover.jpg",
     summary: loc(
-      "A modern booth for Mode at the A+A international safety trade fair.",
-      "Mode 在 A+A 国际安全展上的品牌展台。",
-      "Uno stand contemporaneo per Mode alla fiera internazionale A+A."
+      "A hospitality-led concept for The Elevator Show in Dubai, combining product demonstration, reception, and meeting spaces.",
+      "为迪拜电梯展提出的概念方案，把产品展示、接待与洽谈收进同一套空间秩序里。",
+      "Un concept per The Elevator Show di Dubai che unisce dimostrazione prodotto, accoglienza e incontri commerciali."
     ),
     body: loc(
-      "This booth was designed for Mode at A+A 2025, the leading fair for safety, security, and occupational health. The design combines professional presentation with an approachable brand story.\n\nA black-and-white palette with metallic highlights creates a premium industrial identity. Display cases, wall graphics, and focused product zones communicate technical content without making the space feel cold.\n\nThe booth works as both a product platform and a meeting environment. It supports demonstrations, client conversations, and brand immersion within one unified spatial language.",
-      "展台为 Mode 参加 2025 年 A+A 展会而设计，在专业可靠的行业形象与更亲近的品牌表达之间找到平衡。\n\n黑白主调配合金属细节，形成明确而克制的工业气质。展示柜、墙面信息与清晰分区让技术内容被准确传达，同时避免空间显得生硬。\n\n它既是产品展示的平台，也是商务交流的场所。演示、洽谈与品牌体验被纳入同一套空间语言之中。",
-      "Lo stand e stato progettato per Mode in occasione di A+A 2025, la principale fiera dedicata a sicurezza, protezione e salute sul lavoro. Il progetto trova un equilibrio tra affidabilita professionale e un'espressione di brand piu accessibile.\n\nLa palette in bianco e nero, insieme ai dettagli metallici, definisce un'identita industriale chiara e controllata. Vetrine, grafiche a parete e zone prodotto ben leggibili permettono di trasmettere i contenuti tecnici senza irrigidire lo spazio.\n\nLo stand funziona sia come piattaforma espositiva sia come ambiente di incontro. All'interno di un unico linguaggio spaziale accoglie demo, conversazioni commerciali ed esperienza di brand."
+      "This concept approaches the elevator fair through a softer and more architectural expression. A curved front edge and a sequence of arches create a controlled frontage toward the aisle while giving the booth a memorable silhouette.\n\nInside, product panels, meeting areas, and reception moments are arranged as one continuous environment rather than separate zones. The space moves from first impression to technical explanation without losing its calm tone.\n\nThe overall language balances precision with hospitality. It is intended to feel credible for business conversations while still offering a distinct brand image in a crowded exhibition hall.",
+      "这个方案试图用更建筑化、也更柔和的方式来回应电梯行业展会。弧形界面与一系列拱形开口共同建立出面向主通道的识别，也让展台轮廓更容易被记住。\n\n内部把产品展示、接待与洽谈组织成一段连续空间，而不是彼此割裂的几个区域。观众可以从第一印象自然进入更具体的技术沟通。\n\n整体语言在准确与接待感之间保持平衡。它既适合商务交流，也能在密集的展馆环境中留下稳定而清晰的品牌印象。",
+      "Il concept affronta la fiera del settore ascensori con un'espressione piu architettonica e piu misurata. Una facciata curva e una sequenza di archi costruiscono una presenza chiara verso il corridoio e rendono lo stand riconoscibile.\n\nAll'interno, pannelli prodotto, zone meeting e momenti di accoglienza formano un unico ambiente continuo. Il visitatore passa dalla prima percezione alla spiegazione tecnica senza perdere il tono calmo del progetto.\n\nIl linguaggio complessivo bilancia precisione e ospitalita. Lo stand e pensato per sostenere un'immagine credibile nelle conversazioni business e allo stesso tempo distinguersi nel contesto fieristico."
     ),
-    gallery: ["/images/exhibition/p2-1.jpg", "/images/exhibition/p2-2.png", "/images/exhibition/p2-3.png"]
+    gallery: [
+      "/images/exhibition/p2-1.jpg",
+      "/images/exhibition/p2-2.jpg"
+    ]
   },
   {
     id: "p3",
-    title: loc("Topband Solar Exhibition", "拓邦光伏展位", "Stand Topband Solar"),
+    title: loc(
+      "International Exhibition for Hospitality Industry",
+      "酒店行业国际展",
+      "International Exhibition for Hospitality Industry"
+    ),
     year: 2025,
-    location: loc("Shanghai, China", "上海，中国", "Shanghai, Cina"),
+    location: loc("Moscow, Russia", "莫斯科，俄罗斯", "Mosca, Russia"),
     typology: "Exhibition",
     status: "Concept",
     tags: list(
-      ["Solar", "Energy", "Technology"],
-      ["光伏", "能源", "科技"],
-      ["Solare", "Energia", "Tecnologia"]
+      ["Hospitality", "Coffee Systems", "Trade Fair"],
+      ["酒店设备", "咖啡系统", "展会"],
+      ["Hospitality", "Coffee systems", "Fiera"]
     ),
     category: "exhibition",
-    coverImage: "/images/exhibition/p3-cover.png",
+    coverImage: "/images/exhibition/p3-cover.jpg",
     summary: loc(
-      "An exhibition concept for Topband focused on solar energy and smart technology.",
-      "为拓邦提出的展台概念，围绕光伏能源与智能技术展开。",
-      "Un concept espositivo per Topband dedicato a soluzioni fotovoltaiche e tecnologie intelligenti."
+      "A hospitality-industry booth shaped by warm materials, open product islands, and a more welcoming rhythm of circulation.",
+      "围绕温暖材质、开放展示岛和更友好动线展开的酒店行业展位方案。",
+      "Uno stand per il settore hospitality costruito con materiali caldi, isole prodotto aperte e un ritmo di visita piu accogliente."
     ),
     body: loc(
-      "This concept for Topband presents solar energy solutions through a bright and open spatial language. The booth is organized around clarity, technological optimism, and environmental responsibility.\n\nDifferent product categories are arranged in distinct yet connected zones, allowing visitors to understand the system as a whole. Green lighting accents and interactive displays reinforce the clean-energy message.\n\nSustainability informed the design from the beginning. Material choices, visual identity, and visitor flow all support a narrative of efficiency, intelligence, and future-oriented infrastructure.",
-      "这个方案以明亮、开放的空间语言呈现拓邦的光伏解决方案，整体气质围绕清晰表达、技术信心和环境责任展开。\n\n不同产品类别被组织成彼此独立又相互衔接的区域，让观众能够沿着明确路径理解完整系统。绿色灯光节点与互动展示进一步强化了清洁能源主题。\n\n可持续性并不是附加议题，而是方案本身的一部分。材料选择、视觉表达与参观动线共同服务于效率、智能与未来基础设施的叙事。",
-      "Il concept per Topband presenta le soluzioni fotovoltaiche del brand attraverso un linguaggio spaziale luminoso e aperto. L'atmosfera complessiva si costruisce attorno a chiarezza, fiducia tecnologica e responsabilita ambientale.\n\nLe diverse categorie di prodotto sono organizzate in aree distinte ma connesse, cosi che il visitatore possa comprendere il sistema nel suo insieme lungo un percorso continuo. Accenti luminosi verdi e contenuti interattivi rafforzano il racconto dell'energia pulita.\n\nLa sostenibilita orienta il progetto fin dalle prime scelte. Materiali, identita visiva e flussi di visita sostengono una narrazione fatta di efficienza, intelligenza e infrastrutture rivolte al futuro."
+      "This project takes cues from cafe and lounge environments rather than from a conventional technical fair booth. Timber frames, soft lighting, and open counters create a setting that feels closer to use than to abstract display.\n\nThe plan is broken into readable islands so visitors can understand equipment categories without losing the sense of an integrated brand environment. Product interaction, quick conversations, and longer meetings can happen within one continuous layout.\n\nThe space is designed to make hospitality products feel believable, not isolated. That makes the booth more approachable and helps clients imagine the products inside a real service setting.",
+      "这个项目更接近咖啡馆和接待空间的气质，而不是传统技术展位的表达。木构框架、柔和灯光与开放式柜台，让现场更像一个可被使用的环境，而不只是抽象陈列。\n\n平面被拆成清晰可读的几个展示岛，让不同设备类别可以被快速理解，同时整体品牌气氛仍然保持统一。产品体验、简短交流与较长时间的洽谈可以同时发生。\n\n空间希望让酒店设备显得可信、可被想象，而不是被当作孤立技术物件看待。这种处理让展位更容易接近，也更有助于客户代入真实使用场景。",
+      "Il progetto prende distanza dallo stand tecnico convenzionale e si avvicina piuttosto all'atmosfera di una lounge o di una caffetteria. Telai in legno, luce morbida e banchi aperti costruiscono un ambiente piu vicino all'uso reale che alla pura esposizione.\n\nL'impianto e diviso in isole leggibili, cosi che le diverse categorie di prodotto siano comprensibili senza perdere l'unita dell'ambiente di brand. Interazione, conversazioni rapide e incontri piu lunghi convivono nello stesso layout.\n\nL'obiettivo e far percepire i prodotti hospitality in un contesto credibile, non come oggetti tecnici isolati. Questo rende lo stand piu accessibile e aiuta il cliente a immaginare i prodotti in un servizio reale."
     ),
-    gallery: ["/images/exhibition/p3-1.png", "/images/exhibition/p3-2.png", "/images/exhibition/p3-3.png"]
+    gallery: [
+      "/images/exhibition/p3-1.jpg",
+      "/images/exhibition/p3-2.jpg"
+    ]
   },
   {
     id: "p4",
-    title: loc("Safety Workwear Booth", "安全工装展位", "Stand Safety Workwear"),
+    title: loc(
+      "Integrated Systems Europe",
+      "欧洲视听系统集成展",
+      "Integrated Systems Europe"
+    ),
     year: 2025,
-    location: loc("Dusseldorf, Germany", "杜塞尔多夫，德国", "Dusseldorf, Germania"),
+    location: loc("Barcelona, Spain", "巴塞罗那，西班牙", "Barcellona, Spagna"),
     typology: "Exhibition",
-    status: "Concept",
+    status: "Built",
     tags: list(
-      ["A+A", "Workwear", "Fashion"],
-      ["A+A", "工装", "时尚"],
-      ["A+A", "Abbigliamento da lavoro", "Moda"]
+      ["Technology", "Display", "Brand Booth"],
+      ["科技", "展示系统", "品牌展台"],
+      ["Tecnologia", "Display", "Stand di brand"]
     ),
     category: "exhibition",
-    coverImage: "/images/exhibition/p4-cover.png",
+    coverImage: "/images/exhibition/p4-cover.jpg",
     summary: loc(
-      "A contemporary concept for safety workwear and protective equipment.",
-      "面向安全工装与防护装备的展台方案。",
-      "Un concept contemporaneo per workwear tecnico e dispositivi di protezione."
+      "A dark-toned technology booth that uses contrast, lighting, and controlled openings to sharpen product presence.",
+      "以深色基调、灯光对比和受控开口来强化产品存在感的科技展台。",
+      "Uno stand dal tono scuro che usa contrasto, luce e aperture controllate per dare maggiore presenza al prodotto."
     ),
     body: loc(
-      "This concept blends the atmosphere of premium retail with the display logic of industrial safety products. The goal is to elevate workwear into a more aspirational and experience-driven environment.\n\nWarm wood tones, clean white surfaces, and mannequin compositions create an approachable mood that differs from typical industrial exhibitions. Products are shown as complete use scenarios rather than isolated items.\n\nThe structure combines openness and intimacy. It offers strong aisle visibility while still providing sheltered zones for meetings and detailed product conversations.",
-      "这个概念把精品零售的空间氛围与工业安全产品的展示逻辑放在一起，让工装不只停留在功能陈列层面，也更接近一种有体验感的品牌表达。\n\n温暖木色、干净的白色界面和模特陈列营造出更易接近的现场气质，也和传统工业展会拉开距离。产品不再被拆成孤立单品，而是在完整穿着场景中被理解。\n\n结构在开放与围合之间保持平衡。它既保证通道侧的可见性，也留出更安静的会谈区，方便展开更细的产品沟通。",
-      "Il concept unisce l'atmosfera del retail premium con la logica espositiva dei prodotti per la sicurezza industriale, trasformando il workwear da semplice esposizione funzionale a racconto di brand piu esperienziale.\n\nLegni caldi, superfici bianche pulite e composizioni con manichini costruiscono un ambiente piu accogliente, in netto contrasto con l'immaginario della fiera industriale tradizionale. I prodotti non sono mostrati come pezzi isolati, ma come scenari d'uso completi.\n\nLa struttura bilancia apertura e raccoglimento. Mantiene un'elevata visibilita dal corridoio e allo stesso tempo offre aree piu quiete per incontri e conversazioni di dettaglio."
+      "This booth is organized around a stronger contrast between enclosure and display. Dark surfaces define the outer figure, while illuminated product zones and counters pull attention toward the interior.\n\nThe layout keeps the footprint compact but legible. Open corners support entry from multiple directions, while the darker shell helps frame product demonstrations and conversation areas more precisely.\n\nThe result is a stand with a sharper and more technical character. It communicates clarity and control without becoming visually heavy.",
+      "这个展台围绕更鲜明的“外壳与展示”对比来组织。深色界面先建立出整体轮廓，发光的展示面与柜台则把注意力准确拉向内部。\n\n布局在相对紧凑的尺度里保持清晰。开放转角允许观众从不同方向进入，而较深的外层界面也让产品展示与交流区域被更准确地框定出来。\n\n最终形成的是一个更利落、也更偏技术感的展台。它传递的是清晰与控制，而不是沉重。",
+      "Lo stand e costruito su un contrasto piu netto tra involucro e display. Le superfici scure definiscono la figura esterna, mentre banchi illuminati e zone prodotto attirano l'attenzione verso l'interno.\n\nL'impianto mantiene una scala compatta ma leggibile. Gli angoli aperti favoriscono l'accesso da piu lati, mentre il guscio piu scuro aiuta a inquadrare con precisione demo e conversazioni.\n\nIl risultato e uno stand piu nitido e piu tecnico, capace di comunicare chiarezza e controllo senza risultare pesante."
     ),
-    gallery: ["/images/exhibition/p4-1.png", "/images/exhibition/p4-2.png", "/images/exhibition/p4-3.png"]
+    gallery: [
+      "/images/exhibition/p4-1.jpg",
+      "/images/exhibition/p4-2.jpg"
+    ]
   },
   {
     id: "p5",
-    title: loc("BKT Tires Exhibition", "BKT 轮胎展位", "Stand BKT Tires"),
+    title: loc("Automechanika", "法兰克福汽配展", "Automechanika"),
     year: 2025,
-    location: loc("Hanover, Germany", "汉诺威，德国", "Hannover, Germania"),
+    location: loc("Dubai, UAE", "迪拜，阿联酋", "Dubai, Emirati Arabi Uniti"),
     typology: "Exhibition",
     status: "Concept",
     tags: list(
-      ["Agricultural", "Tires", "Industrial"],
-      ["农业", "轮胎", "工业"],
-      ["Agricoltura", "Pneumatici", "Industriale"]
+      ["Automotive", "Tire Display", "Industrial"],
+      ["汽车", "轮胎展示", "工业"],
+      ["Automotive", "Pneumatici", "Industriale"]
     ),
     category: "exhibition",
-    coverImage: "/images/exhibition/p5-cover.png",
+    coverImage: "/images/exhibition/p5-cover.jpg",
     summary: loc(
-      "A bold concept for BKT showcasing agricultural and industrial tire solutions.",
-      "为 BKT 提出的高识别度展台概念，聚焦农业与工业轮胎。",
-      "Un concept espositivo ad alta riconoscibilita per BKT, dedicato ai pneumatici agricoli e industriali."
+      "A large-scale exhibition concept built around tire display, luminous framing, and a highly legible central gesture.",
+      "围绕轮胎展示、发光框景与强识别中心装置展开的大尺度展台概念。",
+      "Un concept di grande scala costruito attorno a pneumatici, cornici luminose e un gesto centrale molto leggibile."
     ),
     body: loc(
-      "This exhibition concept gives BKT a strong and memorable presence through oversized product gestures and the brand's signature green accent. The booth treats the tire itself as architecture.\n\nA large tire tunnel acts as both landmark and threshold, drawing visitors into the center of the booth. Around it, products are positioned to communicate the range and scale of the brand.\n\nDigital media and technical information are integrated without weakening the physical impact of the installation. The result is a space that is practical, recognizable, and highly photogenic.",
-      "这个概念通过超尺度的产品动作和 BKT 标志性的绿色视觉，为品牌建立出鲜明而直接的现场识别。轮胎本身被当作空间构成的一部分来使用。\n\n巨大的轮胎通道既是视觉地标，也是进入展位的门槛，把观众自然引向核心区域。围绕它展开的产品陈列进一步传达品牌的产品宽度与行业尺度。\n\n数字媒介和技术信息被纳入整体表达之中，但不会削弱装置本身的物理张力。最后形成的是一个兼具识别度、传播性与实用性的展览空间。",
-      "Il concept costruisce per BKT una presenza di forte impatto attraverso gesti di grande scala e il verde distintivo del brand. Il pneumatico viene assunto come vero e proprio elemento architettonico.\n\nIl grande tunnel circolare funziona al tempo stesso come landmark e soglia d'ingresso, attirando i visitatori verso il cuore dello stand. Intorno a questo segno centrale, la disposizione dei prodotti comunica ampiezza di gamma e scala del marchio.\n\nMedia digitali e contenuti tecnici sono integrati senza ridurre la forza fisica dell'installazione. Il risultato e uno spazio insieme riconoscibile, pratico e altamente comunicativo."
+      "This project uses the tire as both product and spatial device. A large circular gesture organizes the stand, giving it an immediate identity from the aisle and helping structure the visitor path.\n\nGreen lighting accents, suspended frames, and open meeting zones give the booth a strong industrial character while keeping the plan easy to read. The products can be understood at different distances, from broad visual impact to close inspection.\n\nThe concept aims for directness rather than excess. It is built to feel bold, efficient, and easy to move through, with the product always remaining at the center of the composition.",
+      "这个项目把轮胎同时当作产品与空间装置来处理。一个大尺度环形动作首先建立出对主通道的识别，也把整体参观路径组织得更明确。\n\n绿色灯光、悬挂框架和开放式会谈区共同塑造出鲜明的工业气质，同时仍然保持平面足够清晰。产品既可以在远距离被整体感知，也能在近距离被仔细观看。\n\n它追求的是直接而不是堆叠。整个概念希望展台显得有力度、高效、易于浏览，并始终把产品放在构图中心。",
+      "Il progetto tratta il pneumatico sia come prodotto sia come dispositivo spaziale. Un grande gesto circolare costruisce l'identita dello stand verso il corridoio e aiuta a organizzare il percorso di visita.\n\nAccenti verdi, cornici sospese e zone meeting aperte danno al booth un carattere industriale netto senza compromettere la leggibilita dell'impianto. I prodotti possono essere letti da lontano e approfonditi da vicino.\n\nL'obiettivo e la chiarezza piu che l'accumulo. Lo stand vuole apparire deciso, efficiente e facile da percorrere, con il prodotto sempre al centro della composizione."
     ),
-    gallery: ["/images/exhibition/p5-1.png", "/images/exhibition/p5-2.png", "/images/exhibition/p5-3.png"]
+    gallery: [
+      "/images/exhibition/p5-1.jpg",
+      "/images/exhibition/p5-2.jpg"
+    ]
   },
   {
     id: "p6",
-    title: loc("Jetinno Hotel Equipment", "Jetinno 酒店设备展位", "Stand Jetinno Hospitality"),
+    title: loc("MIDO", "MIDO 米兰展", "MIDO"),
     year: 2025,
-    location: loc("Shanghai, China", "上海，中国", "Shanghai, Cina"),
+    location: loc("Milan, Italy", "米兰，意大利", "Milano, Italia"),
+    typology: "Exhibition",
+    status: "Built",
+    tags: list(
+      ["Brand Booth", "Retail Display", "Trade Fair"],
+      ["品牌展台", "零售展示", "展会"],
+      ["Stand di brand", "Display", "Fiera"]
+    ),
+    category: "exhibition",
+    coverImage: "/images/exhibition/p6-cover.jpg",
+    summary: loc(
+      "A compact exhibition booth in Milan that balances clear product presentation, aisle visibility, and conversation space.",
+      "位于米兰展会现场的一处紧凑型展台，在产品展示、通道识别与交流空间之间保持平衡。",
+      "Uno stand compatto per Milano che bilancia presentazione del prodotto, visibilita dal corridoio e spazio per il dialogo."
+    ),
+    body: loc(
+      "This project is defined by a compact but efficient footprint. Display walls, counters, and open corners are arranged so the stand reads quickly from the aisle while still offering more controlled moments inside.\n\nThe composition avoids unnecessary visual weight. Instead, it relies on proportion, sharp framing, and careful product placement to create a professional and confident presence.\n\nWhat matters most here is usability. The booth supports both first contact and more focused discussion, making it well suited to a trade-fair context where time and attention are limited.",
+      "这个项目的重点是一种紧凑但高效的尺度控制。展示墙、柜台与开放转角被组织成一个能被快速读懂的界面，同时内部仍然保留更可控的交流层次。\n\n整体避免多余的视觉负担，而是通过比例、清晰框定和产品摆放来建立更专业、更稳定的形象。\n\n对这个展台来说，可用性比夸张表达更重要。它既适合建立第一印象，也适合展开更深入的交流，因此很适合节奏紧凑的行业展会。",
+      "Il progetto lavora su una scala compatta ma molto efficiente. Pareti espositive, banchi e angoli aperti sono disposti in modo da rendere lo stand leggibile subito dal corridoio, lasciando pero zone piu controllate all'interno.\n\nLa composizione evita peso superfluo e si affida invece a proporzioni, inquadrature nette e posizionamento accurato dei prodotti per costruire una presenza professionale.\n\nQui conta soprattutto l'usabilita. Lo stand sostiene sia il primo contatto sia conversazioni piu approfondite, risultando adatto a un contesto fieristico in cui tempo e attenzione sono limitati."
+    ),
+    gallery: [
+      "/images/exhibition/p6-1.jpg",
+      "/images/exhibition/p6-2.jpg"
+    ]
+  },
+  {
+    id: "p7",
+    title: loc("A+A", "A+A 安全工业展", "A+A"),
+    year: 2025,
+    location: loc("Dusseldorf, Germany", "杜塞尔多夫，德国", "Dusseldorf, Germania"),
+    typology: "Exhibition",
+    status: "Built",
+    tags: list(
+      ["Safety", "Industrial", "Brand Presence"],
+      ["安全行业", "工业", "品牌识别"],
+      ["Sicurezza", "Industriale", "Presenza di brand"]
+    ),
+    category: "exhibition",
+    coverImage: "/images/exhibition/p7-cover.jpg",
+    summary: loc(
+      "An exhibition stand at A+A that uses vertical framing, contrast, and clean zoning to stand out in a dense industrial fair context.",
+      "位于 A+A 展会现场的展台，通过垂直构架、强对比与清晰分区，在密集的工业展馆里建立识别。",
+      "Uno stand per A+A che usa verticalita, contrasto e zonizzazione chiara per emergere in un contesto fieristico denso."
+    ),
+    body: loc(
+      "This project is built around vertical emphasis and a stronger graphic identity. The stand presents itself clearly from the aisle and uses layered thresholds to move from open display into more focused interaction.\n\nDifferent zones are kept legible without becoming isolated. Product display, reception, and conversation areas are linked through one continuous language of framing, signage, and material contrast.\n\nThe design aims to be efficient in a crowded hall. It gives the brand enough visual force to be noticed while still supporting practical movement and business exchange.",
+      "这个项目围绕更明显的垂直构架与图形识别来展开。展台首先在主通道上建立清晰形象，再通过层层递进的界面，把开放展示自然带向更集中的交流区域。\n\n不同区域之间保持可读，但不会彼此割裂。展示、接待与洽谈通过统一的框架、标识与材料对比被串联起来。\n\n它希望在拥挤展馆里保持效率。品牌需要足够醒目，但现场动线与商务沟通也同样重要。",
+      "Il progetto lavora su una forte verticalita e su un'identita grafica piu decisa. Lo stand si presenta in modo chiaro verso il corridoio e usa soglie successive per accompagnare il passaggio dall'esposizione aperta all'interazione piu mirata.\n\nLe diverse zone restano leggibili senza diventare autonome. Display, accoglienza e incontro sono legati da un linguaggio continuo fatto di cornici, segnaletica e contrasti materici.\n\nL'obiettivo e l'efficienza dentro un padiglione affollato: abbastanza forza visiva per emergere, ma anche un uso pratico dello spazio per muoversi e parlare."
+    ),
+    gallery: [
+      "/images/exhibition/p7-1.jpg",
+      "/images/exhibition/p7-2.jpg",
+      "/images/exhibition/p7-3.jpg"
+    ]
+  },
+  {
+    id: "p8",
+    title: loc("Lift Expo", "电梯博览会", "Lift Expo"),
+    year: 2025,
+    location: loc("Kazakhstan", "哈萨克斯坦", "Kazakistan"),
     typology: "Exhibition",
     status: "Concept",
     tags: list(
-      ["Hospitality", "Coffee", "Equipment"],
-      ["酒店", "咖啡", "设备"],
-      ["Ospitalita", "Caffe", "Attrezzature"]
+      ["Elevator", "Trade Fair", "Spatial Identity"],
+      ["电梯", "行业展会", "空间识别"],
+      ["Ascensori", "Fiera", "Identita spaziale"]
     ),
     category: "exhibition",
-    coverImage: "/images/exhibition/p6-cover.png",
+    coverImage: "/images/exhibition/p8-cover.jpg",
     summary: loc(
-      "A warm exhibition concept for hospitality equipment and coffee systems.",
-      "围绕酒店设备与咖啡系统展开的温暖型展台概念。",
-      "Un concept accogliente dedicato ad attrezzature hospitality e sistemi coffee."
+      "A lift-industry exhibition concept that combines a soft architectural shell with direct brand visibility.",
+      "为电梯行业展会提出的概念方案，以柔和的建筑外壳和直接的品牌识别共同构成空间。",
+      "Un concept per il settore ascensori che combina un involucro architettonico morbido con una visibilita di brand immediata."
     ),
     body: loc(
-      "This concept for Jetinno creates a welcoming atmosphere closer to a cafe than a conventional trade fair booth. The intention is to let visitors experience hospitality equipment in a believable setting.\n\nWarm wood, greenery, and soft lighting build a relaxed environment that supports product demonstrations and casual conversation. Lifestyle scenes help potential buyers imagine how each machine might live in a real interior.\n\nThe layout encourages exploration and interaction. Rather than treating equipment as isolated technical objects, the project presents them as part of a complete service experience.",
-      "这个方案为 Jetinno 营造出比传统展位更接近咖啡馆的氛围，让观众能在更可信的场景里理解酒店设备与咖啡系统。\n\n温暖木色、绿植与柔和灯光共同构成放松而友好的环境，既适合产品演示，也适合轻松交流。带有生活方式线索的场景帮助潜在客户想象设备进入真实空间后的使用状态。\n\n整体布局鼓励停留、探索与互动。设备不再只是孤立的技术物件，而被放回完整服务体验的一部分。",
-      "Il concept per Jetinno costruisce un'atmosfera piu vicina a una caffetteria che a uno stand fieristico tradizionale, cosi da far leggere le attrezzature hospitality all'interno di un contesto credibile.\n\nLegni caldi, verde e luci morbide definiscono un ambiente rilassato e accogliente, adatto sia alla dimostrazione del prodotto sia a conversazioni informali. Le scene di lifestyle aiutano il cliente a immaginare le macchine inserite in spazi reali.\n\nIl layout invita a sostare, esplorare e interagire. Le attrezzature non sono trattate come oggetti tecnici isolati, ma come parte di un'esperienza di servizio completa."
+      "This concept uses a rounded envelope and a more architectural frontage to give the stand a calm but recognizable image. Instead of relying on fragmented display, it organizes the booth as one coherent figure in the hall.\n\nThe interior supports product viewing, quick explanation, and business conversation within a compact footprint. Curved edges help soften the technical character of the category without reducing clarity.\n\nThe result is a stand that feels composed and contemporary. It offers a stronger identity while remaining practical for trade-fair use.",
+      "这个概念通过圆润外壳和更建筑化的正面界面，让展台在展馆里形成一种安静但明确的识别。它不是把展示拆得很碎，而是把整个展位作为一个完整体量来处理。\n\n内部在紧凑尺度里同时容纳产品观看、简要讲解与商务交流。弧形边界减弱了品类本身过强的技术感，同时并没有牺牲清晰度。\n\n最终形成的是一个更完整、也更当代的展台形象。它既有更强的品牌个性，也适合展会现场的实际使用。",
+      "Il concept utilizza un involucro arrotondato e una facciata piu architettonica per dare allo stand un'immagine calma ma riconoscibile. Invece di frammentare l'esposizione, il progetto tratta il booth come una figura coerente nel padiglione.\n\nAll'interno trovano posto visione del prodotto, spiegazione rapida e conversazione commerciale in una scala compatta. I bordi curvi attenuano il carattere tecnico della categoria senza perdere chiarezza.\n\nNe risulta uno stand piu composto e contemporaneo, capace di dare identita al brand restando pratico per l'uso fieristico."
     ),
-    gallery: ["/images/exhibition/p6-1.png", "/images/exhibition/p6-2.png", "/images/exhibition/p6-3.png"]
+    gallery: [
+      "/images/exhibition/p8-1.jpg",
+      "/images/exhibition/p8-2.jpg"
+    ]
+  },
+  {
+    id: "p9",
+    title: loc("Vitafoods Europe", "欧洲营养健康展", "Vitafoods Europe"),
+    year: 2025,
+    location: loc("Europe", "欧洲", "Europa"),
+    typology: "Exhibition",
+    status: "Concept",
+    tags: list(
+      ["Health", "Ingredients", "Trade Fair"],
+      ["营养健康", "配料", "展会"],
+      ["Salute", "Ingredienti", "Fiera"]
+    ),
+    category: "exhibition",
+    coverImage: "/images/exhibition/p9-cover.jpg",
+    summary: loc(
+      "A bright green-and-white booth concept for Vitafoods Europe, designed to feel open, clean, and easy to approach.",
+      "为 Vitafoods Europe 设计的白绿展位概念，以开放、清洁、易于接近的现场氛围为重点。",
+      "Un concept in bianco e verde per Vitafoods Europe, pensato per apparire aperto, pulito e immediato."
+    ),
+    body: loc(
+      "This stand is organized around visual openness and direct communication. A white-and-green palette gives the project an immediate identity while keeping the atmosphere bright and accessible.\n\nGraphics, shelving, and meeting points are integrated into one clear framework so information and product categories can be understood quickly. The plan leaves enough breathing room for conversations without losing display density.\n\nThe design aims to feel credible and friendly at the same time. It supports brand visibility, product storytelling, and practical use within one consistent spatial language.",
+      "这个展台围绕视觉开敞和直接沟通来组织。白绿主调先建立出鲜明识别，同时也让整体氛围保持明亮、干净和容易接近。\n\n图形、货架与会谈点被整合进一套清晰框架里，让信息和产品类别都能被快速理解。平面在保证展示密度的同时，也留出了足够的交流余量。\n\n它希望同时具备可信度和亲和力，在统一的空间语言中兼顾品牌识别、产品叙事与现场使用。",
+      "Lo stand e costruito attorno a apertura visiva e comunicazione diretta. La palette bianca e verde definisce un'identita immediata mantenendo l'atmosfera luminosa e accessibile.\n\nGrafiche, scaffalature e punti incontro sono integrati in una struttura chiara, cosi che informazioni e categorie di prodotto siano comprensibili rapidamente. Il layout lascia spazio alle conversazioni senza perdere intensita espositiva.\n\nL'obiettivo e un equilibrio tra credibilita e prossimita. Il progetto sostiene visibilita di brand, racconto del prodotto e uso pratico dentro un unico linguaggio spaziale."
+    ),
+    gallery: [
+      "/images/exhibition/p9-1.jpg",
+      "/images/exhibition/p9-2.jpg"
+    ]
   }
 ];
 
-export const INTERIOR_PROJECTS: Project[] = [
-  {
-    id: "i1",
-    title: loc("Xingguo Road Residence", "兴国路住宅", "Residenza su Xingguo Road"),
-    year: 2023,
-    location: loc("Shanghai, China", "上海，中国", "Shanghai, Cina"),
-    typology: "Interior",
-    status: "Built",
-    tags: list(
-      ["Interior", "Residential", "Minimal"],
-      ["室内", "住宅", "极简"],
-      ["Interni", "Residenziale", "Minimal"]
-    ),
-    category: "interior",
-    coverImage: "/images/projects/i1-cover.jpg",
-    summary: loc(
-      "A refined private residence on historic Xingguo Road.",
-      "兴国路的一处私宅改造。",
-      "Una residenza privata raffinata nella storica Xingguo Road."
-    ),
-    body: loc(
-      "This residence combines warm neutrals, marble surfaces, and carefully curated natural elements. The project seeks a balance between contemporary minimalism and a timeless domestic calm.\n\nNatural stone, warm oak, and tactile fabrics shape a palette that feels elegant without becoming fragile. The rooms are connected through long sightlines and a restrained use of material contrast.\n\nCustom joinery integrates storage and display so that daily life remains orderly while personal objects still contribute to the atmosphere of the home.",
-      "这处住宅以暖中性色、大理石和经过筛选的自然元素为基础，在当代极简与长期居住的安定感之间取得平衡。\n\n天然石材、暖色橡木与有触感的织物共同建立出细腻的材料层次，既显得精致，也不过分脆弱。空间之间通过连续的视线和克制的材质对比保持统一。\n\n定制木作把储物与展示整合在一起，让日常保持有序，也让屋主的个人物件继续参与家的氛围。",
-      "Questa residenza costruisce il proprio equilibrio attraverso neutri caldi, superfici in marmo ed elementi naturali selezionati con cura, cercando una sintesi tra minimalismo contemporaneo e calma domestica senza tempo.\n\nPietra naturale, rovere caldo e tessuti tattili definiscono una materia elegante ma mai fragile. Gli ambienti si tengono insieme grazie a visuali continue e a un uso misurato dei contrasti materici.\n\nLa falegnameria su misura integra contenimento ed esposizione, mantenendo ordinata la vita quotidiana e lasciando agli oggetti personali un ruolo attivo nell'atmosfera della casa."
-    ),
-    gallery: ["/images/projects/i1-1.jpg", "/images/projects/i1-2.jpg", "/images/projects/i1-3.jpg"]
-  },
-  {
-    id: "i2",
-    title: loc("Shanghaiwan Residence", "上海湾住宅", "Residenza Shanghaiwan"),
-    year: 2024,
-    location: loc("Shanghai, China", "上海，中国", "Shanghai, Cina"),
-    typology: "Interior",
-    status: "Built",
-    tags: list(
-      ["Interior", "Living", "Contemporary"],
-      ["室内", "居住", "当代"],
-      ["Interni", "Living", "Contemporaneo"]
-    ),
-    category: "interior",
-    coverImage: "/images/projects/i2-cover.jpg",
-    summary: loc(
-      "A contemporary residence overlooking Shanghai Bay.",
-      "一处面向湾景的当代住宅。",
-      "Una residenza contemporanea affacciata sulla baia di Shanghai."
-    ),
-    body: loc(
-      "This project frames panoramic views, natural light, and layered textures into a calm contemporary living space. The bay remains a constant visual backdrop to daily life.\n\nThe interior composition is organized around sightlines and openness. Low furniture, reflective surfaces, and restrained colors allow the changing sky and water to become part of the room.\n\nPublic and private areas are zoned to support different rhythms of use, creating a home that feels open, composed, and deeply connected to its setting.",
-      "项目把全景视野、自然采光与层次丰富的材料组织进一个安静的当代居住空间，让湾景始终成为日常的一部分。\n\n室内构成围绕视线与开敞感展开。低矮家具、反射表面和克制色彩让天空与水面的变化自然进入空间。\n\n公共与私密区域被清楚分开，以回应不同的生活节奏，也让这座住宅始终与场地保持联系。",
-      "Il progetto organizza viste panoramiche, luce naturale e materiali stratificati in uno spazio domestico contemporaneo e calmo, dove la baia resta una presenza costante nella vita quotidiana.\n\nLa composizione interna si costruisce attorno a visuali e senso di apertura. Arredi bassi, superfici riflettenti e colori misurati permettono a cielo e acqua di entrare nell'esperienza dello spazio.\n\nLe aree pubbliche e private sono chiaramente distinte per assecondare ritmi diversi dell'abitare, dando forma a una casa aperta, composta e profondamente legata al luogo."
-    ),
-    gallery: ["/images/projects/i2-1.jpg", "/images/projects/i2-2.jpg", "/images/projects/i2-3.jpg"]
-  },
-  {
-    id: "i3",
-    title: loc("Xiangyang South Road Private House", "襄阳南路私宅", "Casa privata in Xiangyang South Road"),
-    year: 2024,
-    location: loc("Shanghai, China", "上海，中国", "Shanghai, Cina"),
-    typology: "Interior",
-    status: "Built",
-    tags: list(
-      ["Interior", "Heritage", "Modern"],
-      ["室内", "历史建筑", "现代"],
-      ["Interni", "Patrimonio", "Moderno"]
-    ),
-    category: "interior",
-    coverImage: "/images/projects/i3-cover.jpg",
-    summary: loc(
-      "A historic lane house transformed into a contemporary home.",
-      "里弄住宅更新后的当代居所。",
-      "Una casa storica di lilong trasformata in abitazione contemporanea."
-    ),
-    body: loc(
-      "This renovation preserves the character of a historic lane house while introducing contemporary comfort and updated systems. Existing structure and new intervention are meant to remain in dialogue.\n\nOriginal timber beams and masonry are retained as visible elements, while new insertions are kept restrained and precise. A skylight transforms the central circulation into a brighter and more generous core.\n\nThe project argues that preservation and innovation can support each other. The house remains recognizably historic while meeting the demands of current living.",
-      "这次改造在保留里弄住宅原有气质的同时，引入当代生活所需的舒适度与更新系统，让旧结构与新介入保持可见的关系。\n\n原有木梁和砌体被保留为重要的空间线索，新加入的部分则尽量克制、准确。一处天窗把原本偏暗的中心交通空间转化成更明亮也更开敞的核心。\n\n这个项目证明，保护和更新并不冲突。住宅在回应当代生活需求的同时，仍保有清晰的历史身份。",
-      "La ristrutturazione conserva il carattere della storica casa di lilong introducendo il comfort e gli impianti richiesti dall'abitare contemporaneo, cosi che struttura esistente e nuovi inserimenti restino in dialogo.\n\nTravi in legno e murature originali sono mantenute come elementi visibili, mentre le nuove aggiunte si presentano con misura e precisione. Un lucernario trasforma il nucleo distributivo centrale, prima piu buio, in un cuore piu luminoso e aperto.\n\nIl progetto dimostra che conservazione e aggiornamento possono sostenersi a vicenda. La casa risponde alle esigenze dell'abitare attuale senza perdere la propria identita storica."
-    ),
-    gallery: ["/images/projects/i3-1.jpg", "/images/projects/i3-2.jpg", "/images/projects/i3-3.jpg"]
-  },
-  {
-    id: "i4",
-    title: loc("Cangjia Mansion Showroom I", "藏家公馆样板间 I", "Showroom Cangjia Mansion I"),
-    year: 2024,
-    location: loc("Shanghai, China", "上海，中国", "Shanghai, Cina"),
-    typology: "Interior",
-    status: "Built",
-    tags: list(
-      ["Interior", "Showroom", "Luxury"],
-      ["室内", "样板间", "高端"],
-      ["Interni", "Showroom", "Luxury"]
-    ),
-    category: "interior",
-    coverImage: "/images/projects/i4-cover.jpg",
-    summary: loc(
-      "A premium showroom for a luxury residential development.",
-      "为高端住宅项目打造的样板空间。",
-      "Uno showroom premium per un progetto residenziale di fascia alta."
-    ),
-    body: loc(
-      "This model apartment showcases refined material coordination, bespoke furniture, and an elevated domestic atmosphere aimed at high-end buyers.\n\nThe showroom balances aspiration with realism. Standard finishes are elevated through careful curation, while lighting and layout help visitors imagine themselves inside the future residence.\n\nThe circulation is choreographed to reveal each room with compositional control, turning the visit into a carefully staged spatial sequence.",
-      "这套样板间通过细致的材料搭配、定制家具和完整的氛围控制，向潜在买家呈现更具说服力的生活方式与品质感。\n\n空间在理想气质与真实交付之间保持平衡。标准交付内容经过重新梳理，灯光与布局则帮助参观者更自然地代入未来的居住场景。\n\n参观路径经过有意识的编排，让每个房间都以更合适的节奏展开，形成一段层层推进的空间序列。",
-      "Questo appartamento campione presenta un coordinamento materico raffinato, arredi su misura e un'atmosfera domestica controllata, pensata per un pubblico residenziale di fascia alta.\n\nLo showroom trova un equilibrio tra aspirazione e concretezza. Le finiture standard vengono valorizzate dal progetto, mentre luce e layout aiutano il visitatore a immaginarsi nella futura abitazione.\n\nIl percorso di visita e orchestrato per aprire ogni ambiente con precisione compositiva, trasformando la visita in una sequenza spaziale progressiva."
-    ),
-    gallery: ["/images/projects/i4-1.jpg", "/images/projects/i4-2.jpg", "/images/projects/i4-3.jpg"]
-  },
-  {
-    id: "i5",
-    title: loc("Cangjia Mansion Showroom II", "藏家公馆样板间 II", "Showroom Cangjia Mansion II"),
-    year: 2025,
-    location: loc("Shanghai, China", "上海，中国", "Shanghai, Cina"),
-    typology: "Interior",
-    status: "Built",
-    tags: list(
-      ["Interior", "Showroom", "Contemporary"],
-      ["室内", "样板间", "当代"],
-      ["Interni", "Showroom", "Contemporaneo"]
-    ),
-    category: "interior",
-    coverImage: "/images/projects/i5-cover.jpg",
-    summary: loc(
-      "A contemporary showroom shaped by warm earth tones.",
-      "以暖土地色为基调的当代样板空间。",
-      "Uno showroom contemporaneo costruito su toni terrosi e caldi."
-    ),
-    body: loc(
-      "This model unit explores a calmer and warmer interpretation of contemporary luxury. Layered plasters, textiles, and natural-toned furniture create depth without visual noise.\n\nMateriality plays a central role. Surfaces are designed to reward close attention, while furniture selections emphasize craftsmanship and long-term value.\n\nThe narrative of the showroom is one of retreat. It offers a sense of shelter from urban intensity through proportion, texture, and a muted palette.",
-      "这套样板间提供了一种更安静、更温暖的当代高端住宅表达。层次化灰泥、织物与自然色家具营造出有深度却不过分喧闹的室内氛围。\n\n材料是空间的主线。表面处理鼓励近距离感知，家具选择则强调工艺品质和更长久的使用价值。\n\n整个空间围绕“退居其中”的感受展开，通过比例、触感与低饱和色彩回应城市生活的强度。",
-      "Questa unita campione propone una lettura piu quieta e piu calda del lusso contemporaneo. Intonaci stratificati, tessuti e arredi nei toni naturali costruiscono profondita senza produrre rumore visivo.\n\nLa materia e il filo conduttore del progetto. Le superfici invitano a un'osservazione ravvicinata, mentre gli arredi mettono in evidenza artigianalita e valore nel tempo.\n\nL'intero showroom e costruito attorno all'idea di rifugio. Proporzioni, texture e palette attenuata rispondono all'intensita della vita urbana con una sensazione di protezione."
-    ),
-    gallery: ["/images/projects/i5-1.jpg", "/images/projects/i5-2.jpg", "/images/projects/i5-3.jpg"]
-  },
-  {
-    id: "i6",
-    title: loc("Cangjia Mansion Showroom III", "藏家公馆样板间 III", "Showroom Cangjia Mansion III"),
-    year: 2025,
-    location: loc("Shanghai, China", "上海，中国", "Shanghai, Cina"),
-    typology: "Interior",
-    status: "Built",
-    tags: list(
-      ["Interior", "Showroom", "Minimal"],
-      ["室内", "样板间", "极简"],
-      ["Interni", "Showroom", "Minimal"]
-    ),
-    category: "interior",
-    coverImage: "/images/projects/i6-cover.jpg",
-    summary: loc(
-      "A light-filled showroom centered on spatial calm.",
-      "一套围绕采光与空间秩序展开的样板间。",
-      "Uno showroom luminoso costruito attorno alla calma dello spazio."
-    ),
-    body: loc(
-      "This project uses natural light as the main design material. Pale finishes, reflective surfaces, and careful detailing make the apartment feel open and bright throughout the day.\n\nThe furniture strategy is deliberately restrained so the architecture can remain primary. A limited palette supports an atmosphere that is minimal but not cold.\n\nThe result is a showroom that communicates generosity through emptiness, continuity, and measured control rather than excess decoration.",
-      "这个项目把自然光当作最重要的设计材料。浅色饰面、反射表面与克制细部，让样板间在一天不同时间都保持明亮和开阔。\n\n家具策略被有意压低存在感，让空间本身成为主角。有限的材料和色彩建立出极简却不冷漠的气质。\n\n最终呈现的是一个依靠留白、连续性与尺度控制传达从容感的样板空间，而不是靠过度装饰来制造效果。",
-      "Il progetto assume la luce naturale come principale materiale di lavoro. Finiture chiare, superfici riflettenti e dettagli misurati mantengono l'appartamento aperto e luminoso nell'arco della giornata.\n\nLa strategia d'arredo e volutamente discreta, cosi che sia l'architettura a restare protagonista. Una palette ridotta costruisce un'atmosfera minimale ma non fredda.\n\nNe deriva uno showroom che comunica generosita attraverso vuoto, continuita e controllo della scala, piu che tramite un eccesso di decorazione."
-    ),
-    gallery: ["/images/projects/i6-1.jpg", "/images/projects/i6-2.jpg", "/images/projects/i6-3.jpg"]
-  },
-  {
-    id: "i7",
-    title: loc("Cangjia Mansion Showroom IV", "藏家公馆样板间 IV", "Showroom Cangjia Mansion IV"),
-    year: 2025,
-    location: loc("Shanghai, China", "上海，中国", "Shanghai, Cina"),
-    typology: "Interior",
-    status: "Built",
-    tags: list(
-      ["Interior", "Showroom", "Elegant"],
-      ["室内", "样板间", "优雅"],
-      ["Interni", "Showroom", "Elegante"]
-    ),
-    category: "interior",
-    coverImage: "/images/projects/i7-cover.jpg",
-    summary: loc(
-      "An elegant showroom with a rich and tactile material palette.",
-      "一套以材料层次取胜的优雅样板空间。",
-      "Uno showroom elegante con una palette materica ricca e tattile."
-    ),
-    body: loc(
-      "This model apartment is conceived for buyers who value finish quality, detail, and material richness. Stone, metal, and custom millwork are treated as a continuous luxury language.\n\nRare materials and hand-finished elements are used with restraint so that richness feels composed rather than excessive. Hidden lighting and seamless joints reinforce the sense of refinement.\n\nThe visitor experience unfolds as a sequence of discoveries, where each room reveals new textures and details while maintaining an overall atmosphere of calm elegance.",
-      "这套样板间面向重视完成度、细节与材料价值的购房者。石材、金属和定制木作共同构成连续而克制的高端表达。\n\n珍贵材料与手工细节被谨慎使用，让丰富感呈现为有分寸的优雅，而不是简单堆叠。隐藏灯光与精细收口进一步强化了整体完成度。\n\n参观动线像一次逐步展开的发现过程。每个房间都带出新的质感与细节，同时维持整体的安静与优雅。",
-      "Questo appartamento campione e pensato per acquirenti che attribuiscono valore a qualita esecutiva, dettaglio e ricchezza materica. Pietra, metallo e falegnameria su misura costruiscono un linguaggio continuo e misurato.\n\nMateriali preziosi e dettagli rifiniti a mano sono impiegati con controllo, cosi che la ricchezza appaia come eleganza composta e non come accumulo. Illuminazione nascosta e giunti accurati rafforzano ulteriormente il senso di precisione.\n\nL'esperienza di visita si sviluppa come una sequenza di scoperte progressive. Ogni ambiente introduce nuove texture e nuovi dettagli, mantenendo pero un'atmosfera complessiva di calma ed eleganza."
-    ),
-    gallery: ["/images/projects/i7-1.jpg", "/images/projects/i7-2.jpg", "/images/projects/i7-3.jpg"]
-  }
-];
-
-export const PROJECTS: Project[] = [...EXHIBITION_PROJECTS, ...INTERIOR_PROJECTS];
+export const PROJECTS: Project[] = EXHIBITION_PROJECTS;
 
 export const FEATURED_EXHIBITION = EXHIBITION_PROJECTS.filter((p) => ["p1", "p2"].includes(p.id));
-export const FEATURED_INTERIOR = INTERIOR_PROJECTS.filter((p) => ["i1", "i2", "i4"].includes(p.id));
 
 export interface HomeSection {
   type: "image" | "text";
@@ -367,7 +299,11 @@ export const HOME_SECTIONS: HomeSection[] = [
   {
     type: "image",
     title: loc("ZM Studio", "ZM Studio", "ZM Studio"),
-    subtitle: loc("Exhibition & Interior Design", "展览与室内设计", "Design espositivo e d'interni"),
+    subtitle: loc(
+      "Exhibition Design & Brand Spaces",
+      "展览设计与品牌空间",
+      "Design espositivo e spazi di brand"
+    ),
     align: "left",
     url: "/images/home/hero1.jpg"
   },
@@ -375,63 +311,64 @@ export const HOME_SECTIONS: HomeSection[] = [
     type: "text",
     heading: loc("Design Philosophy", "设计理念", "Filosofia del progetto"),
     text: loc(
-      "We believe architecture is not static. It moves, adapts, and connects to emotion. Each project is a deep exploration of space, time, and human experience.",
-      "我们不把建筑看成静止的对象。它会回应环境、适应使用，也会与人的情绪发生关系。每个项目都是对空间、时间与体验的持续推敲。",
-      "Per noi l'architettura non e un fatto statico: reagisce, si adatta e costruisce un legame emotivo. Ogni progetto e una ricerca continua su spazio, tempo ed esperienza."
+      "We believe strong exhibition design comes from clarity, rhythm, and material honesty. Each project is shaped to be both memorable and buildable.",
+      "我们相信，好的展览空间来自清晰的判断、准确的节奏和真实的材料。每个项目都需要同时具备识别度与可落地性。",
+      "Per noi un buon progetto espositivo nasce da chiarezza, ritmo e sincerita dei materiali. Ogni lavoro deve essere insieme memorabile e costruibile."
     )
   },
   {
     type: "image",
-    title: loc("Highfield Boat Show", "Highfield 游艇展", "Salone nautico Highfield"),
-    subtitle: loc("Boot Dusseldorf 2025", "2025 杜塞尔多夫游艇展", "Boot Dusseldorf 2025"),
+    title: loc(
+      "International Boat Show",
+      "国际游艇展",
+      "International Boat Show"
+    ),
+    subtitle: loc("Dusseldorf 2025", "杜塞尔多夫 2025", "Dusseldorf 2025"),
     align: "right",
-    url: "/images/home/hero-exhibition1.jpg"
+    url: "/images/home/hero2.jpg"
   },
   {
     type: "text",
     heading: loc("Exhibition Design", "展览设计", "Design espositivo"),
     text: loc(
-      "From concept to construction drawings to on-site coordination. We create light, fast, and reusable systems that let temporary spaces tell memorable stories.",
-      "从概念、施工图到现场统筹，我们以轻量、高效、可复用的系统，让临时空间也能留下清晰而持久的品牌记忆。",
-      "Dal concept espositivo allo sviluppo esecutivo fino al coordinamento in cantiere, sviluppiamo sistemi leggeri, rapidi e riutilizzabili capaci di dare forma a spazi temporanei memorabili."
+      "From concept framing to detailed drawings and on-site coordination, we build exhibition systems that stay clear under real production pressure.",
+      "从概念框架到深化图纸，再到现场统筹，我们关心的不只是效果，也包括方案在真实制作条件下是否依然清晰成立。",
+      "Dal concept allo sviluppo esecutivo fino al coordinamento in cantiere, costruiamo sistemi espositivi che restano chiari anche sotto la pressione della realizzazione."
     )
   },
   {
     type: "image",
-    title: loc("BKT Tires Exhibition", "BKT 轮胎展位", "Stand BKT Tires"),
-    subtitle: loc("Agricultural Trade Fair", "农业行业展会", "Fiera agricola"),
+    title: loc("The Elevator Show", "电梯展", "The Elevator Show"),
+    subtitle: loc("Dubai 2026", "迪拜 2026", "Dubai 2026"),
     align: "left",
-    url: "/images/home/hero-exhibition2.png"
+    url: "/images/home/hero3.jpg"
   },
   {
     type: "image",
-    title: loc("Interior Design", "室内设计", "Design d'interni"),
-    subtitle: loc("Creating harmonious living spaces", "营造克制、耐看的居住空间", "Spazi da abitare armoniosi e durevoli"),
+    title: loc("AI Workflows", "AI 工作流", "Workflow AI"),
+    subtitle: loc(
+      "Visual development and workflow research",
+      "用于视觉推演与流程研究",
+      "Ricerca su sviluppo visivo e workflow"
+    ),
     align: "right",
-    url: "/images/home/hero3.jpg"
+    url: "/images/home/hero4.jpg"
   },
   {
     type: "text",
     heading: loc("Practice", "实践方式", "Metodo"),
     text: loc(
-      "We work like editors: choose one strong idea, then remove everything that weakens it. Materials stay honest, and details guide the body through space.",
-      "我们的工作方式更像编辑：先找到最有力量的那个概念，再删去所有削弱它的部分。材料保持真实，细节则引导身体和视线穿过空间。",
-      "Lavoriamo come editor: individuiamo un'idea forte e togliamo tutto cio che la indebolisce. I materiali restano sinceri, mentre i dettagli guidano il corpo nello spazio."
+      "We prefer one strong spatial idea over unnecessary complexity. Materials, graphics, and circulation should work together rather than compete for attention.",
+      "我们更相信一个足够有力的空间动作，而不是过度堆叠。材料、图形与动线应该彼此协同，而不是互相争夺注意力。",
+      "Preferiamo un'idea spaziale forte alla complessita gratuita. Materiali, grafica e flussi devono lavorare insieme, non competere tra loro."
     )
   },
   {
     type: "image",
-    title: loc("Topband Solar Exhibition", "拓邦光伏展位", "Stand Topband Solar"),
-    subtitle: loc("Clean Energy Trade Fair", "清洁能源展会", "Fiera dell'energia pulita"),
+    title: loc("Vitafoods Europe", "欧洲营养健康展", "Vitafoods Europe"),
+    subtitle: loc("Open, bright, product-led", "开放、明亮、以产品为中心", "Aperto, luminoso, centrato sul prodotto"),
     align: "left",
-    url: "/images/home/hero-exhibition3.png"
-  },
-  {
-    type: "image",
-    title: loc("Crafted Spaces", "精心雕琢的空间", "Spazi su misura"),
-    subtitle: loc("Where function meets aesthetics", "让功能与美感自然并行", "Dove funzione ed estetica trovano equilibrio"),
-    align: "right",
-    url: "/images/home/hero4.jpg"
+    url: "/images/home/hero5.jpg"
   }
 ];
 
@@ -442,6 +379,7 @@ export interface Founder {
   education: LocalizedText;
   specialty: LocalizedText;
   photo: string;
+  photoPosition?: string;
 }
 
 export const MILAN_TEAM: Founder[] = [
@@ -480,83 +418,44 @@ export const MILAN_TEAM: Founder[] = [
       "Collega strategia di brand ed espressione spaziale attraverso marketing del progetto e narrazione visiva."
     ),
     photo: "/images/about/jiachen.png"
-  }
-];
-
-export const SHANGHAI_TEAM: Founder[] = [
+  },
   {
-    name: "Jian Liu",
-    nameCN: "刘健",
-    role: loc("Shanghai Studio Director", "上海工作室负责人", "Responsabile dello studio di Shanghai"),
+    name: "Rafshaan Shaik",
+    nameCN: "Rafshaan Shaik",
+    role: loc("Partner", "合伙人", "Socio"),
     education: loc("Architectural Design", "建筑设计", "Progettazione architettonica"),
     specialty: loc(
-      "Oversees operations in the Shanghai studio and leads the team on residential and commercial interiors.",
-      "负责上海工作室运营，并带领团队推进住宅与商业室内项目。",
-      "Coordina le attivita dello studio di Shanghai e guida il team sui progetti residenziali e commerciali."
+      "Supports concept development, visual communication, and coordination across project phases.",
+      "负责方案推进、视觉表达与各阶段设计协调。",
+      "Supporta lo sviluppo del concept, la comunicazione visiva e il coordinamento delle diverse fasi di progetto."
     ),
-    photo: "/images/about/shanghai2.png"
-  },
-  {
-    name: "Luna",
-    nameCN: "Luna",
-    role: loc("Designer", "设计师", "Designer"),
-    education: loc("Interior Design", "室内设计", "Design d'interni"),
-    specialty: loc(
-      "Focuses on spatial planning, material selection, and bringing concepts into detailed execution.",
-      "专注空间规划、材料选择，以及把概念推进到细部执行。",
-      "Si occupa di pianificazione dello spazio, selezione dei materiali e sviluppo del concept fino al dettaglio esecutivo."
-    ),
-    photo: "/images/about/shanghai3.png"
-  },
-  {
-    name: "Jerry",
-    nameCN: "Jerry",
-    role: loc("Designer", "设计师", "Designer"),
-    education: loc("Interior Design", "室内设计", "Design d'interni"),
-    specialty: loc(
-      "Specializes in 3D visualization, technical drawing, and coordination with contractors.",
-      "擅长三维呈现、施工图表达，以及与施工方的现场协同。",
-      "Specializzato in visualizzazione 3D, disegno esecutivo e coordinamento con le imprese."
-    ),
-    photo: "/images/about/shanghai4.png"
-  },
-  {
-    name: "May",
-    nameCN: "May",
-    role: loc("Designer", "设计师", "Designer"),
-    education: loc("Interior Design", "室内设计", "Design d'interni"),
-    specialty: loc(
-      "Passionate about spatial narratives developed through furniture, lighting, and soft furnishing choices.",
-      "擅长通过家具、灯光与软装的组合塑造空间叙事。",
-      "Lavora sulla narrazione dello spazio attraverso arredi, illuminazione e soft decoration."
-    ),
-    photo: "/images/about/shanghai5.png"
+    photo: "/images/about/rafshaan-shaik-cropped.jpg"
   }
 ];
 
 export const ABOUT_STUDIO_PARAGRAPHS: LocalizedText[] = [
   loc(
-    "ZM Studio was founded by three graduates of Politecnico di Milano's School of Architecture. Based in Milan, the studio focuses on exhibition design, brand narrative spaces, and art installations.",
-    "ZM Studio 由三位毕业于米兰理工大学建筑学院的合伙人共同创立，立足米兰，主要从事展览设计、品牌叙事空间与艺术装置。",
-    "ZM Studio e stato fondato da tre professionisti formati alla Scuola di Architettura del Politecnico di Milano. Con base a Milano, lo studio lavora su design espositivo, spazi narrativi per i brand e installazioni artistiche."
+    "ZM Studio was founded by designers trained at Politecnico di Milano. Based in Milan, the studio focuses on exhibition design, brand-space narratives, and spatial concepts that can move efficiently from idea to implementation.",
+    "ZM Studio 由毕业于米兰理工大学的设计合伙人共同创立，立足米兰，主要从事展览设计、品牌叙事空间，以及能够高效推进到落地的空间方案。",
+    "ZM Studio e stato fondato da professionisti formati al Politecnico di Milano. Con base a Milano, lo studio lavora su design espositivo, narrazioni spaziali per i brand e concept capaci di arrivare in modo efficiente alla realizzazione."
   ),
   loc(
-    "We care deeply about spatial experience and material detail. By understanding brand identity and storytelling, we translate abstract concepts into spaces with tactile and emotional presence.",
-    "我们重视空间体验，也重视材料和细部带来的真实感。通过理解品牌身份与叙事逻辑，我们把抽象概念转化为可感、可停留、也可被记住的空间。",
-    "Dedichiamo grande attenzione all'esperienza dello spazio e al dettaglio materico. A partire dall'identita del brand e dalla sua narrazione, trasformiamo concetti astratti in luoghi tangibili, emotivi e memorabili."
+    "We care about how a booth is read in motion: from the first view across the aisle to the smaller moments of product explanation, meeting, and pause. Visual identity, material choices, and circulation are developed together.",
+    "我们关心展台在真实移动中的被阅读方式: 从通道上的第一眼识别，到更细的产品讲解、洽谈与停留。视觉识别、材料选择与动线会被放在一起推进。",
+    "Ci interessa come uno stand viene letto nel movimento reale: dal primo colpo d'occhio dal corridoio ai momenti piu ravvicinati di spiegazione prodotto, incontro e sosta. Identita visiva, materiali e circolazione vengono sviluppati insieme."
   ),
   loc(
-    "The studio maintains long-term partnerships with manufacturing and processing facilities in Italy, Poland, and Germany, enabling a fast transition from sketches to implementation across Europe.",
-    "工作室与意大利、波兰和德国的制作伙伴保持长期合作，使项目能够在欧洲范围内从草图快速推进到落地。",
-    "Lo studio collabora stabilmente con partner produttivi in Italia, Polonia e Germania, permettendo ai progetti di passare rapidamente dallo schizzo alla realizzazione in Europa."
+    "The studio works with long-term production and installation partners across Europe, allowing concepts, drawings, and execution to stay closely aligned through the whole process.",
+    "工作室与欧洲多地的制作和安装伙伴保持长期协作，让概念、图纸与执行在整个过程中始终紧密对应。",
+    "Lo studio collabora stabilmente con partner di produzione e installazione in Europa, cosi che concept, disegni ed esecuzione restino allineati lungo tutto il processo."
   )
 ];
 
 export const ABOUT_KEYWORDS: LocalizedText[] = [
+  loc("Exhibition Strategy", "展览策略", "Strategia espositiva"),
   loc("Spatial Storytelling", "空间叙事", "Narrazione spaziale"),
-  loc("Material Experimentation", "材料实验", "Sperimentazione materica"),
-  loc("On-site Implementation", "现场统筹", "Realizzazione in cantiere"),
-  loc("International Supply Chain", "国际供应链", "Filiera internazionale")
+  loc("Production Coordination", "制作统筹", "Coordinamento produttivo"),
+  loc("International Delivery", "国际落地", "Realizzazione internazionale")
 ];
 
 export interface AboutServiceCard {

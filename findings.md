@@ -135,3 +135,47 @@
 - The updated news titles now read more like published studio updates: `快闪展亭方案入围`, `Runway Curve Campus 方案发布`, and `分享会：微型疗愈空间`.
 - The Highfield project-detail summary and first paragraph now read more directly in the hero-and-body layout, with less of the original explanatory tone.
 - The Xiangyang South Road project-detail summary and closing paragraph now feel more native in Chinese, especially after removing the `项目想说明的是` construction.
+
+## Follow-up: New Site Clone Refresh
+
+### New Requirements
+- Keep the existing website structure as the base for a new site.
+- Replace all current site images with images from the `项目图` folder.
+- Remove the Interior section from the new site.
+- Remove the Shanghai Studio introduction from the About page.
+- Reserve space for a future AI page without fully building its final content yet.
+- Continue working inside the current copied workspace instead of creating a separate project folder.
+
+### Codebase Findings
+- The site is a Vite + React app with route definitions in `src/config/routes.tsx` and major content/data in `src/config/data.ts`.
+- Interior content is wired through multiple surfaces: routes, header/footer navigation, homepage featured section, the dedicated interior page, detail-page data, type labels, and translation dictionaries.
+- The About page renders separate `SHANGHAI_TEAM` and `MILAN_TEAM` sections, so removing the Shanghai Studio introduction requires both data and page-level edits.
+- The folder is already a Git repository on branch `master`, currently ahead of `origin/master` by 6 commits and containing uncommitted changes.
+
+### Asset Findings
+- `项目图` currently contains around two dozen render images with non-portrait project visuals.
+- The current site expects images across homepage hero slots, exhibition/project covers and galleries, About hero/team areas, and a few other branded surfaces.
+- Because the available replacement assets are project renders rather than team portraits, the About-page team image treatment needs an explicit decision before implementation.
+
+### Open Question
+- Should About-page team cards be kept as image cards using reused project renders, or should the team image area be removed/neutralized while keeping the section structure?
+
+### Approved Direction
+- Keep the Milan team portraits unchanged.
+- Remove the Shanghai Studio section entirely.
+- Remove Interior from navigation, routes, homepage surfacing, and data definitions.
+- Add an AI placeholder page and show it in the main navigation.
+- Use `ZM portfolio.pdf` plus the `项目图` folder as the authoritative local asset-mapping source for the new exhibition portfolio.
+
+### Implementation Findings
+- The original site structure could be preserved by replacing the Interior route with an AI route, removing the homepage Interior feature block, and keeping the rest of the navigation and page shell intact.
+- The About page was cleanly simplified by deleting the Shanghai team block while retaining the Milan team cards and portraits.
+- The exhibition data model was flexible enough to collapse the portfolio into nine exhibition projects without changing list/detail page structure.
+- The image set in `项目图` maps well to exhibition and homepage imagery, but not to team portrait usage, confirming the decision to keep Milan portraits unchanged.
+
+### Verification Findings
+- `npm run build` completed successfully after the refresh.
+- Playwright checks on `/`, `/about`, `/exhibition`, `/exhibition/p7`, `/exhibition/p9`, and `/ai` showed the new navigation, new image set, removed Shanghai section, and AI placeholder rendering correctly.
+- Mobile checks confirmed the hamburger menu shows `AI` and no longer shows `Interior`.
+- The mobile navigation accessibility warning from Radix was resolved by adding a dialog description.
+- The remaining console warning is the existing React Router v7 future-flag warning in development mode.

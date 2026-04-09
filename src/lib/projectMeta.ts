@@ -21,8 +21,6 @@ export function getTypologyLabel(typology: string, t: Translations): string {
   switch (typology) {
     case "Exhibition":
       return t.filters.exhibition;
-    case "Interior":
-      return t.filters.interior;
     case "Installation":
       return t.filters.installation;
     case "Research":

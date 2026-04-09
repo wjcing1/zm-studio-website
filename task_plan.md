@@ -100,3 +100,34 @@ Phase 5
 - Verify that project lists and project detail pages both switch content language.
 - Keep English copy as the source-of-truth reference for meaning and facts.
 - Focus this pass on `src/i18n/zh.ts`, `src/i18n/it.ts`, and localized copy in `src/config/data.ts`.
+
+### Phase 10: Site Clone Refresh for New Portfolio
+- [x] Confirm this workspace copy should be reused instead of creating a separate folder
+- [x] Inspect current routes, data sources, and image folders
+- [x] Confirm how to handle image-only source material on About page team slots
+- [x] Present design options for removing Interior, removing Shanghai Studio, reserving AI page, and replacing all images
+- [x] Document approved design and implementation plan
+- [x] Implement content, routing, and asset changes
+- [x] Verify build and key page rendering
+- **Status:** complete
+
+## Additional Key Questions
+5. Should this happen in the current copied workspace? Yes.
+6. Should all existing images be replaced? Yes, using files from `项目图`.
+7. How should About-page team image slots behave when only project renders are available? Keep the Milan team portraits unchanged and remove the Shanghai team entirely.
+
+## Additional Decisions Made
+| Decision | Rationale |
+|----------|-----------|
+| Continue in the current copied workspace | User confirmed this directory is the working copy for the new site |
+| Treat the existing Git repository as the project repository | The folder is already a Git repo with history and uncommitted changes |
+| Preserve the overall site structure while changing content and image assets | Matches the user's requirement to keep the structure unchanged |
+| Remove Interior across routes and navigation | The new site should focus on exhibition work only |
+| Remove the Shanghai Studio section but keep Milan team portraits | User explicitly wanted only the Shanghai team removed |
+| Add an AI placeholder page to navigation | Reserves space for future AI-focused content without changing the overall structure |
+| Rebuild Exhibition project data around the PDF-mapped `项目图` assets | Keeps the current structure while aligning the new portfolio to the replacement image set |
+
+## Additional Notes
+- Current repo state is dirty, so implementation must avoid overwriting unrelated user changes.
+- `项目图` currently contains project renderings rather than portrait photography, so team portraits were not replaced.
+- `ZM portfolio.pdf` was used as the local project-mapping reference after Google Drive access was blocked by an expired OAuth token in the available CLI setup.

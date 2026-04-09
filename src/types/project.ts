@@ -2,7 +2,7 @@
 
 import type { LocalizedText, LocalizedTextList } from "@/lib/i18n";
 
-export type ProjectCategory = "exhibition" | "interior";
+export type ProjectCategory = "exhibition";
 
 export interface Project {
   id: string;
@@ -20,6 +20,6 @@ export interface Project {
   gallery: (string | number)[];
 }
 
-export type Typology = "All" | "Installation" | "Research" | "Interior" | "Masterplan" | "Exhibition";
+export type Typology = "All" | "Installation" | "Research" | "Masterplan" | "Exhibition";
 
 export type Status = "Any" | "Built" | "Prototype" | "Concept" | "Competition";

@@ -3,6 +3,7 @@ export const it = {
     home: "Home",
     about: "Chi siamo",
     exhibition: "Allestimenti",
+    ai: "AI",
     interior: "Interni",
     services: "Servizi",
     news: "Aggiornamenti",
@@ -10,6 +11,7 @@ export const it = {
     startProject: "Avvia la collaborazione",
     navigation: "Navigazione",
     openMenu: "Apri menu",
+    menuDescription: "Sfoglia le sezioni principali del sito di ZM Studio.",
     language: "Lingua"
   },
   footer: {
@@ -57,7 +59,7 @@ export const it = {
     designPhilosophy: "Filosofia del progetto",
     designPhilosophyText: "Per noi l'architettura non e un fatto statico: reagisce, si adatta e costruisce un legame emotivo. Ogni progetto e una ricerca continua su spazio, tempo ed esperienza, dove precisione parametrica e cultura del dettaglio si incontrano.",
     ctaTitle: "Diamo forma al progetto",
-    ctaText: "Che si tratti di uno spazio espositivo o di un interno da abitare, accompagniamo ogni idea fino alla sua realizzazione.",
+    ctaText: "Dagli allestimenti agli spazi di brand fino al coordinamento produttivo, accompagniamo ogni idea verso una realizzazione solida e credibile.",
     getInTouch: "Contattaci"
   },
   exhibition: {
@@ -105,6 +107,21 @@ export const it = {
   services: {
     title: "Servizi",
     subtitle: "ZM Studio"
+  },
+  ai: {
+    title: "AI",
+    subtitle: "Una pagina segnaposto dedicata a ricerca, sviluppo concettuale e flussi di lavoro supportati dall'AI.",
+    introTitle: "L'AI come livello operativo dello studio",
+    introText: "Stiamo preparando una nuova pagina su come l'AI puo supportare concept espositivi, iterazione visiva e coordinamento dei processi. Per ora questa sezione segna la direzione del lavoro che verra sviluppato.",
+    focusTitle: "Focus attuale",
+    focus1Title: "Ricerca concettuale",
+    focus1Text: "Usare strumenti AI per testare riferimenti, direzioni e ipotesi narrative nelle prime fasi del progetto.",
+    focus2Title: "Iterazione visiva",
+    focus2Text: "Esplorare piu rapidamente varianti di atmosfera, layout e immagine mantenendo il controllo progettuale.",
+    focus3Title: "Supporto al workflow",
+    focus3Text: "Costruire metodi ripetibili per preparazione immagini, presentazioni e comunicazione con la produzione.",
+    ctaTitle: "Vuoi capire se l'AI puo entrare nel progetto?",
+    ctaText: "Possiamo valutare insieme il livello di integrazione piu utile e piu credibile per il tuo processo."
   },
   news: {
     title: "Aggiornamenti"

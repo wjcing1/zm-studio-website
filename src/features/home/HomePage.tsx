@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { fadeUp } from "@/config/animation";
-import { HOME_SECTIONS, FEATURED_EXHIBITION, FEATURED_INTERIOR } from "@/config/data";
+import { HOME_SECTIONS, FEATURED_EXHIBITION } from "@/config/data";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getLocalizedText } from "@/lib/i18n";
@@ -172,49 +172,6 @@ export default function HomePage() {
                   </div>
                   <div className="mt-4">
                     <h3 className="text-xl font-semibold tracking-tight text-neutral-900 group-hover:text-neutral-600 transition-colors">{getLocalizedText(p.title, language)}</h3>
-                    <p className="text-sm text-neutral-500 mt-1">{getLocalizedText(p.location, language)} • {p.year}</p>
-                  </div>
-                </button>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Interior Featured Section */}
-      <section className="bg-white py-20 md:py-28 border-t border-neutral-100">
-        <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-          <motion.div {...fadeUp} className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
-            <div>
-              <p className="text-sm text-neutral-500 tracking-widest uppercase mb-2">{t.common.featuredWork}</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900">{t.interior.title}</h2>
-            </div>
-            <Button
-              variant="outline"
-              className="self-start md:self-auto"
-              onClick={() => navigate("/interior")}
-            >
-              {t.common.viewAll} <ArrowRight className="ml-2 size-4" />
-            </Button>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {FEATURED_INTERIOR.map((p) => (
-              <motion.div key={p.id} {...fadeUp}>
-                <button
-                  onClick={() => navigate(`/interior/${p.id}`)}
-                  className="block w-full text-left group"
-                >
-                  <div className="relative overflow-hidden aspect-[4/3]">
-                    <img
-                      src={p.coverImage}
-                      alt={getLocalizedText(p.title, language)}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500" />
-                  </div>
-                  <div className="mt-4">
-                    <h3 className="text-lg font-semibold tracking-tight group-hover:text-neutral-600 transition-colors">{getLocalizedText(p.title, language)}</h3>
                     <p className="text-sm text-neutral-500 mt-1">{getLocalizedText(p.location, language)} • {p.year}</p>
                   </div>
                 </button>

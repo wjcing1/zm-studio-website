@@ -194,3 +194,86 @@
 | Chinese News rendered check | Headless Chrome DOM on `/news` | Updated Chinese news titles and summaries appear in rendered output | Verified | ✓ |
 | Chinese Exhibition detail rendered check | Headless Chrome DOM on `/exhibition/p1` | Updated hero summary and body copy appear in rendered output | Verified | ✓ |
 | Chinese Interior detail rendered check | Headless Chrome DOM on `/interior/i3` | Updated hero summary and body copy appear in rendered output | Verified | ✓ |
+
+## Session: 2026-04-09 New Site Clone Refresh
+
+### Phase 10: Discovery & Design
+- **Status:** complete
+- Actions taken:
+  - Confirmed the current workspace copy should be reused for the new site.
+  - Inspected routes, page components, data sources, and image folders to map the impact of removing Interior and Shanghai Studio content.
+  - Confirmed the user wants all site images replaced using assets from `项目图`.
+  - Logged that the folder is already a Git repository with existing history and local uncommitted changes.
+  - Reviewed `ZM portfolio.pdf` and matched the local `项目图` assets to the new exhibition project set.
+  - Kept the Milan team portraits unchanged and removed the Shanghai Studio section per the user's decision.
+  - Removed Interior from routes, navigation, homepage surfacing, and shared project metadata.
+  - Added an AI placeholder page and exposed it in desktop and mobile navigation.
+  - Rebuilt the exhibition portfolio data around the replacement image set and updated homepage/about imagery.
+  - Ran `npm run build` successfully after implementation.
+  - Verified the updated pages in Playwright on desktop and mobile, including `/`, `/about`, `/exhibition`, `/exhibition/p7`, `/exhibition/p9`, and `/ai`.
+  - Fixed the mobile sheet accessibility warning by adding a dialog description and updated the site title to remove the old Architecture wording.
+- Files created/modified:
+  - `task_plan.md`
+  - `findings.md`
+  - `progress.md`
+  - `docs/plans/2026-04-09-portfolio-refresh-design.md`
+  - `docs/plans/2026-04-09-portfolio-refresh-implementation.md`
+  - `index.html`
+  - `src/components/layout/Footer.tsx`
+  - `src/components/layout/Header.tsx`
+  - `src/components/ui/PageLoader.tsx`
+  - `src/components/ui/sheet.tsx`
+  - `src/config/constants.ts`
+  - `src/config/data.ts`
+  - `src/config/routes.tsx`
+  - `src/features/about/AboutPage.tsx`
+  - `src/features/ai/AiPage.tsx`
+  - `src/features/home/HomePage.tsx`
+  - `src/features/projects/ProjectDetailPage.tsx`
+  - `src/i18n/en.ts`
+  - `src/i18n/it.ts`
+  - `src/i18n/zh.ts`
+  - `src/lib/projectMeta.ts`
+  - `src/types/project.ts`
+  - `public/images/home/hero1.jpg`
+  - `public/images/home/hero2.jpg`
+  - `public/images/home/hero3.jpg`
+  - `public/images/home/hero4.jpg`
+  - `public/images/home/hero5.jpg`
+  - `public/images/about/hero.jpg`
+  - `public/images/exhibition/p1-cover.jpg`
+  - `public/images/exhibition/p1-1.jpg`
+  - `public/images/exhibition/p1-2.jpg`
+  - `public/images/exhibition/p2-cover.jpg`
+  - `public/images/exhibition/p2-1.jpg`
+  - `public/images/exhibition/p2-2.jpg`
+  - `public/images/exhibition/p3-cover.jpg`
+  - `public/images/exhibition/p3-1.jpg`
+  - `public/images/exhibition/p3-2.jpg`
+  - `public/images/exhibition/p4-cover.jpg`
+  - `public/images/exhibition/p4-1.jpg`
+  - `public/images/exhibition/p4-2.jpg`
+  - `public/images/exhibition/p5-cover.jpg`
+  - `public/images/exhibition/p5-1.jpg`
+  - `public/images/exhibition/p5-2.jpg`
+  - `public/images/exhibition/p6-cover.jpg`
+  - `public/images/exhibition/p6-1.jpg`
+  - `public/images/exhibition/p6-2.jpg`
+  - `public/images/exhibition/p7-cover.jpg`
+  - `public/images/exhibition/p7-1.jpg`
+  - `public/images/exhibition/p7-2.jpg`
+  - `public/images/exhibition/p7-3.jpg`
+  - `public/images/exhibition/p8-cover.jpg`
+  - `public/images/exhibition/p8-1.jpg`
+  - `public/images/exhibition/p8-2.jpg`
+  - `public/images/exhibition/p9-cover.jpg`
+  - `public/images/exhibition/p9-1.jpg`
+  - `public/images/exhibition/p9-2.jpg`
+
+## Additional Test Results
+| Test | Input | Expected | Actual | Status |
+|------|-------|----------|--------|--------|
+| Production build after portfolio refresh | `npm run build` | Build succeeds after removing Interior, adding AI, and remapping assets | Build succeeded | ✓ |
+| Desktop homepage / about / exhibition / AI review | Playwright screenshots on `/`, `/about`, `/exhibition`, `/ai` | New nav and replacement imagery render correctly; Shanghai section removed | Verified | ✓ |
+| Desktop project detail review | Playwright screenshots on `/exhibition/p7` and `/exhibition/p9` | New project hero images and gallery content render correctly | Verified | ✓ |
+| Mobile navigation review | Playwright screenshot on `/` at 390x844 with menu open | Mobile menu shows AI and no Interior; dialog warning removed | Verified | ✓ |

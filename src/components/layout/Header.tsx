@@ -3,7 +3,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Header() {
@@ -15,7 +15,7 @@ export default function Header() {
     { path: "/", label: t.nav.home, key: "" },
     { path: "/about", label: t.nav.about, key: "about" },
     { path: "/exhibition", label: t.nav.exhibition, key: "exhibition" },
-    { path: "/interior", label: t.nav.interior, key: "interior" },
+    { path: "/ai", label: t.nav.ai, key: "ai" },
     { path: "/services", label: t.nav.services, key: "services" },
     { path: "/news", label: t.nav.news, key: "news" },
     { path: "/contact", label: t.nav.contact, key: "contact" }
@@ -40,6 +40,9 @@ export default function Header() {
             <SheetContent side="left" className="w-80">
               <SheetHeader>
                 <SheetTitle>{t.nav.navigation}</SheetTitle>
+                <SheetDescription className="sr-only">
+                  {t.nav.menuDescription}
+                </SheetDescription>
               </SheetHeader>
               <nav className="mt-6 grid gap-2">
                 {navItems.map(({ path, label }) => (
