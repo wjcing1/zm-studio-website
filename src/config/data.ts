@@ -1,4 +1,5 @@
 import type { Project } from "@/types";
+import { withBasePath } from "@/lib/assets";
 import type { LocalizedText } from "@/lib/i18n";
 
 const loc = (en: string, zh: string, it: string) => ({ en, zh, it });
@@ -22,7 +23,7 @@ export const EXHIBITION_PROJECTS: Project[] = [
       ["Nautica", "Salone", "Esperienza di brand"]
     ),
     category: "exhibition",
-    coverImage: "/images/exhibition/p1-cover.jpg",
+    coverImage: withBasePath("/images/exhibition/p1-cover.jpg"),
     summary: loc(
       "A warm, open exhibition booth for International Boat Show in Dusseldorf, organized around strong visibility and clear visitor flow.",
       "为杜塞尔多夫国际游艇展打造的展台，以开放动线、清晰识别和温暖材料建立现场气质。",
@@ -34,8 +35,8 @@ export const EXHIBITION_PROJECTS: Project[] = [
       "Il progetto costruisce la presenza del brand con un linguaggio misurato ma incisivo. Legno caldo, insegne sospese e una grande apertura frontale danno allo stand un'identita premium senza irrigidirlo.\n\nL'impianto accompagna la lettura di prodotti di grande scala mantenendo il brand leggibile gia da lontano. Il visitatore coglie subito il quadro generale e poi entra nello spazio con un ritmo naturale.\n\nIl risultato non dipende dall'effetto scenico puro, ma da proporzioni, materiali e visuali ben controllate. Ne nasce uno stand sicuro, accogliente e facile da attraversare."
     ),
     gallery: [
-      "/images/exhibition/p1-1.jpg",
-      "/images/exhibition/p1-2.jpg"
+      withBasePath("/images/exhibition/p1-1.jpg"),
+      withBasePath("/images/exhibition/p1-2.jpg")
     ]
   },
   {
@@ -51,7 +52,7 @@ export const EXHIBITION_PROJECTS: Project[] = [
       ["Ascensori", "Ospitalita", "Fiera di settore"]
     ),
     category: "exhibition",
-    coverImage: "/images/exhibition/p2-cover.jpg",
+    coverImage: withBasePath("/images/exhibition/p2-cover.jpg"),
     summary: loc(
       "A hospitality-led concept for The Elevator Show in Dubai, combining product demonstration, reception, and meeting spaces.",
       "为迪拜电梯展提出的概念方案，把产品展示、接待与洽谈收进同一套空间秩序里。",
@@ -63,8 +64,8 @@ export const EXHIBITION_PROJECTS: Project[] = [
       "Il concept affronta la fiera del settore ascensori con un'espressione piu architettonica e piu misurata. Una facciata curva e una sequenza di archi costruiscono una presenza chiara verso il corridoio e rendono lo stand riconoscibile.\n\nAll'interno, pannelli prodotto, zone meeting e momenti di accoglienza formano un unico ambiente continuo. Il visitatore passa dalla prima percezione alla spiegazione tecnica senza perdere il tono calmo del progetto.\n\nIl linguaggio complessivo bilancia precisione e ospitalita. Lo stand e pensato per sostenere un'immagine credibile nelle conversazioni business e allo stesso tempo distinguersi nel contesto fieristico."
     ),
     gallery: [
-      "/images/exhibition/p2-1.jpg",
-      "/images/exhibition/p2-2.jpg"
+      withBasePath("/images/exhibition/p2-1.jpg"),
+      withBasePath("/images/exhibition/p2-2.jpg")
     ]
   },
   {
@@ -84,7 +85,7 @@ export const EXHIBITION_PROJECTS: Project[] = [
       ["Hospitality", "Coffee systems", "Fiera"]
     ),
     category: "exhibition",
-    coverImage: "/images/exhibition/p3-cover.jpg",
+    coverImage: withBasePath("/images/exhibition/p3-cover.jpg"),
     summary: loc(
       "A hospitality-industry booth shaped by warm materials, open product islands, and a more welcoming rhythm of circulation.",
       "围绕温暖材质、开放展示岛和更友好动线展开的酒店行业展位方案。",
@@ -96,8 +97,8 @@ export const EXHIBITION_PROJECTS: Project[] = [
       "Il progetto prende distanza dallo stand tecnico convenzionale e si avvicina piuttosto all'atmosfera di una lounge o di una caffetteria. Telai in legno, luce morbida e banchi aperti costruiscono un ambiente piu vicino all'uso reale che alla pura esposizione.\n\nL'impianto e diviso in isole leggibili, cosi che le diverse categorie di prodotto siano comprensibili senza perdere l'unita dell'ambiente di brand. Interazione, conversazioni rapide e incontri piu lunghi convivono nello stesso layout.\n\nL'obiettivo e far percepire i prodotti hospitality in un contesto credibile, non come oggetti tecnici isolati. Questo rende lo stand piu accessibile e aiuta il cliente a immaginare i prodotti in un servizio reale."
     ),
     gallery: [
-      "/images/exhibition/p3-1.jpg",
-      "/images/exhibition/p3-2.jpg"
+      withBasePath("/images/exhibition/p3-1.jpg"),
+      withBasePath("/images/exhibition/p3-2.jpg")
     ]
   },
   {
@@ -117,7 +118,7 @@ export const EXHIBITION_PROJECTS: Project[] = [
       ["Tecnologia", "Display", "Stand di brand"]
     ),
     category: "exhibition",
-    coverImage: "/images/exhibition/p4-cover.jpg",
+    coverImage: withBasePath("/images/exhibition/p4-cover.jpg"),
     summary: loc(
       "A dark-toned technology booth that uses contrast, lighting, and controlled openings to sharpen product presence.",
       "以深色基调、灯光对比和受控开口来强化产品存在感的科技展台。",
@@ -129,8 +130,8 @@ export const EXHIBITION_PROJECTS: Project[] = [
       "Lo stand e costruito su un contrasto piu netto tra involucro e display. Le superfici scure definiscono la figura esterna, mentre banchi illuminati e zone prodotto attirano l'attenzione verso l'interno.\n\nL'impianto mantiene una scala compatta ma leggibile. Gli angoli aperti favoriscono l'accesso da piu lati, mentre il guscio piu scuro aiuta a inquadrare con precisione demo e conversazioni.\n\nIl risultato e uno stand piu nitido e piu tecnico, capace di comunicare chiarezza e controllo senza risultare pesante."
     ),
     gallery: [
-      "/images/exhibition/p4-1.jpg",
-      "/images/exhibition/p4-2.jpg"
+      withBasePath("/images/exhibition/p4-1.jpg"),
+      withBasePath("/images/exhibition/p4-2.jpg")
     ]
   },
   {
@@ -146,7 +147,7 @@ export const EXHIBITION_PROJECTS: Project[] = [
       ["Automotive", "Pneumatici", "Industriale"]
     ),
     category: "exhibition",
-    coverImage: "/images/exhibition/p5-cover.jpg",
+    coverImage: withBasePath("/images/exhibition/p5-cover.jpg"),
     summary: loc(
       "A large-scale exhibition concept built around tire display, luminous framing, and a highly legible central gesture.",
       "围绕轮胎展示、发光框景与强识别中心装置展开的大尺度展台概念。",
@@ -158,8 +159,8 @@ export const EXHIBITION_PROJECTS: Project[] = [
       "Il progetto tratta il pneumatico sia come prodotto sia come dispositivo spaziale. Un grande gesto circolare costruisce l'identita dello stand verso il corridoio e aiuta a organizzare il percorso di visita.\n\nAccenti verdi, cornici sospese e zone meeting aperte danno al booth un carattere industriale netto senza compromettere la leggibilita dell'impianto. I prodotti possono essere letti da lontano e approfonditi da vicino.\n\nL'obiettivo e la chiarezza piu che l'accumulo. Lo stand vuole apparire deciso, efficiente e facile da percorrere, con il prodotto sempre al centro della composizione."
     ),
     gallery: [
-      "/images/exhibition/p5-1.jpg",
-      "/images/exhibition/p5-2.jpg"
+      withBasePath("/images/exhibition/p5-1.jpg"),
+      withBasePath("/images/exhibition/p5-2.jpg")
     ]
   },
   {
@@ -175,7 +176,7 @@ export const EXHIBITION_PROJECTS: Project[] = [
       ["Stand di brand", "Display", "Fiera"]
     ),
     category: "exhibition",
-    coverImage: "/images/exhibition/p6-cover.jpg",
+    coverImage: withBasePath("/images/exhibition/p6-cover.jpg"),
     summary: loc(
       "A compact exhibition booth in Milan that balances clear product presentation, aisle visibility, and conversation space.",
       "位于米兰展会现场的一处紧凑型展台，在产品展示、通道识别与交流空间之间保持平衡。",
@@ -187,8 +188,8 @@ export const EXHIBITION_PROJECTS: Project[] = [
       "Il progetto lavora su una scala compatta ma molto efficiente. Pareti espositive, banchi e angoli aperti sono disposti in modo da rendere lo stand leggibile subito dal corridoio, lasciando pero zone piu controllate all'interno.\n\nLa composizione evita peso superfluo e si affida invece a proporzioni, inquadrature nette e posizionamento accurato dei prodotti per costruire una presenza professionale.\n\nQui conta soprattutto l'usabilita. Lo stand sostiene sia il primo contatto sia conversazioni piu approfondite, risultando adatto a un contesto fieristico in cui tempo e attenzione sono limitati."
     ),
     gallery: [
-      "/images/exhibition/p6-1.jpg",
-      "/images/exhibition/p6-2.jpg"
+      withBasePath("/images/exhibition/p6-1.jpg"),
+      withBasePath("/images/exhibition/p6-2.jpg")
     ]
   },
   {
@@ -204,7 +205,7 @@ export const EXHIBITION_PROJECTS: Project[] = [
       ["Sicurezza", "Industriale", "Presenza di brand"]
     ),
     category: "exhibition",
-    coverImage: "/images/exhibition/p7-cover.jpg",
+    coverImage: withBasePath("/images/exhibition/p7-cover.jpg"),
     summary: loc(
       "An exhibition stand at A+A that uses vertical framing, contrast, and clean zoning to stand out in a dense industrial fair context.",
       "位于 A+A 展会现场的展台，通过垂直构架、强对比与清晰分区，在密集的工业展馆里建立识别。",
@@ -216,9 +217,9 @@ export const EXHIBITION_PROJECTS: Project[] = [
       "Il progetto lavora su una forte verticalita e su un'identita grafica piu decisa. Lo stand si presenta in modo chiaro verso il corridoio e usa soglie successive per accompagnare il passaggio dall'esposizione aperta all'interazione piu mirata.\n\nLe diverse zone restano leggibili senza diventare autonome. Display, accoglienza e incontro sono legati da un linguaggio continuo fatto di cornici, segnaletica e contrasti materici.\n\nL'obiettivo e l'efficienza dentro un padiglione affollato: abbastanza forza visiva per emergere, ma anche un uso pratico dello spazio per muoversi e parlare."
     ),
     gallery: [
-      "/images/exhibition/p7-1.jpg",
-      "/images/exhibition/p7-2.jpg",
-      "/images/exhibition/p7-3.jpg"
+      withBasePath("/images/exhibition/p7-1.jpg"),
+      withBasePath("/images/exhibition/p7-2.jpg"),
+      withBasePath("/images/exhibition/p7-3.jpg")
     ]
   },
   {
@@ -234,7 +235,7 @@ export const EXHIBITION_PROJECTS: Project[] = [
       ["Ascensori", "Fiera", "Identita spaziale"]
     ),
     category: "exhibition",
-    coverImage: "/images/exhibition/p8-cover.jpg",
+    coverImage: withBasePath("/images/exhibition/p8-cover.jpg"),
     summary: loc(
       "A lift-industry exhibition concept that combines a soft architectural shell with direct brand visibility.",
       "为电梯行业展会提出的概念方案，以柔和的建筑外壳和直接的品牌识别共同构成空间。",
@@ -246,8 +247,8 @@ export const EXHIBITION_PROJECTS: Project[] = [
       "Il concept utilizza un involucro arrotondato e una facciata piu architettonica per dare allo stand un'immagine calma ma riconoscibile. Invece di frammentare l'esposizione, il progetto tratta il booth come una figura coerente nel padiglione.\n\nAll'interno trovano posto visione del prodotto, spiegazione rapida e conversazione commerciale in una scala compatta. I bordi curvi attenuano il carattere tecnico della categoria senza perdere chiarezza.\n\nNe risulta uno stand piu composto e contemporaneo, capace di dare identita al brand restando pratico per l'uso fieristico."
     ),
     gallery: [
-      "/images/exhibition/p8-1.jpg",
-      "/images/exhibition/p8-2.jpg"
+      withBasePath("/images/exhibition/p8-1.jpg"),
+      withBasePath("/images/exhibition/p8-2.jpg")
     ]
   },
   {
@@ -263,7 +264,7 @@ export const EXHIBITION_PROJECTS: Project[] = [
       ["Salute", "Ingredienti", "Fiera"]
     ),
     category: "exhibition",
-    coverImage: "/images/exhibition/p9-cover.jpg",
+    coverImage: withBasePath("/images/exhibition/p9-cover.jpg"),
     summary: loc(
       "A bright green-and-white booth concept for Vitafoods Europe, designed to feel open, clean, and easy to approach.",
       "为 Vitafoods Europe 设计的白绿展位概念，以开放、清洁、易于接近的现场氛围为重点。",
@@ -275,8 +276,8 @@ export const EXHIBITION_PROJECTS: Project[] = [
       "Lo stand e costruito attorno a apertura visiva e comunicazione diretta. La palette bianca e verde definisce un'identita immediata mantenendo l'atmosfera luminosa e accessibile.\n\nGrafiche, scaffalature e punti incontro sono integrati in una struttura chiara, cosi che informazioni e categorie di prodotto siano comprensibili rapidamente. Il layout lascia spazio alle conversazioni senza perdere intensita espositiva.\n\nL'obiettivo e un equilibrio tra credibilita e prossimita. Il progetto sostiene visibilita di brand, racconto del prodotto e uso pratico dentro un unico linguaggio spaziale."
     ),
     gallery: [
-      "/images/exhibition/p9-1.jpg",
-      "/images/exhibition/p9-2.jpg"
+      withBasePath("/images/exhibition/p9-1.jpg"),
+      withBasePath("/images/exhibition/p9-2.jpg")
     ]
   }
 ];
@@ -305,7 +306,7 @@ export const HOME_SECTIONS: HomeSection[] = [
       "Design espositivo e spazi di brand"
     ),
     align: "left",
-    url: "/images/home/hero1.jpg"
+    url: withBasePath("/images/home/hero1.jpg")
   },
   {
     type: "text",
@@ -325,7 +326,7 @@ export const HOME_SECTIONS: HomeSection[] = [
     ),
     subtitle: loc("Dusseldorf 2025", "杜塞尔多夫 2025", "Dusseldorf 2025"),
     align: "right",
-    url: "/images/home/hero2.jpg"
+    url: withBasePath("/images/home/hero2.jpg")
   },
   {
     type: "text",
@@ -341,7 +342,7 @@ export const HOME_SECTIONS: HomeSection[] = [
     title: loc("The Elevator Show", "电梯展", "The Elevator Show"),
     subtitle: loc("Dubai 2026", "迪拜 2026", "Dubai 2026"),
     align: "left",
-    url: "/images/home/hero3.jpg"
+    url: withBasePath("/images/home/hero3.jpg")
   },
   {
     type: "image",
@@ -352,7 +353,7 @@ export const HOME_SECTIONS: HomeSection[] = [
       "Ricerca su sviluppo visivo e workflow"
     ),
     align: "right",
-    url: "/images/home/hero4.jpg"
+    url: withBasePath("/images/home/hero4.jpg")
   },
   {
     type: "text",
@@ -368,7 +369,7 @@ export const HOME_SECTIONS: HomeSection[] = [
     title: loc("Vitafoods Europe", "欧洲营养健康展", "Vitafoods Europe"),
     subtitle: loc("Open, bright, product-led", "开放、明亮、以产品为中心", "Aperto, luminoso, centrato sul prodotto"),
     align: "left",
-    url: "/images/home/hero5.jpg"
+    url: withBasePath("/images/home/hero5.jpg")
   }
 ];
 
@@ -393,7 +394,7 @@ export const MILAN_TEAM: Founder[] = [
       "负责从概念到落地的全流程项目管理，统筹工厂、场馆团队与各方协作。",
       "Segue la gestione del progetto end-to-end, dal concept alla realizzazione, coordinando produzione, venue team e stakeholder."
     ),
-    photo: "/images/about/niko.png"
+    photo: withBasePath("/images/about/niko.png")
   },
   {
     name: "Wei Ma",
@@ -405,7 +406,7 @@ export const MILAN_TEAM: Founder[] = [
       "专注展览空间的叙事结构与形式表达。",
       "Si concentra su struttura narrativa ed espressione formale negli spazi espositivi."
     ),
-    photo: "/images/about/wei.png"
+    photo: withBasePath("/images/about/wei.png")
   },
   {
     name: "Jiachen Wang",
@@ -417,7 +418,7 @@ export const MILAN_TEAM: Founder[] = [
       "通过设计营销与视觉叙事，把品牌策略转化为更具体的空间表达。",
       "Collega strategia di brand ed espressione spaziale attraverso marketing del progetto e narrazione visiva."
     ),
-    photo: "/images/about/jiachen.png"
+    photo: withBasePath("/images/about/jiachen.png")
   },
   {
     name: "Rafshaan Shaik",
@@ -429,7 +430,7 @@ export const MILAN_TEAM: Founder[] = [
       "负责方案推进、视觉表达与各阶段设计协调。",
       "Supporta lo sviluppo del concept, la comunicazione visiva e il coordinamento delle diverse fasi di progetto."
     ),
-    photo: "/images/about/rafshaan-shaik-cropped.jpg"
+    photo: withBasePath("/images/about/rafshaan-shaik-cropped.jpg")
   }
 ];
 

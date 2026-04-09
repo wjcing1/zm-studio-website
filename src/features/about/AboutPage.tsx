@@ -13,7 +13,10 @@ import {
   MILAN_TEAM
 } from "@/config/data";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { withBasePath } from "@/lib/assets";
 import { getLocalizedText } from "@/lib/i18n";
+
+const aboutHeroImage = withBasePath("/images/about/hero.jpg");
 
 export default function AboutPage() {
   const { language, t } = useLanguage();
@@ -22,7 +25,7 @@ export default function AboutPage() {
   // Preload hero image
   useEffect(() => {
     const img = new Image();
-    img.src = '/images/about/hero.jpg';
+    img.src = aboutHeroImage;
     img.onload = () => setHeroLoaded(true);
   }, []);
 
@@ -63,7 +66,7 @@ export default function AboutPage() {
         <div
           className="relative w-full min-h-[70vh] md:min-h-screen transition-opacity duration-700"
           style={{
-            backgroundImage: 'url(/images/about/hero.jpg)',
+            backgroundImage: `url(${aboutHeroImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
