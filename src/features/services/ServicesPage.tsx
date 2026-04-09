@@ -6,8 +6,15 @@ import { SERVICES } from "@/config/data";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getLocalizedText } from "@/lib/i18n";
 
+const VISIBLE_SERVICE_TITLES = new Set([
+  "Exhibition Application & Registration",
+  "Custom Booth Design & Construction",
+  "On-site Supervision"
+]);
+
 export default function ServicesPage() {
   const { language, t } = useLanguage();
+  const visibleServices = SERVICES.filter((service) => VISIBLE_SERVICE_TITLES.has(getLocalizedText(service.title, "en")));
 
   return (
     <main className="bg-white">
@@ -17,7 +24,7 @@ export default function ServicesPage() {
           <p className="text-xl text-neutral-600 mb-12">{t.services.subtitle}</p>
         </motion.div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((s) => (
+          {visibleServices.map((s) => (
             <motion.article key={getLocalizedText(s.title, language)} {...fadeUp} className="flex flex-col">
               <h3 className="text-xl font-bold tracking-tight mb-2">{getLocalizedText(s.title, language)}</h3>
               <p className="text-sm text-neutral-600 leading-relaxed">{getLocalizedText(s.text, language)}</p>
